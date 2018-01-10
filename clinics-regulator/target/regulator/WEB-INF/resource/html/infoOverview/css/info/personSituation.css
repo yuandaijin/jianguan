@@ -1,0 +1,352 @@
+.left{
+	float: left;
+	margin-left: 6px;
+}
+
+.right{
+	float: right;
+	margin-right: 12px;
+}
+p {
+	margin: 0;
+}
+
+/***************************自行添加的样式******************************************/
+
+.distritExplain{
+	text-align: center;
+	margin-top: 20px;
+}
+.areaSelect{
+	background: #ccc;
+	margin-top: 5px;
+	height: 40px;
+	font: 14px/40px "微软雅黑";
+	width: 100%;
+    height: 40px;
+    background-color: #f7f5f6;
+    border-bottom: 2px solid #0e5283;
+}
+.clinicInfoHead{
+	height: 24px;
+   /* background-color: #CCCCCC;*/
+    /*border: 1px solid #f4f4f4;*/
+    color: #000000;
+    text-align: center;
+    margin-top: 20px;
+    line-height: 24px;
+	font-size: 16px;
+}
+.clinicInfoHeads{
+	height: 30px;
+    font-size: 18px;
+    line-height: 30px;
+    text-align: center;
+    background-color: #f8f8f8;
+    border: 1px solid #f4f4f4;
+    color: #333333;
+    margin-top: 20px;
+
+}
+.nowSituation{
+	margin-top: 12px;
+	width: 100%;
+}
+.nowSituation .nowStuationPrint{
+	overflow: hidden;
+	padding-bottom: 12px;
+	border-bottom: 1px solid #ccc;
+}
+
+.nowSituation .clinicsInfoNav{
+	width: 100%;
+}
+.nowSituation .clinicsInfoNav p{
+	text-align: center;
+}
+.nowSituation .clinicsInfoNav .personStation{
+	height: 33px;
+    background-color: #e0edfe;
+    margin-top: 4px;
+    line-height: 33px;
+    text-align: center;
+    font-size: 14px;
+    color: #0e5283;
+}
+.nowSituation .clinicsInfoNav .professionTitle{
+	height: 33px;
+    background-color: #e0edfe;
+    margin-top: 4px;
+    line-height: 33px;
+    text-align: center;
+    font-size: 14px;
+    color: #0e5283;
+}
+
+.nowSituation .clinicsInfoNav .numSummarize{
+	width: 100%;
+}
+.nowSituation .clinicsInfoNav .numSummarize .summarizeTitle{
+	height: 40px;
+	line-height: 40px;
+	margin-top: 30px;
+	font-size: 16px;
+}
+.nowSituation .clinicsInfoNav .numSummarize  input{
+	height: 24px;
+	margin-top: 4px;
+	border: 1px solid #ccc;
+}
+
+.nowSituation .clinicsInfoNav .numSummarize table{
+	width: 90%;
+	height: 80px;
+	margin: 30px auto;
+}
+.nowSituation .clinicsInfoNav .numSummarize table td{
+	border: 1px solid #ccc;
+	text-align: center;
+}
+
+
+.nowSituation .lowerDistrict{
+	width: 100%;
+}
+.nowSituation .lowerDistrict .classEndtime{
+	width: 100%;
+	text-align: center;
+	height: 40px;
+	line-height: 40px;
+	margin-top: 20px;
+	font-size: 20px;
+}
+.nowSituation .lowerDistrict .classEndtime input{
+	height: 24px;
+}
+.nowSituation .lowerDistrict .positionDistribute{
+	width: 100%;
+	position: relative;
+}
+.nowSituation .lowerDistrict .positionDistribute .distributeChart,.nowSituation .lowerDistrict .jobDistribute .distributeChart,.nowSituation .evenDistribution .evenDistribute .evenChart{
+	width: 80%;
+	height: 400px;
+	margin: 0 auto;
+}
+.nowSituation .lowerDistrict .positionDistribute .yName{
+	width: 25px;
+    height: 100px;
+    text-align: center;
+    position: absolute;
+    top: 110px;
+    left: 70px;
+}
+.nowSituation .lowerDistrict .chartInfo{
+	text-align: center;
+	margin-bottom: 30px;
+	font-size: 16px;
+}
+
+.nowSituation .lowerDistrict .jobDistribute{
+	width: 100%;
+	position: relative;
+}
+
+.nowSituation .lowerDistrict .jobDistribute .yName{
+	width: 25px;
+    height: 100px;
+    text-align: center;
+    position: absolute;
+    top: 110px;
+    left: 70px;
+}
+/*//下级区划概况结束*/
+
+
+/*//平均分布概况开始*/
+.nowSituation .evenDistribution{
+	width: 100%;
+}
+.nowSituation .evenDistribution .evenTitle{
+	width: 100%;
+	text-align: center;
+	height: 40px;
+	line-height: 40px;
+	margin-top: 20px;
+	font-size: 20px;
+}
+.nowSituation .evenDistribution .evenTitle input{
+	height: 24px;
+}
+.nowSituation .evenDistribution .distritTitle{
+	height: 33px;
+    background-color: #e0edfe;
+    margin-top: 4px;
+    line-height: 33px;
+    text-align: center;
+    font-size: 14px;
+    color: #0e5283;
+}
+.nowSituation .evenDistribution .evenDistribute{
+	width: 100%;
+	position: relative;
+}
+.nowSituation .evenDistribution .evenDistribute .yName{
+	 width: 25px;
+    height: 100px;
+    text-align: center;
+    position: absolute;
+    top: 110px;
+    left: 70px;
+}
+/*//平均分布概况结束*/
+
+/*// 信息总表开始*/
+.nowSituation .infoTotal{
+	width: 100%;
+}
+.nowSituation .infoTotal .totalTitle{
+	width: 100%;
+	text-align: center;
+	height: 40px;
+	line-height: 40px;
+	margin-top: 20px;
+	font-size: 20px;
+}
+.nowSituation .infoTotal .totalTitle input{
+	height: 24px;
+}
+.nowSituation .infoTotal .totalTableTitle{
+	width: 100%;
+	text-align: center;
+	height: 40px;
+	line-height: 40px;
+	margin-top: 60px;
+}
+.nowSituation .infoTotal .totalTableTitle input{
+	height: 24px;
+}
+.nowSituation .infoTotal .totalTable{
+	width: 90%;
+	margin: 30px auto;
+	text-align: center;
+}
+.nowSituation .infoTotal .totalTable tr{
+	height: 30px
+}
+.nowSituation .infoTotal .totalTable td{
+	border: 1px solid #ccc;
+	text-align: center;
+	height: 35px;
+	line-height: 35px;
+
+}
+
+/*//时间趋势开始*/
+.o-wrap .timeTrend{
+	width: 100%;
+}
+.timeControl .query {
+	width: 90px;
+	height: 30px;
+	margin-left: 40px;
+	border: 1px solid #d7d7d7;
+	line-height: 30px;
+	margin-top: 6px;
+	padding-left: 12px;
+}
+.o-wrap .timeTrend .numChange{
+	width: 100%;
+}
+.o-wrap .timeTrend .numChange .changeTitle{
+	height: 40px;
+	width: 100%;
+	text-align: center;
+	font-size: 20px;
+	margin-top: 20px;
+}
+.o-wrap .timeTrend .numChange .numChangeChart{
+	width: 80%;
+	height: 500px;
+	margin: 0 auto;
+	position: relative;
+}
+.o-wrap .timeTrend .numChange .numChangeChart .numChart{
+	width: 100%;
+	height: 100%;
+}
+.o-wrap .timeTrend .numChange .numChangeChart .yName{
+	width: 25px;
+	height: 100px;
+	text-align: center;
+	position: absolute;
+	top: 90px;
+	left:10px;
+}
+.o-wrap  .numExplain .month{
+	width: 170px;
+	text-align: center;
+}
+.o-wrap .chartExplain{
+	text-align: center;
+}
+.o-wrap .timeTrend .numChange .numExplain{
+	text-align: center;
+	clear: both;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	font-size: 16px;
+}
+/*//时间趋势结束*/
+/****************增加的查询***********************/
+.o-wrap  .query span{
+	position: relative;
+	left: 15px;
+}
+.timeControl .query{
+	margin-top: 0;
+}
+/**************************************************/
+#main .current .regionSelection{
+	padding-left: 24%;
+}
+@media (min-width: 100px) and (max-width: 1200px){
+	#main .current .regionSelection{
+		padding-left: 15%;
+	}
+}
+#main .current{
+	margin-bottom: 0;
+}
+/*****************2016年11月9日更改添加的样式*******************************/
+.container .disease .four {
+	margin-left: 40px;
+	width: 90px;
+	height: 28px;
+	border: 1px solid #d7d7d7;
+	line-height: 26px;
+	cursor: pointer;
+}
+.container .disease li:nth-child(3) {
+    margin-left: 0;
+    line-height: 74px;
+    margin-top: 0;
+}
+.container .disease li:nth-child(4) {
+    margin-left: 0;
+    width: auto;
+    height: auto;
+    border: none;
+    line-height: 26px;
+    cursor: pointer;
+}
+.container .disease{
+	padding-left: 20px;
+}
+.cent{
+	width: 100%;
+	text-align: center;
+	margin-top: 30px;
+}
+.container .timeTrend .timeChooseOuter{
+	padding-left: 20px;
+}

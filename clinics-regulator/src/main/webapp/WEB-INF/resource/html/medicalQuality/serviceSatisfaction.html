@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>诊所医疗质量-服务满意度</title>
+	</head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=7"></meta>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<link rel="stylesheet" type="text/css" href="css/commonidentical.css" />
+	<link rel="stylesheet" type="text/css" href="css/medical/serviceSatisfaction.css" />
+
+	<body>
+		<div class="container">
+			<ul class="current">
+				<li>当前位置： &nbsp;双流区&nbsp;&gt;&gt;&nbsp;诊所医疗质量&nbsp;&gt;&gt;&nbsp;<span>服务满意度</span></li>
+				<li class="regionSelection">区域选择：
+					<select class="city" id="areaChoose">
+						<option value="">蒙自市</option>
+<!-- 						<option value="成都市" select="">成都市</option> -->
+					</select>
+					<button class="confirm">确认</button>
+					<i></i>
+					<button class="returnMap">返回地图</button>
+				</li>
+			</ul>
+			<!--<ul class="clinicInfoTab nowTimeChoose">
+			<li class="clinicInfoTabBTn">年度</li>
+			<li>季度</li>
+			<li>月度</li>
+		</ul>-->
+			<!-- 当前概况开始 -->
+			<div id="condition" class="nowProfile">
+				<div class="time">
+					<ul class="diseaseo nowTimeList show">
+						<li>时间：</li>
+						<li>
+							<select name="">
+								<option value="">按年</option>
+								<option value="">按月</option>
+								<option value="">按日</option>
+							</select>
+						</li>
+						<li>
+							<select name="">
+								<option value="">2016年</option>
+							</select>
+							至
+						</li>
+						<li>
+							<select name="">
+								<option value="">2017</option>
+							</select>
+						</li>
+						<li>
+							<i class="img"></i>
+							<span>查询</span>
+						</li>
+						<li>打印</li>
+						<li></li>
+						<li>导出</li>
+						<li></li>
+					</ul>
+
+					<ul class="diseaseo nowTimeList hide">
+						<li>时间：</li>
+						<li>
+							<select name="">
+								<option value="">按年</option>
+								<option value="">按月</option>
+								<option value="">按日</option>
+							</select>
+						</li>
+						<li>
+							<select name="">
+								<option value="">2016年</option>
+							</select>
+						</li>
+						<li>
+							<select name="">
+								<option value="">1月</option>
+							</select>
+						</li>
+						<li>
+							<i class="img"></i>
+							<span>查询</span>
+						</li>
+						<li>打印</li>
+						<li></li>
+						<li>导出</li>
+						<li></li>
+					</ul>
+					<ul class="diseas nowTimeList hide">
+						<li>时间：</li>
+						<li>
+							<select name="">
+								<option value="">按年</option>
+								<option value="">按月</option>
+								<option value="">按日</option>
+							</select>
+						</li>
+						<li>
+							<select name="">
+
+							</select>
+						</li>
+						<li>
+							<select name="">
+
+							</select>
+						</li>
+						<li>
+							<select name="">
+
+							</select>
+						</li>
+						<li>
+							<i class="img"></i>
+							<span>查询</span>
+						</li>
+						<li>打印</li>
+						<li></li>
+						<li>导出</li>
+						<li></li>
+					</ul>
+				</div>
+				<div class="nowSituation">
+					<ul class="area">
+						<li class="active">诊所数量统计</li>
+						<li>下级区划概况</li>
+						<li>信息总表</li>
+					</ul>
+				</div>
+
+				<div class="first areaList show">
+					<div class="list">
+						2016年1月双流区个体诊所服务满意度情况统计
+					</div>
+					<div class="coverytr">
+						居民对个体诊所总体满意度状况
+					</div>
+					<div class="antibiotic">
+						<div id="status" class="qualifiedRate" ">
+						
+					</div>	
+				</div>
+				<div class="namelist ">
+					2016年1月双流区个体诊所总体服务满意度得分情况
+				</div>
+				<div class="coverytr">
+						个体诊所各维度服务满意度平均情况
+				</div>
+				<div id="passChart " class="antibiotic ">
+						
+				</div>
+				<div class="namelist ">
+					2016年1月双流区个体诊所服务满意度各维度平均得分
+				</div>
+				<div class="blank "></div>
+			</div>
+			
+			<div class="second areaList hide ">
+				<div class="clinicInfoHeads ">
+					2016年1月双流区各下级区划个体诊所服务满意度合格率统计
+				</div>
+				<div class="coverytr">
+					下级区划个体诊所服务满意合格率情况
+				</div>
+				<div class="namelist ">
+					注：服务满意度评分≥3分为满意度合格
+				</div>
+				<div id="serviceChart " class="antibiotic ">
+						
+				</div>
+				<div class="namelist ">
+					2016年1月双流区各下级区划个体诊所服务满意度合格率
+				</div>
+				<div class="blank "></div>
+			</div>
+
+			<div class="third areaList hide ">
+				<div class="clinicInfoHeads ">
+					2016年1月各双流区个体诊所服务满意度合格率信息总表
+				</div>
+				<div class="namelist">
+					注：服务满意度评分≥3分为满意度合格
+				</div>
+				<div class="coverytr">
+					表1 2016年1月各双流区个体诊所服务满意度合格率信息总表
+				</div>
+				<table>
+						<tr class="tableHead ">
+							<td rowspan="2 ">行政区域</td>
+							<td rowspan="2 ">总体满意度合格率</td>
+							<td colspan="5 ">个体诊所服务满意度维度</td>
+							
+						</tr>
+						<tr class="tableHead ">
+							<td>诊所环境设施</td>
+							<td>医护人员服务态度</td>
+							<td>诊所服务效率</td>
+							<td>诊所诊疗服务效果</td>
+							<td>诊所收费合理性</td>
+						</tr>
+						<tr>
+							<td>双流区</td>
+							<td>16000</td>
+							<td>14000</td>
+							<td>60%</td>
+							<td>60%</td>
+							<td>20.00%</td>
+							<td>60%</td>
+						</tr>
+						<tr>
+							<td>双流区</td>
+							<td>16000</td>
+							<td>14000</td>
+							<td>20.00%</td>
+							<td>60%</td>
+							<td>60%</td>
+							<td>60%</td>
+						</tr>
+						<tr>
+							<td>双流区</td>
+							<td>16000</td>
+							<td>14000</td>
+							<td>20.00%</td>
+							<td>60%</td>
+							<td>60%</td>
+							<td>60%</td>
+						</tr>
+						<tr>
+							<td>双流区</td>
+							<td>16000</td>
+							<td>14000</td>
+							<td>20.00%</td>
+							<td>60%</td>
+							<td>60%</td>
+							<td>60%</td>
+						</tr>
+						<tr>
+							<td>双流区</td>
+							<td>16000</td>
+							<td>14000</td>
+							<td>20.00%</td>
+							<td>60%</td>
+							<td>60%</td>
+							<td>60%</td>
+						</tr>
+				</table>
+				<div class="blank "></div>
+			</div>
+		</div>	
+	</body>
+	<script src="../public/js/plugins/jquery-1.11.1.min.js "></script>
+	<script type="text/javascript " src="../public/js/echarts.min.js "></script>
+	<script type="text/javascript " src="../commonPath.js "></script>
+	<script src="js/commonInfo.js "></script>
+	<script src="js/serviceSatisfaction.js "></script>
+</html>

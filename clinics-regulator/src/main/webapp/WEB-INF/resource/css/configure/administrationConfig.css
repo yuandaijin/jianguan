@@ -1,0 +1,232 @@
+.o-content dl.f-choose-list {
+    width: auto;
+	  overflow-y: auto;
+	  height: 200px;
+	  word-wrap: break-word; word-break: normal;
+}
+.f-choose-list.s-choose-before dt:after,
+.f-choose-list.s-choose-after dt:after {
+	content: "";
+	display: inline-block;
+	width: 12px;
+	height: 12px;
+	position: absolute;
+	right: 0;
+	top: 12px;
+}
+.f-choose-list.s-choose-before dt:after {
+  	background: url(../../imgs/icon-arrow.png) no-repeat 0 2px;
+/*   background: url(../../imgs/icon-arrow.png) no-repeat 100px 12px; */
+}
+.f-choose-list.s-choose-after dt:after {
+  	background: url(../../imgs/icon-arrow.png) no-repeat 0 -28px;
+/*   background: url(../../imgs/icon-arrow.png) no-repeat 100px -18px; */
+}
+.f-choose-list.s-choose-before dt,
+.f-choose-list.s-choose-after dt {
+  padding-right: 15px;
+  background: none;
+}
+.mechanism-company-list.s-choose-after {
+  min-width: 180px;
+}
+
+.o-nav-list.list2 div {
+  width: 185px;
+}
+
+.i-check i {
+	display: inline-block;
+	width: 18px;
+	height: 18px;
+	float: left;
+	border-radius: 2px;
+	border: 1px solid #999;
+	cursor: pointer;
+}
+.i-check .i-checked {
+	background: url(../../imgs/i-check_0001.png) no-repeat 2px 4px;
+}
+
+/*选择列表表格*/
+.o-content {
+	padding-top: 20px;
+}
+/*全选框*/
+#choose-all {
+	margin-right: 10px;
+}
+/*选框checkbox*/
+.o-table tr div {
+	position: relative;
+	display: inline-block;
+	width: 18px;
+	height: 18px;
+	overflow: hidden;
+	top: 5px;
+}
+.o-table tr span {
+	position: relative;
+	top: 0;
+	left: -18px;
+	display: inline-block;
+	z-index: 12;
+	top: 5px;
+	background-color: #fff;
+}
+.o-table tr span+label {
+	cursor: pointer;
+}
+.o-table .last-th {
+	width: 120px;
+}
+.o-table .last-td {
+	color: #d7d7d7;
+}
+.o-table .last-td a {
+	color: #666;
+	display: inline-block;
+	padding: 0 6px;
+}
+.o-table a.usable {
+	color: #2081c7;
+}
+.o-table a.disable {
+	cursor: not-allowed;
+}
+
+/*弹出框样式*/
+.popup-inner {
+	padding: 20px;
+	background-color: #fff;
+}
+.popup-inner .choose-btns-warp {
+	padding-top: 38px;
+	padding-bottom: 30px;
+}
+.popup-inner>a, .choose-btns-warp a {
+	display: inline-block;
+	color: #666;
+	line-height: 30px;
+	padding: 0 13px;
+	border: 1px solid #ccc;
+	border-radius: 2px;
+	background-color: #fff;
+}
+.popup-inner>a+a, .choose-btns-warp a+a {
+	margin-left: 10px;
+}
+/*选中后的样式*/
+.popup-inner>a.s-color, .choose-btns-warp a.s-color {
+	color: #fff;
+	background-color: #2081c7;
+	border: 1px solid #2081c7;
+}
+.form-list {
+	height: 170px;
+	overflow: hidden;
+}
+.form-list li {
+	float: left;
+}
+.form-list li>p {
+	display: inline-block;
+	width: 95px;
+	height: 48px;
+	float: left;
+	/*outline: 1px solid red;*/
+}
+.form-list .nth1-p {
+	text-align: right;
+}
+.form-list .nth1-p span {
+	color: #ff3e3e;
+}
+.form-list .nth1-p+p {
+	width: 255px;
+}
+.form-list li input {
+	width: 162px;
+	height: 26px;
+	padding-left: 5px;
+	margin-right: 10px;
+	border: 1px solid #d2d2d2;
+}
+.form-list li em {
+	display: block;
+	line-height: 20px;
+	padding-left: 15px;
+}
+.popup-inner .btn-warp {
+	text-align: center;
+}
+.popup-inner .btn-warp a {
+	display: inline-block;
+	width: 90px;
+	line-height: 30px;
+	color: #fff;
+	background-color: #f16528;
+	border-radius: 2px;
+}
+.popup-inner .btn-warp a+a {
+	margin-left: 60px;
+}
+.hold-btn {
+	margin-left: -120px;
+}
+
+/*平台分成页面独有样式*/
+.mechanism .medical-mechanism-list.s-choose-before dt {
+  background: url(../../imgs/icon-arrow.png) no-repeat 140px 12px;
+}
+.mechanism .medical-mechanism-list.s-choose-after dt {
+  background: url(../../imgs/icon-arrow.png) no-repeat 140px -18px;
+}
+
+/*管理公司配置页面独有样式*/
+#user-area {
+	width: 150px;
+	height: 24px;
+	border: 1px solid #d1d0d0;
+	padding-left: 10px;
+	background-color: rgba(255,255,255,0.8);
+}
+.info-list {
+	/*width: 100%;*/
+	margin: 20px auto 30px;
+	vertical-align: top;
+}
+.info-list tr>th, .info-list tr>td {
+	vertical-align: top;
+}
+.info-list tr>th{
+	width: 100px;
+	font-size: 16px;
+}
+.info-list input {
+	width: 100%;
+	height: 30px;
+	line-height: 30px;
+	padding-left: 10px;
+	border: 1px solid #d1d0d0;
+	border-radius: 2px;
+}
+.info-list input:focus {
+	border: 1px solid #999;
+}
+.info-list div{
+	width: 400px;
+	height: 200px;
+	overflow: auto;
+	/*padding: 10px;*/
+	/*outline: 1px solid #e5e5e5;*/
+}
+.info-data {
+	width: 100%;
+}
+.info-data tr+tr td {
+	padding-top: 5px;
+}
+.info-data td+td{
+	padding-left: 20px;
+}

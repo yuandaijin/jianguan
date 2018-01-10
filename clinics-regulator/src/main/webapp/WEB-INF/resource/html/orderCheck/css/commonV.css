@@ -1,0 +1,165 @@
+/*头部样式*/
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    font-family: "微软雅黑";
+    color: #333333;
+}
+body{
+    background-color: white;
+}
+table{
+    table-layout: fixed;
+}
+td{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.overHidden{
+    overflow: hidden;
+}
+.floatL{
+    float: left;
+}
+.floatR{
+    float: right;
+}
+.displayInB{
+    display: inline-block;
+}
+.displayBLo{
+    display: block;
+}
+.displayNo{
+    display: none;
+}
+.textCenter{
+    text-align: center;
+}
+.textRight{
+    text-align: right;
+}
+.borCcc{
+    border: 1px solid #cccccc;
+    height: 25px;
+}
+.curPointer{
+    cursor: pointer;
+}
+input{
+    padding-left: 5px;
+}
+.clearBoth{
+    clear: both;
+}
+.layerHead{
+    height: 40px;
+    background-color: #e5e5e5;
+}
+.layerHead .closeLayer{
+    font-size: 45px;
+    margin-right: 10px;
+    margin-top: -12px;
+}
+.textPoint{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.container{
+    width: 100%;
+    overflow: hidden;
+    padding: 0;
+}
+.current{
+    width: 100%;
+    height: 41px;
+    background-color: #f2f2f2;
+    border-bottom:1px solid #e0e0e0;
+    color: #666666;
+}
+.container .current span{
+    color: #666666;
+}
+.container .current a{
+    color: #333333;
+}
+.container .current li{
+    line-height: 40px;
+    float: left;
+    margin-left: 21px;
+}
+.container .current .currentLocation{
+    width: 48px;
+    height: 18px;
+    position: relative;
+    top:-1px;
+    font-size: 14px;
+    color: #666666;
+}
+.container .current .city{
+    width: 110px;
+    height: 24px;
+    line-height: 24px;
+    border: 1px solid #d4d4d4;
+    position: relative;
+    top:-1px;
+    color: #666666;
+    outline: none;
+}
+.container .current .confirm{
+    width: 51px;
+    height: 24px;
+    line-height: 24px;
+    background-color: #f3f3f3;
+    margin-right: 72px;
+    border: 1px solid #d7d7d7;
+    margin-left: -5px;
+    color: #666666;
+    cursor: pointer;
+    outline: none;
+}
+.container .current .regionSelection{
+    float:right;
+    margin-right: 50px;
+}
+.container .current .regionSelection i{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background:url(../images/返回地图.png) no-repeat;
+    margin-left: 45px;
+    top: 10px;
+    cursor: pointer;
+}
+.container .current .returnMap{
+    height:26px;
+    line-height: 22px;
+    font-size: 14px;
+    border: none;
+    background-color:#f3f3f3;
+    color: #666666;
+    margin-left: 75px;
+    cursor: pointer;
+    outline: none;
+}
+/*tab切换样式*/
+.preSamTabHeader li{
+    width: 145px;
+    height: 30px;
+    border: 1px solid #d5d5d5;
+    line-height: 30px;
+}
+.preSamTabHeader{
+    margin:0 20px 35px 20px;
+    border-bottom: 1px solid #374156;
+}
+.preSamTabHeader li.active{
+    background-color: #374156;
+    color: white;
+    border-color: #374156;
+}

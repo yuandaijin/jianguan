@@ -1,0 +1,10 @@
+###
+debug=true
+###
+jdbc.url=jdbc:mysql://192.168.100.61:3306/huatuo_clinics_0412?useUnicode=true&amp;characterEncoding=UTF-8
+##
+jdbc.user=admin
+##
+jdbc.pwd=admin!@22
+##
+jdbc.driver=com.mysql.jdbc.Driver

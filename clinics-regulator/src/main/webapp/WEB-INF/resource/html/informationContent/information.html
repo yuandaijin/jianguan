@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>资讯内容</title>
+		<!--[if lt IE 9]>
+    <script>
+        alert('管理系统已不支持IE6-8，请使用谷歌、火狐等浏览器\n或360、QQ等国产浏览器的极速模式浏览本页面！');
+    </script>
+    <![endif]-->
+		<link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/bootstrap-multiselect.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/font-awesome.min.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/style.min.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/function.css" />
+		<link rel="stylesheet" t ype="text/css" href="../../css/employeeList.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/component.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/jquery.Jcrop.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/location.css" />
+		<link rel="stylesheet" type="text/css" href="information.css" />
+	</head>
+
+	<body>
+		<div class="background">
+			<div class="main">
+				<div class="content">
+					<div class="whole">
+						<div class="column">
+							选择栏目：
+							<select name="" id="column" class="columnlly">
+							</select>
+						</div>
+						<div class="head">
+							<span class="add_to">添加</span>
+							<span class="existing">已有资讯列表</span>
+						</div>
+						<table class="table" border="1" cellspacing="0" cellpadding="0" bordercolor="#eeeeee">
+							<thead>
+								<tr>
+									<td>主标题</td>
+									<td>副标题</td>
+									<td>栏目</td>
+									<td>频道</td>
+									<td>发布时间</td>
+									<!--<td>来源</td>-->
+									<td>操作</td>
+								</tr>
+							</thead>
+							<tbody id="addTr">
+							</tbody>
+						</table>
+					</div>
+					<div class="specific hide" style="width: 1000px; margin: 0 auto;">
+						<div class="information">
+							<span class="addnew">添加新资讯</span>
+							<span class="cancel">取消</span>
+							<span class="preservation">保存</span>
+						</div>
+						<form id="setMenu">
+							<div class="empty">
+								<div class="left_content">
+									<ul class="detailed">
+										<li class="upward" style="width: 230px;">
+											<label class="same-width"><span class="i-star">*&emsp;</span >所属栏目：</label>
+											<input id="columnly" type="text" readonly="readonly" class="standardly" />
+										</li>
+										<li class="upward" style="width: 230px;">
+											<label class="same-width"><span class="i-star">*&emsp;</span >所属频道：</label>
+											<select class="standard" id="channel">
+											</select>
+											<span class="errortips"></span>
+										</li>
+										<li class="upward" style="width: 230px;">
+											<label class="same-width"><span class="i-star">*&emsp;</span >排序号：</label>
+											<input type="text" name="sort" id="sort" placeholder="数字小,排序靠前" class="standard" />
+											<span class="errortips"></span>
+										</li>
+										<li class="upward">
+											<label class="same-width reduce">推荐：</label>
+											<input type="checkbox" name="recommend" id="recommend" class="recommend" vaule="1" />
+											<span class="errortips"></span>
+										</li>
+										<li class="hundred upward">
+											<label class="same-width"><span class="i-star">*&emsp;</span >主标题：</label>
+											<input type="text" name="titlely" id="titlely" placeholder="1-20字" class="long" maxlength="20" />
+											<span class="errortips"></span>
+										</li>
+										<li class="hundred upward">
+											<label class="same-width"><span class="i-star"> &nbsp;&emsp;</span >副标题：</label>
+											<input type="text" name="subtitle" id="subtitle" placeholder="0-20字" class="long" maxlength="20" />
+											<span class="errortips"></span>
+										</li>
+										<!--<li class="upward">
+											<label class="same-width"><span class="i-star">*&emsp;</span >资讯来源：</label>
+											<input type="radio" name="source" value="0" checked="checked" id="huaTuo"/><span class="location">华佗</span>
+											<input type="radio" name="source" value="1" id="extension"/><span class="location">推广</span>
+											<input type="radio" name="source" value="2" id="region" checked="checked"/><span class="location">区域</span>
+											<input type="text" name="local-selector" id="local-selector" value="" class="" readonly="readonly"/>
+											<span class="errortips"></span>
+										</li>-->
+									</ul>
+								</div>
+								<!--<div class="right_content">
+									<div class="form-group profile">
+										<ul style="list-style: none;display:inline-block">
+											<li style="float: left;margin-top: 50px;margin-left: 100px;">
+												主题图:
+											</li>
+											<li style="float: left;margin-left: 20px;">
+												<a id="imgClick" href="javascript:void(0);"><img src="../../imgs/i-select-large.png" id="userPhoto"/></input>
+											</li>
+											<em class="myerror"></em>
+										</ul>
+									</div>
+								</div>-->
+							</div>
+						</form>
+						<div class="editor">
+							<script id="container" name="content" type="text/plain"></script>
+							<em class="errortips"></em>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="uploadPop" style="display: none;" id="div-upload-pop">
+			<div class="PUI-headPho">
+				<div class="upPho" style="margin-top: 20px;">
+					<div class="clear">
+						<div class="fl" id="imgdiv">
+							<img src="" id="sourceImg" class="w420" alt="[Jcrop Example]" width="420" height="325" />
+						</div>
+						<div class="fl" style="margin-left: 95px; margin-top: 18px; border: 2px solid #f2f2f2; padding: 2px;" id="preview-pane">
+							<div class="preview-container">
+								<img src="" class="jcrop-preview" alt="Preview" id="cutImg" width="90" height="120" />
+							</div>
+						</div>
+					</div>
+					<input type="hidden" id="imgpath" />
+				</div>
+				<div class='upPho bottom'>
+					<input type="hidden" id="bigImage" name="bigImage" />
+					<input type="hidden" id="x" name="x" />
+					<input type="hidden" id="y" name="y" />
+					<input type="hidden" id="w" name="w" />
+					<input type="hidden" id="h" name="h" />
+
+					<input type="hidden" id="fileName" name="fileName" value="" />
+					<div style="margin: 0 auto;">
+						<div class="up_img_btn" style="display: none;">
+							<span>选择图片</span>
+							<input type="file" id="imgFile" name="imgFile" accept="image/jpeg, image/x-png" />
+						</div>
+						<div class="up_img_btn" style="display: inline-block;">
+							<span>确定</span><input type="button" id="checkOk" />
+						</div>
+						<div class="up_img_btn" style="display: inline-block; background: #fff; background: #fff; color: #333; border: 1px solid #999; margin-left: 20px;">
+							<span>取消</span><input type="button" id="checkNo" />
+						</div>
+						<div class="up_img_btn" style="display: inline-block;">
+							<span>保存</span><input type="button" id="submit-avatar" />
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+	</body>
+	<script src="../../js/plugins/jquery-1.11.1.min.js"></script>
+	<script src="../../js/plugins/layer/layer.js"></script>
+	<script src="../../js/libs/jquery.validate.js"></script>
+	<script src="../../js/libs/location.js"></script>
+	<script src="../../js/plugins/validate/card.js"></script>
+	<script src="../../js/libs/jquery.Jcrop.js"></script>
+	<script src="../../js/libs/location.js"></script>
+	<script src="../../../static/ueditor/ueditor.config.js"></script>
+	<script src="../../../static//ueditor/ueditor.all.js"></script>
+	<script src="information.js"></script>
+	<script src="../commonPath.js"></script>
+
+</html>

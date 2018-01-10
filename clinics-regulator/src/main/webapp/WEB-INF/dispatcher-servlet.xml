@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util" xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.1.xsd"
+		>
+
+    
+    <!-- 激活@Controller模式 -->
+    <!-- 对包中的所有类进行扫描，以完成Bean创建和自动依赖注入的功能 需要更改 -->
+    <!--  -->
+      
+    <context:component-scan base-package="com.huatuo.clinics.cms" />
+  
+    <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter" />
+    <mvc:default-servlet-handler/>
+    <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/jsp/" />
+        <property name="suffix" value=".jsp" />
+    </bean>
+    <mvc:resources location="/WEB-INF/resource/" mapping="/resource/**"/>
+	<mvc:annotation-driven>
+		<mvc:message-converters>
+			<bean class="org.springframework.http.converter.StringHttpMessageConverter">
+				<property name="supportedMediaTypes">
+					<list>
+						<value>text/plain;charset=UTF-8</value>
+					</list>
+				</property>
+			</bean>
+
+			<bean id="byteArrayMessageConverter"
+				class="org.springframework.http.converter.ByteArrayHttpMessageConverter" />
+			<bean
+				class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+				<property name="supportedMediaTypes">
+					<list>
+						<value>application/json;charset=UTF-8</value>
+					</list>
+				</property>
+			</bean>
+		</mvc:message-converters>
+	</mvc:annotation-driven>
+	<bean id="xmlViewer" 
+        class="org.springframework.web.servlet.view.xml.MarshallingView">
+        <constructor-arg>
+            <bean class="org.springframework.oxm.jaxb.Jaxb2Marshaller">
+                <property name="classesToBeBound">
+                    <list>
+                        <value>com.huatuo.clinics.cms.adapter.FlexXmlResponse</value>
+                    </list>
+                </property>
+            </bean>
+        </constructor-arg>
+    </bean>
+    <mvc:interceptors>  
+	    <!-- 使用bean定义一个Interceptor，直接定义在mvc:interceptors根下面的Interceptor将拦截所有的请求 -->  
+	    <mvc:interceptor>  
+	        <mvc:mapping path="/**"/>  
+	        <mvc:exclude-mapping path="/resource/**"/>  
+	        <!-- 定义在mvc:interceptor下面的表示是对特定的请求才进行拦截的 -->  
+	        <bean class="com.huatuo.clinics.cms.adapter.ControllerAdapter"/>  
+	    </mvc:interceptor>  
+	</mvc:interceptors>
+</beans>

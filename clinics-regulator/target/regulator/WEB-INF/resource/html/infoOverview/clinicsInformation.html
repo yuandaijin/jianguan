@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>诊所资源--基本信息</title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="css/info/conmon.css">
+		<link href="css/info/clinicsInformation.css" rel="stylesheet" type="text/css">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=7">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	</head>
+
+	<body>
+		<div class="container" id="main">
+			<ul class="current">
+				<li>当前位置： &nbsp;<span class="areaShow"></span>&nbsp;&gt;&gt;&nbsp;诊所资源&nbsp;&gt;&gt;&nbsp;<span>诊所基本信息</span></li>
+				<li class="regionSelection">区域选择：
+					<select class="city" id="areaChoose"></select>
+					<button id="areaConfirm" class="confirm">确认</button>
+				</li>
+				<li class="backBtn">
+					<i></i>
+					<button class="returnMap">返回地图</button>
+				</li>
+			</ul>
+			<ul class="clinicInfoTab print">
+				<li id="nowCondition" class="clinicInfoTabBtn active">当前概况</li>
+				<li id="timeTrend" class="clinicInfoTabBtn">时间趋势</li>
+				<li>打印</li>
+				<li></li>
+				<li>导出</li>
+				<li></li>
+			</ul>
+
+			<!-- 当前概况开始 -->
+			<div id="condition" class="nowProfile">
+				<div class="time">
+					<ul class="disease">
+						<li>时间：</li>
+						<li>
+							<select id="timeStyle" class="timeStyle">
+								<option value="year">按年</option>
+								<option value="month">按月</option>
+							</select>
+						</li>
+						<li class="two">
+							<select class="nowProfileYear yearSelected">
+
+							</select>
+						</li>
+						<li class="fif">
+							<select class="nowProfileMonth monthSelected hide">
+
+							</select>
+						</li>
+						<li class="nowProfileTime four">
+							<i class="img"></i>
+							<span>查询</span>
+						</li>
+					</ul>
+				</div>
+
+				<div class="nowSituation">
+					<ul class="area">
+						<li class="totalCondition active" data-id="1">
+							辖区总体概况
+							<div class="totalNav hide">
+								<div class="numStat active">诊所数量统计</div>
+								<div class="classStat">诊所类型统计</div>
+							</div>
+						</li>
+						<li class="lowerLocation">下级区划概况</li>
+						<li class="infoTotal">信息总表</li>
+					</ul>
+					<div class="clinicsInfoNav areaList">
+						<p class="clinicInfoHead">
+							截止<span class="yearShow" style="font-size: 20px">2016年</span><span class="monthShow" style="font-size: 20px">1月</span><span class="areaShow" style="font-size: 20px">双流县</span>个体诊所数量统计
+						</p>
+						<div class="coverytr">个体诊所数量统计概况</div>
+						<div class="clinicInfoDetail">
+							<div class="numWrap chart">
+								<div id="clinicsTotalNum" class="clinicsChart"></div>
+								<p class="yName">诊所数量(个)</p>
+								<p class="chartInfo">个体诊所数量总计</p>
+							</div>
+
+							<div class="relativeWrap chart">
+								<div id="clinicsNumRelative" class="clinicsChart"></div>
+								<p class="yName">诊所数量(个)</p>
+								<p class="chartInfo">个体诊所数量环比</p>
+							</div>
+
+							<div class="compareWrap chart">
+								<div id="clinicsNumCompare" class="clinicsChart"></div>
+								<p class="yName">诊所数量(个)</p>
+								<p class="chartInfo">个体诊所数量同比</p>
+							</div>
+						</div>
+						<div class="numSummarize">
+							<p class="summarizeTitle">
+								<span class="yearShow" style="font-size: 16px">2016年</span><span class="monthShow" style="font-size: 16px">1月</span><span class="areaShow" style="font-size: 16px">双流县</span>个体诊所数量环比、同比概况
+							</p>
+							<table>
+								<tr class="tableHead">
+									<td>行政区划</td>
+									<td>诊所数量</td>
+									<td>环比增长率</td>
+									<td>同比增长率</td>
+								</tr>
+								<tr>
+									<td class="areaShow">双流区</td>
+									<td id="numAll"></td>
+									<td id="anbi"></td>
+									<td id="mombi"></td>
+								</tr>
+							</table>
+						</div>
+					</div>
+
+					<div class="clinicsClasses areaList hide">
+						<div class="coverytr">个体诊所类型统计概况</div>
+						<p class="classEndtime">
+							截止<span class="yearShow">2016年</span><span class="monthShow">1月</span><span class="areaShow">双流县</span>个体诊所类型统计
+						</p>
+						<div class="clinicsClassDetail">
+							<div class="classChart">
+								<div id="organizerClasses" class="clinicsChart"></div>
+								<p class="chartInfo">个体诊所主办单位分类</p>
+							</div>
+
+							<div class="classChart">
+								<div id="clinicsClasses" class="clinicsChart"></div>
+								<p class="chartInfo">个体诊所诊所类型分类</p>
+							</div>
+
+							<div class="classChart">
+								<div id="levelClasses" class="clinicsChart"></div>
+								<p class="chartInfo">个体诊级别分类</p>
+							</div>
+							<div class="classChart">
+								<div id="scaleClasses" class="clinicsChart"></div>
+								<p class="chartInfo">个体诊所规模分类</p>
+							</div>
+						</div>
+						<div class="clasesStatic">
+							<p class="clasesStaticTitle">
+								表一<span class="yearShow">2016年</span><span class="monthShow">1月</span><span class="areaShow">双流县</span>个体诊所分类统计
+							</p>
+							<table id="totalTable" class="clasesStaticTable">
+								<tr class="tableHead">
+									<td rowspan="2">行政区划</td>
+									<td rowspan="2">总数</td>
+									<td colspan="3">主办单位</td>
+									<td colspan="5">诊所类别</td>
+									<td colspan="4">诊所级别</td>
+									<td colspan="3">诊所规模</td>
+								</tr>
+								<tr class="tableHead">
+									<td>社会办</td>
+									<td>个人办</td>
+									<td>其他</td>
+									<td>普通</td>
+									<td>中医</td>
+									<td>中西医口腔结合</td>
+									<td>口腔</td>
+									<td>其他</td>
+									<td>五星级</td>
+									<td>四星级</td>
+									<td>三星级</td>
+									<td>未评级</td>
+									<td>小型
+										<3人</td>
+											<td>中型3-5人</td>
+											<td>大型>5人</td>
+								</tr>
+								<tr>
+									<td class="areaShow"></td>
+									<td class="cliQty"></td>
+									<td class="social"></td>
+									<td class="personal"></td>
+									<td class="foundOther"></td>
+									<td class="ordinary"></td>
+									<td class="chinaDoctor"></td>
+									<td class="medicine"></td>
+									<td class="mouth"></td>
+									<td class="otherType"></td>
+									<td class="fiveStars"></td>
+									<td class="fourStars"></td>
+									<td class="thereStars"></td>
+									<td class="rateD"></td>
+									<td class="small"></td>
+									<td class="midsize"></td>
+									<td class="big"></td>
+
+								</tr>
+
+							</table>
+						</div>
+					</div>
+
+					<div class="lowerLevel areaList hide">
+						<p class="lowerLevelTitle">
+							截止<span class="yearShow" style="font-size: 20px">2016年</span><span class="monthShow" style="font-size: 20px">1月</span><span class="areaShow" style="font-size: 20px">双流县</span>个体诊所行政区划分布
+						</p>
+						<div class="coverytr">下级行政区划诊所数量分布概况</div>
+						<div class="levelWrap chart">
+							<div id="lowerLevelChart" class="lowerLevelChart"></div>
+							<p class="yName">诊所数量(个)</p>
+							<p class="chartInfo">
+								<span class="yearShow" style="font-size: 16px">2016年</span><span class="monthShow" style="font-size: 16px">1月</span><span class="areaShow" style="font-size: 16px">双流县</span>各下级行政区划个体诊所数量分布
+							</p>
+						</div>
+					</div>
+
+					<div class="infoSummary areaList hide">
+						<p class="summaryTitle">
+							截止 <span class="yearShow" style="font-size: 20px">2016年</span><span class="monthShow" style="font-size: 20px">1月</span><span class="areaShow" style="font-size: 20px">双流县</span>个体诊所基本信息总表
+						</p>
+
+						<p class="summaryTableTitle">
+							表1 <span class="yearShow">2016年</span><span class="monthShow">1月</span><span class="areaShow">双流县</span>个体诊所概况
+						</p>
+						<table id="infoTable" class="infoSummaryTable"></table>
+					</div>
+				</div>
+			</div>
+			<!-- 当前概况结束 -->
+
+			<!-- 时间趋势开始 -->
+			<div id="trend" class="timeTrend hide">
+
+				<div class="timeControl timeChooseOuter">
+					<p>
+						<span>时间：</span>
+						<select name="" class="yearAndDay" id="">
+							<option value="year">年趋势</option>
+							<option value="month">月趋势</option>
+							<!--	<option value="">天趋势</option>-->
+						</select>
+					</p>
+					<p class="year timeSelect">
+						<select class="yearBeginYear yearSelected">
+						</select>
+						<span>至</span>
+						<select class="yearEndYear yearSelected">
+						</select>
+					</p>
+					<p class="month timeSelect hide">
+						<select class="monthBeginYear yearSelected"></select><select class="monthBeginMonth monthSelected"></select>
+						<span>至</span>
+						<select class="monthEndMonth monthSelected">
+						</select>
+						<p class="query">
+							<i class="img"></i>
+							<span class="timeQuery">查询</span>
+						</p>
+					</p>
+				</div>
+
+				<!-- 个体诊所数量变化趋势分析开始 -->
+				<div class="numChange">
+					<p class="changeTitle">
+						<span class="beginTitle" style="font-size: 20px">2016年12月</span>至 <span class="endTitle" style="font-size: 20px">2016年12月</span><span class="areaShow" style="font-size: 20px">双流县</span>个体诊所数量变化趋势分析
+					</p>
+					<div class="coverytr">
+						个体诊所数量时间趋势
+					</div>
+					<!-- 个体诊所数量变化趋势分析表开始 -->
+					<div class="numChangeChart">
+						<div id="numChart" class="numChart"></div>
+						<p class="yName">诊所数量(个)</p>
+					</div>
+					<!-- 个体诊所数量变化趋势分析表结束 -->
+
+					<p class="numExplain">
+						<span class="beginTitle" style="font-size: 16px">2016年12月</span>至 <span class="endTitle" style="font-size: 16px">2016年12月</span><span class="areaShow" style="font-size: 16px">双流县</span>个体诊所数量变化情况
+					</p>
+				</div>
+				<!-- 个体诊所数量变化趋势分析结束 -->
+
+			</div>
+			<!-- 时间趋势结束 -->
+		</div>
+		<script src="js/plugins/jquery-1.11.1.min.js"></script>
+		<script src="js/echarts.min.js"></script>
+		<script type="text/javascript" src="../commonPath.js"></script>
+		<script type="text/javascript" src="js/info/commonInfo.js"></script>
+		<script src="js/info/clinicsInformation.js"></script>
+	</body>
+
+</html>

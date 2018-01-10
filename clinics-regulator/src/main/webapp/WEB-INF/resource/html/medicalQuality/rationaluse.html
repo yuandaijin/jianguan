@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>诊所医疗质量-诊所合理用药</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=7">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<link rel="stylesheet" type="text/css" href="css/commonidentical.css" />
+		<link rel="stylesheet" type="text/css" href="css/medical/rationaluse.css" />
+	</head>
+
+	<body>
+		<div class="container">
+			<ul class="current">
+				<li>当前位置： &nbsp; <span class="areahide areaShow"></span>&nbsp;&gt;&gt;&nbsp;诊所医疗质量&nbsp;&gt;&gt;&nbsp;<span>诊所合理用药</span></li>
+				<li class="regionSelection">区域选择：
+					<select class="city" id="areaChoose">
+						<!--<option>双流区</option>-->
+					</select>
+					<button id="areaConfirm" class="confirm">确认</button>
+					<i></i>
+					<button class="returnMap">返回地图</button>
+				</li>
+			</ul>
+			<ul class="clinicInfoTab chooseTrend">
+				<li id="nowCondition" data-id="0" class="clinicInfoTabBTn">当前概况</li>
+				<li data-id="1" id="timeTrend">时间趋势</li>
+				<li class="widthChange">打印</li>
+				<li class="widthChange"></li>
+				<li class="widthChange">导出</li>
+				<li class="widthChange"></li>
+			</ul>
+
+			<!-- 当前概况开始 -->
+			<div id="condition" class="nowProfile">
+				<div class="time">
+					<ul class="nowTimeChoose">
+						<li>时间：</li>
+						<li>
+							<select name="" id="">
+								<option value="year">年度</option>
+								<option value="month">月度</option>
+								<option value="day">天</option>
+							</select>
+						</li>
+					</ul>
+					<ul class="diseaseo yearY nowTimeList">
+						<li></li>
+						<li>
+							<select name="" class="nowChooseYear yearSelected">
+							</select>
+						</li>
+						<li></li>
+						<li class="nowChooseYearByTime">
+							<i class="img"></i>
+							<span>查询</span>
+						</li>
+					</ul>
+					<ul class="diseaseo monthY nowTimeList hide">
+						<li></li>
+						<li>
+							<select name="" class="nowMonthChooseYear yearSelected">
+							</select>
+						</li>
+						<li>
+							<select name="" class="nowMonthChooseMonth monthSelected">
+							</select>
+						</li>
+						<li class="nowChooseYearByTime">
+							<i class="img"></i>
+							<span>查询</span>
+						</li>
+					</ul>
+					<!--
+                    	作者：1206950286@qq.com
+                    	时间：2016-11-09
+                    	描述：按天查询
+                    -->
+					<ul class="diseas dayY nowTimeList hide">
+						<li></li>
+						<li>
+							<select name="" class="nowDayChooseYear yearSelected">
+							</select>
+						</li>
+						<li>
+							<select name="" class="nowDayChooseMonth monthSelected">
+							</select>
+						</li>
+						<li>
+							<select name="" class="nowDayChooseDay daySelected">
+							</select>
+						</li>
+						<li class="nowChooseYearByTime">
+							<i class="img"></i>
+							<span>查询</span>
+						</li>
+					</ul>
+				</div>
+
+				<div class="nowProfile">
+
+					<div class="nowSituation">
+						<ul class="area">
+							<li class="totalNav active">
+								辖区总体概况
+								<div class="subordinate">
+									<div id="useCondition" class="active">抗生素使用情况</div>
+									<div id="transfusion">输液情况</div>
+								</div>
+							</li>
+							<li id="lowerLevel">下级区划概况</li>
+							<li id="infoTotal">信息总表</li>
+						</ul>
+
+					</div>
+
+					<!-- 抗生素使用情况开始 -->
+					<div class="first areaList show">
+						<div class="clinicInfoHeadt">
+							<span class="hideTime showTime"></span><span class="areahide areaShow">双流区</span>个体诊所抗生素使用情况分析
+						</div>
+						<div class="coverytr">
+							个体诊所抗生素使用概况
+						</div>
+						<div class="antibiotic">
+							<div class="currency">
+								<div class="transverse">
+									处方总量(张)
+								</div>
+								<div id="proportionOfPrescriptions" class="qualifiedRate"></div>
+								<div class="vertical">
+									个体诊所抗生素处方占比
+								</div>
+							</div>
+							<div class="currency">
+								<div class="transverse">
+									抗生素处方占比(%)
+								</div>
+								<div id="prescriptionRing" class="qualifiedRate"></div>
+								<div class="vertical">
+									个体诊所抗生素处方占比环比
+								</div>
+							</div>
+							<div class="currency">
+								<div class="transverse">
+									抗生素处方占比(%)
+								</div>
+								<div id="prescriptionYear" class="qualifiedRate"></div>
+								<div class="vertical">
+									个体诊所抗生素处方占比同比
+								</div>
+							</div>
+						</div>
+						<div class="clinicInfoHeads">
+							<span class="hideTime showTime"></span><span class="areahide areaShow">双流区</span>个体诊所抗生素使用环比、同比概况
+						</div>
+						<table>
+							<tr class="tableHead">
+								<td></td>
+								<td>处方总量</td>
+								<td>抗生素使用总量</td>
+								<td>抗生素占比</td>
+								<td>抗生素占比环比增长率</td>
+								<td>抗生素占比同比增长率</td>
+							</tr>
+							<tr>
+								<td class="areahide areaShow">双流区</td>
+								<td id="chuZong"></td>
+								<td id="kangZong"></td>
+								<td id="kangBi"></td>
+								<td id="kangHuan"></td>
+								<td id="kangTong"></td>
+							</tr>
+						</table>
+						<div class="blank"></div>
+					</div>
+					<!-- 抗生素使用情况结束 -->
+
+					<!-- 输液情况开始 -->
+					<div class="second areaList hide">
+						<div class="clinicInfoHeads">
+							<span class="hideTime showTime"></span><span class="areahide areaShow">双流区</span>个体诊所输液情况分析
+						</div>
+						<div class="coverytr">
+							个体诊所输液概况
+						</div>
+						<div class="antibiotic">
+							<div class="currency">
+								<div class="transverse">
+									处方数(张)
+								</div>
+								<div id="proportionOfInfusion" class="qualifiedRate"></div>
+								<div class="vertical">
+									个体诊所输液处方占比
+								</div>
+							</div>
+							<div class="currency">
+								<div class="transverse">
+									输液处方占比(%)
+								</div>
+								<div id="fluidInfusion" class="qualifiedRate"></div>
+								<div class="vertical">
+									个体诊所输液处方环比
+								</div>
+							</div>
+							<div class="currency">
+								<div class="transverse">
+									输液处方占比(%)
+								</div>
+								<div id="infusionYear" class="qualifiedRate"></div>
+								<div class="vertical">
+									个体诊所输液处方同比
+								</div>
+							</div>
+						</div>
+						<div class="coverytr">
+							个体诊所输液占比概况
+						</div>
+						<div class="antibiotic">
+							<div class="circleBig">
+								<div id="infusion" class="greatCircle"></div>
+								<div class="vertical">
+									处方总量输液占比
+								</div>
+							</div>
+							<div class="circleSmall">
+								<div id="antibiotic" class="smallCilcle"></div>
+								<div class="vertical">
+									输液处方抗生素占比
+								</div>
+							</div>
+						</div>
+						<div class="clinicInfoHeads">
+							<span class="hideTime showTime"></span><span class="areahide areaShow">双流区</span>个体诊所输液处方环比、同比概况
+						</div>
+						<table>
+							<tr class="tableHead">
+								<td></td>
+								<td>处方总量</td>
+								<td>输液总量</td>
+								<td>输液占比</td>
+								<td>输液占比环比增长率</td>
+								<td>输液占比同比增长率</td>
+							</tr>
+							<tr>
+								<td class="areahide areaShow">双流区</td>
+								<td id="allChu"></td>
+								<td id="shuZong">14000</td>
+								<td id="shuBi">20.00%</td>
+								<td id="shuHuan">60%</td>
+								<td id="shuTong">-9.1%</td>
+							</tr>
+						</table>
+						<div class="blank"></div>
+					</div>
+					<!-- 输液情况结束 -->
+
+					<!-- 下级区划概况开始 -->
+					<div class="third areaList hide">
+						<div class="namelisto">
+							<span class="hideTime showTime"></span><span class="areahide areaShow">双流区</span>各下级区划个体诊所合理用药情况
+						</div>
+						<div class="coverytr">
+							下级行政区划个体诊所抗生素使用占比概况
+						</div>
+						<div class="antibiotic">
+							<div class="transverse">
+								抗生素占比(%)
+							</div>
+							<div id="electronicMedicalRecord" class="antibiotics"></div>
+						</div>
+						<div class="clinicInfoHeads">
+							<span class="hideTime showTime"></span><span class="areahide areaShow">双流区</span>各下级行政区划个体诊所抗生素使用占比
+						</div>
+						<div class="coverytr">
+							下级行政区划个体诊所输液处方占比概况
+						</div>
+						<div class="antibiotic">
+							<div class="transverse">
+								输液占比(%)
+							</div>
+							<div id="electronicPrescription" class="antibiotics"></div>
+						</div>
+						<div class="clinicInfoHeads">
+							<span class="hideTime showTime"></span><span class="areahide areaShow">双流区</span>各下级行政区划个体诊所输液处方占比
+						</div>
+						<div class="blank"></div>
+					</div>
+					<!-- 下级区划概况结束 -->
+
+					<!-- 信息总表开始 -->
+					<div class="fourth areaList hide">
+						<div class="clinicInfoHeads">
+							<span class="hideTime showTime"></span><span class="areahide areaShow">双流区</span>个体诊所合理用药情况信息总表
+						</div>
+						<div class="coverytr">
+							表1 <span class="hideTime showTime" style="font-size: 20px;"></span><span class="areahide areaShow" style="font-size: 20px;">双流区</span>个体诊所合理用药情况信息总表
+						</div>
+						<table class="form">
+							<thead>
+								<tr class="tableHead">
+									<td>行政区划规范</td>
+									<td>处方总量(张)</td>
+									<td>抗生素处方(张)</td>
+									<td>抗生素站总处方比例</td>
+									<td>输液处方(张)</td>
+									<td>输液站总处方比例</td>
+									<td>抗生素输液处方数</td>
+									<td>抗生素占输液数比例</td>
+								</tr>
+							</thead>
+							<tbody id="totalTable">
+
+							</tbody>
+						</table>
+						<div class="blank"></div>
+					</div>
+					<!-- 信息总表结束 -->
+
+				</div>
+			</div>
+
+			<div id="trend" class="hide" style="width: 100%">
+
+				<div class="time">
+					<ul class="timeTrendChoose">
+						<li>时间：</li>
+						<li>
+							<select name="">
+								<option value="year">年趋势</option>
+								<option value="month">月趋势</option>
+								<option value="day">天趋势</option>
+							</select>
+						</li>
+					</ul>
+					<ul class="diseaseo yearY timeTrendList">
+						<li></li>
+						<li>
+							<select name="" class="trendYearChooseStart yearSelected">
+							</select> 至
+						</li>
+						<li>
+							<select name="" class="trendYearChooseEnd yearSelected">
+							</select>
+						</li>
+						<li class="timeTrendChooseByTime">
+							<i class="img"></i>
+							<span>查询</span>
+						</li>
+					</ul>
+					<ul class="diseaset monthY timeTrendList hide">
+						<li></li>
+						<li>
+							<select name="" class="trendMonthChooseYear yearSelected">
+							</select>
+						</li>
+						<li>
+							<select name="" class="trendMonthChooseBegin monthSelected">
+							</select>
+						</li>
+						<li>
+							&nbsp;至
+							<select name="" class="trendMonthChooseEnd monthSelected">
+							</select>
+						</li>
+						<li class="timeTrendChooseByTime">
+							<i class="img"></i>
+							<span>查询</span>
+						</li>
+					</ul>
+					<ul class="dise dayY  timeTrendList hide">
+						<li></li>
+						<li>
+							<select name="" class="trendDayChooseYear yearSelected">
+							</select>
+						</li>
+						<li>
+							<select name="" class="trendDayChooseMonth monthSelected">
+							</select>
+						</li>
+						<li>
+							<select name="" class="trendDayChooseStartDay daySelected">
+							</select>
+						</li>
+						<li>
+							&nbsp;至
+							<select name="" class="trendDayChooseEndDay daySelected">
+							</select>
+						</li>
+						<li class="timeTrendChooseByTime">
+							<i class="img"></i>
+							<span>查询</span>
+						</li>
+					</ul>
+				</div>
+
+				<div class="fifth">
+					<div class="namelisto">
+						<span class="hideTime startTime"></span>至<span class="hideTime endTime"></span><span class="areahide areaShow">双流区</span>合理用药情况分析
+					</div>
+					<div class="coverytr">
+						个体诊所抗生素使用占比时间趋势
+					</div>
+					<div class="currencyDown">
+						<div class="transverse">
+							抗生素处方占比(%)
+						</div>
+						<div id="topChart" class="antibiotic">
+
+						</div>
+					</div>
+
+					<div class="clinicInfoHeads">
+						<span class="hideTime startTime"></span>至<span class="hideTime endTime"></span><span class="areahide areaShow">双流区</span>抗生素使用占比变化情况
+					</div>
+					<div class="currencyDown">
+						<div class="transverse">
+							抗生素处方占比(%)
+						</div>
+						<div id="bottomChart" class="antibiotic">
+
+						</div>
+					</div>
+
+					<div class="clinicInfoHeads">
+						<span class="hideTime startTime"></span>至<span class="hideTime endTime"></span><span class="areahide areaShow">双流区</span>个体诊所输液处方占比变化情况
+					</div>
+					<div class="blank"></div>
+				</div>
+			</div>
+		</div>
+
+	</body>
+	<script src="../public/js/plugins/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="../public/js/echarts.min.js"></script>
+	<script type="text/javascript" src="../commonPath.js"></script>
+	<script src="js/commonInfo.js"></script>
+	<script src="js/rationaluse.js"></script>
+
+</html>

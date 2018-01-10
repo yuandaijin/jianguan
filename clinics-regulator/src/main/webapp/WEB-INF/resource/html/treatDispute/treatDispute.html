@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../../css/jqueryUI/jquery-ui.min.css">
+    <link rel="stylesheet" href="../../js/plugins/layer/skin/layer.css">
+    <link rel="stylesheet" href="css/commonV.css">
+    <link rel="stylesheet" href="css/treatDispute.css">
+    <title>Title</title>
+</head>
+<body>
+    <div  class="container">
+        <!--头部-->
+        <ul class="current">
+            <li>当前位置： &nbsp;<span class="areaShow"></span>&nbsp;&gt;&gt;&nbsp;<span>诊所医疗质量</span>&nbsp;&gt;&gt;&nbsp;<span>医疗争议统计</span></li>
+            <li class="regionSelection">
+                <i></i>
+                <button class="returnMap">返回地图</button>
+            </li>
+            <li class="regionSelection">区域选择：
+                <select class="city" id="areaChoose">
+<!--                     <option>双流县</option> -->
+                </select>
+                <button id="areaConfirm" class="confirm">确认</button>
+            </li>
+        </ul>
+        <!--导出打印-->
+        <div class="overHidden btnG">
+            <div class="chooseOuter displayInB">
+                <select class="borCcc chooseByTimeSelect">
+                    <option value="year">按年</option>
+                    <option value="month">按月</option>
+                    <option value="day">按日</option>
+                </select>
+                <div class="displayInB year">
+                    <span>时间：</span>
+                    <select class="borCcc yYear yearSelected">
+                        <option value="2016">2016年</option>
+                    </select>
+                    <span>至</span>
+                    <select class="borCcc yYear2 yearSelected">
+                        <option value="2016">2016年</option>
+                    </select>
+                </div>
+                <div class="displayInB month" style="display:none">
+                    <span>时间：</span>
+                    <select class="borCcc mYear yearSelected">
+                        <option value="2016">2016年</option>
+                    </select>
+                    <select class="borCcc mMonth monthSelected">
+                        <option value="1">1月</option>
+                    </select>
+                    <span>至</span>
+                    <select class="borCcc mMonth2 monthSelected">
+                        <option value="1">1月</option>
+                    </select>
+                </div>
+                <div class="displayInB day" style="display:none">
+                    <span>时间：</span>
+                    <select class="borCcc dYear yearSelected">
+                        <option value="2016">2016年</option>
+                    </select>
+                    <select class="borCcc dMonth monthSelected">
+                        <option value="1">1月</option>
+                    </select>
+                    <select class="borCcc dDay daySelected">
+                        <option value="1">1日</option>
+                    </select>
+                </div>
+            </div>
+            <div class="floatR">
+                <a class="btnV displayInB textCenter treDisQuery" href="javascript:;">查询</a>
+                <a class="btnV displayInB textCenter" href="javascript:;">导出</a>
+                <a class="btnV displayInB textCenter" href="javascript:;">打印</a>
+            </div>
+        </div>
+        <!--展示头-->
+        <div class="textCenter showTimeHeader">
+            <span class="showTimeChoose">2016-1-1</span><span class="showAreaChoose">双流区</span>医疗争议统计
+        </div>
+        <!--医疗争议数量统计表-->
+        <div class="textCenter">
+            <span class="headerSpan">医疗争议数量统计表</span>
+            <table border="1" cellpadding="0" cellspacing="0" class="numberTotal">
+                <tr class="areaListHead"></tr>
+                <tr class="unSureD"></tr>
+                <tr class="SureD"></tr>
+                <tr class="SureTotal"></tr>
+
+            </table>
+        </div>
+        <!--医疗争议详情说明表-->
+        <div class="textCenter">
+            <span class="headerSpan">医疗争议详情说明表</span>
+            <table border="1" cellpadding="0" cellspacing="0" class="numberTotal">
+                <thead>
+                    <tr>
+                        <th>行政区划</th>
+                        <th>争议发生诊所</th>
+                        <th>争议发生时间</th>
+                        <th>鉴定状态</th>
+                        <th>等级鉴定</th>
+                        <th>分类鉴定</th>
+                        <th>争议原因</th>
+                        <th>争议责任人</th>
+                        <th>上报人</th>
+                        <th>处置状态</th>
+                        <th>处置办法</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody class="infoTTable">
+                  <!--  <tr>
+                        <td>行政区划</td>
+                        <td>争议发生诊所</td>
+                        <td>争议发生时间</td>
+                        <td>鉴定状态</td>
+                        <td>等级鉴定</td>
+                        <td>分类鉴定</td>
+                        <td>争议原因</td>
+                        <td>争议责任人</td>
+                        <td>上报人</td>
+                        <td>处置状态</td>
+                        <td>处置办法</td>
+                        <td class="orderChooseNo curPointer">查看</td>
+                    </tr>-->
+                </tbody>
+
+
+            </table>
+        </div>
+        <!--医疗争议详情表（2）-->
+        <div class="positionA displayNo">
+            <div class="treatStepTwo tabTwo x">
+                <div class="textCenter headTre">医疗争议登记表</div>
+                <div class="dashTable">
+                    <div class="dashHead">责任人信息</div>
+                    <table>
+                        <tr>
+                            <td class="textRight">
+                                发生诊所：
+                            </td>
+                            <td class="orName">
+                                发生诊所
+                            </td>
+                            <td class="textRight paddingL">
+                                鉴定状态：
+                            </td>
+                            <td>
+                                <select name="" class="borCcc fullWidth identifyStatus x" readonly="readonly" disabled="disabled">
+                                    <option value="0">未鉴定</option>
+                                    <option value="1">已鉴定</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="textRight">
+                                所属地区：
+                            </td>
+                            <td class="belongAT">
+                                所属地区
+                            </td>
+                            <td class="textRight">
+                                等级鉴定：
+                            </td>
+                            <td class="identifyGradeName"></td>
+                        </tr>
+                        <tr>
+                            <td class="textRight">
+                                发生日期：
+                            </td>
+                            <td class="bookedDate"></td>
+                            <td class="textRight">
+                                分类鉴定：
+                            </td>
+                            <td class="identifyTypeName"></td>
+                        </tr>
+                        <tr>
+                            <td class="textRight">
+                                登记日期：
+                            </td>
+                            <td class="dengDateT">
+                                2012-02-02
+                            </td>
+                          <!--  <td class="textRight">
+                                最新修改时间：
+                            </td>
+                            <td class="newDateT">
+                                2012-02-02
+                            </td>-->
+                        </tr>
+                        <tr>
+                            <td class="textRight">
+                                争议原因：
+                            </td>
+                            <td colspan="3" class="dispute"></td>
+                        </tr>
+                    </table>
+
+                </div>
+                <div class="dashTable">
+                    <div class="dashHead">争议相关人员信息</div>
+                    <table>
+                        <tr>
+                            <th>责任人信息</th>
+                        </tr>
+                        <tr>
+                            <td class="textRight" style="width: 96px">
+                                责任人姓名：
+                            </td>
+                            <td class="chargeName"> </td>
+                            <td class="textRight paddingL">
+                                职称：
+                            </td>
+                            <td>
+                                <select name="" class="chargeTitle x" disabled="disabled">
+                                    <option value="5">初级职称</option>
+                                    <option value="6">中级职称</option>
+                                    <option value="7">高级职称</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="textRight" style="width: 96px">
+                                联系方式：
+                            </td>
+                            <td class="chargeMobile"></td>
+                        </tr>
+                        <tr>
+                            <th>患者信息</th>
+                        </tr>
+                        <tr>
+                            <td class="textRight" style="width: 96px">
+                                患者姓名：
+                            </td>
+                            <td class="visitName"></td>
+                            <td class="textRight paddingL">
+                                患者现状：
+                            </td>
+                            <td class="visitStatus"></td>
+                        </tr>
+                        <tr>
+                            <td class="textRight" style="width: 96px">
+                                联系方式：
+                            </td>
+                            <td class="visitMobile"></td>
+                            <td class="textRight paddingL">
+                                亲属联系方式：
+                            </td>
+                            <td class="kindredMobile"></td>
+                        </tr>
+                        <tr>
+                            <th>上报人信息</th>
+                        </tr>
+                        <tr>
+                            <td class="textRight" style="width: 96px">
+                                上报人姓名：
+                            </td>
+                            <td class="userName">
+                                上报人姓名
+                            </td>
+                            <td class="textRight paddingL">
+                                联系方式：
+                            </td>
+                            <td class="scrContact">
+                                13646346346
+                            </td>
+                        </tr>
+                    </table>
+
+                </div>
+                <div class="dashTable">
+                    <div class="dashHead">争议处置信息</div>
+                    <table>
+                        <tr>
+                            <td class="textRight">
+                                处置状态：
+                            </td>
+                            <td>
+                                <select class="mercyStatus x" disabled="disabled">
+                                    <option value="0">待处置</option>
+                                    <option value="1">处置中</option>
+                                    <option value="2">已处置</option>
+                                </select>
+                            </td>
+                            <td class="textRight paddingL">
+                                司法机构是否介入：
+                            </td>
+                            <td class="examine">
+                                <select class="justiceStatus x" disabled="disabled">
+                                    <option value="0">是</option>
+                                    <option value="1">否</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="textRight">
+                                处置时间：
+                            </td>
+                            <td class="mercyData"></td>
+                            <td class="textRight paddingL">
+                                处置负责人：
+                            </td>
+                            <td class="mercyUser"></td>
+                        </tr>
+                        <tr>
+                            <td class="textRight">
+                                处置办法：
+                            </td>
+                            <td colspan="3" class="mercyMethod"></td>
+                        </tr>
+                    </table>
+
+                </div>
+                <div class="textCenter marginTopDash">
+                    <a href="javascript:;" class="next tabTwo sure displayInB textCenter">确定</a>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+</body>
+<script src="../orderCheck/timePicker/jquery-1.7.1.min.js"></script>
+<script src="../../js/plugins/jqueryUI/jquery-ui.minDate.js"></script>
+<script src="../../js/plugins/layer/layer.js"></script>
+<script src="../commonPath.js"></script>
+<script src="js/treatDispute.js"></script>
+</html>

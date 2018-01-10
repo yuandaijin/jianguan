@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>区域居民健康-多发病分析</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=7"></meta>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" type="text/css" href="../infoOverview/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/commonidentical.css" />
+    <link rel="stylesheet" type="text/css" href="css/conmon.css" />
+    <link rel="stylesheet" type="text/css" href="css/resident/multipleIncidenceAnalysis.css" />
+</head>
+
+<body>
+    <li class="o-wrap container">
+        <ul class="current">
+            <li>当前位置： &nbsp;<span class="areaShow"></span>&nbsp;&gt;&gt;&nbsp;区域居民健康&nbsp;&gt;&gt;&nbsp;<span>多发病分析</span></li>
+            <li class="regionSelection">区域选择：
+                <select class="city" id="areaChoose">
+						<option>双流区</option>
+					</select>
+                <button id="areaConfirm" class="confirm">确认</button>
+            </li>
+            <li class="map">
+                <i></i>
+                <button class="returnMap">返回地图</button>
+            </li>
+        </ul>
+
+        <!-- 当前概况开始 -->
+        <div id="condition" class="nowProfile">
+            <ul class="clinicInfoTab">
+                <li>时间：</li>
+                <li class="chooseByYear">
+                    <select>
+							<option value="year">年度</option>
+							<option value="quarter">季度</option>
+							<option value="month">月度</option>
+							<option value="day">天</option>
+						</select>
+                </li>
+                <li class="print">打印</li>
+                <li class="print"></li>
+                <li class="print">导出</li>
+                <li class="print"></li>
+            </ul>
+            <div class="time">
+                <ul class="disease yearY timeList hide">
+                    <li></li>
+                    <li>
+                        <select name="" class="yearChooseYear yearSelected">
+							</select>
+                    </li>
+                    <li class="chooseByTime">
+                        <i class="img"></i>
+                        <span>查询</span>
+                    </li>
+                </ul>
+                <ul class="diseaseo quarterY timeList hide">
+                    <li></li>
+                    <li>
+                        <select name="" class="quarterChooseYear yearSelected">
+							</select>
+                    </li>
+                    <li>
+                        <select name="" class="quarterChooseQuater quarterSelected">
+							</select>
+                    </li>
+                    <li class="chooseByTime">
+                        <i class="img"></i>
+                        <span>查询</span>
+                    </li>
+                </ul>
+                <ul class="diseaseo monthY timeList">
+                    <li></li>
+                    <li>
+                        <select name="" class="monthChooseYear yearSelected">
+								<option value="2016">2016年</option>
+							</select>
+                    </li>
+                    <li>
+                        <select name="" class="monthChooseMonth monthSelected">
+							</select>
+                    </li>
+                    <li class="chooseByTime">
+                        <i class="img"></i>
+                        <span>查询</span>
+                    </li>
+                </ul>
+                <ul class="disea dayY  timeList hide">
+                    <li></li>
+                    <li>
+                        <select name="" class="dayChooseYear yearSelected">
+								<option value="2016">2016年</option>
+							</select>
+                    </li>
+                    <li>
+                        <select name="" class="dayChooseMonth monthSelected">
+							</select>
+                    </li>
+                    <li>
+                        <select name="" class="daySelected">
+							</select>
+                    </li>
+                    <li class="chooseByTime">
+                        <i class="img"></i>
+                        <span>查询</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="nowSituation">
+                <ul class="area">
+                    <li class="active" data-id="0">多发病概况</li>
+                    <li data-id="1">多发病特征</li>
+                    <li data-id="2">多发病信息总表</li>
+                </ul>
+            </div>
+            <!--
+            	时间：2016-08-18
+            	描述：第一页图表
+           -->
+            <div class="first areaList show">
+                <div class="clinicInfoHeads">
+                    <span class="timeShow">2016年1月</span><span class="areaShow">双流区</span>个体诊所就诊疾病前十病种分布概况
+                </div>
+                <div class="coverytr">
+                    个体诊所就诊疾病前十分布情况
+                </div>
+                <div class="antibiotic">
+                    <div class="transverse">
+                        各种病占比(%)
+                    </div>
+                    <div id="topTen" class="antibiotics"></div>
+                    <div class="vertical">
+                        排名前十病种
+                    </div>
+                </div>
+                <div class="namelisto">
+                    <span class="timeShow">2016年1月</span><span class="areaShow">双流区</span>个体诊所就诊疾病前十病种分布
+                </div>
+                <div class="blank"></div>
+            </div>
+            <!--
+                	时间：2016-08-18
+                	描述：第二页图表
+                -->
+            <div class="second areaList hide">
+                <div class="clinicInfoHeads">
+                    <span class="timeShow">2016年1月</span><span class="areaShow">双流区</span>个体诊所就诊疾病前十病种特征分析
+                </div>
+                <div class="coverytr">
+                    个体诊所就诊疾病前十高发地区分布概况
+                </div>
+                <div class="antibiotic">
+                    <div class="transverse">
+                        各种病中占比(%)
+                    </div>
+                    <div id="topTenChart" class="antibiotic"></div>
+                </div>
+                <div class="namelisto">
+                    <span class="timeShow">2016年1月</span><span class="areaShow">双流区</span>个体诊所就诊疾病前十病种分布
+                </div>
+                <div class="coverytr">
+                    个体诊所就诊疾病前十性别分布概况
+                </div>
+                <div class="antibiotic">
+                    <div class="transverse">
+                        就诊人数(人)
+                    </div>
+                    <div id="situationCompare" class="antibiotics"></div>
+                </div>
+                <div class="namelisto">
+                    <span class="timeShow">2016年1月</span><span class="areaShow">双流区</span>个体诊所就诊疾病前十病种性别分布
+                </div>
+                <div class="coverytr">
+                    个体诊所就诊疾病前十年龄分布概况
+                </div>
+                <div class="antibiotic">
+                    <div class="transverse">
+                        就诊人数(人)
+                    </div>
+                    <div id="diseaseAge" class="antibiotics"></div>
+                </div>
+                <div class="namelisto">
+                    <span class="timeShow">2016年1月</span><span class="areaShow">双流区</span>个体诊所就诊疾病前十病种年龄分布
+                </div>
+                <div class="blank"></div>
+            </div>
+
+            <div class="third areaList hide">
+                <div class="clinicInfoHeads">
+                    <span class="timeShow">2016年1月</span><span class="areaShow">双流区</span>个体诊所就诊疾病前十病种信息总表
+                </div>
+                <div style="text-align: center;">
+                    表1 <span class="timeShow">2016年1月</span><span class="areaShow">双流区</span>个体诊所就诊疾病前十病种概况
+                </div>
+                <table>
+                    <thead>
+                        <tr class="tableHead">
+                            <td rowspan="2">病种</td>
+                            <td rowspan="2">总量(人次)</td>
+                            <td colspan="2">性别占比</td>
+                            <td colspan="5">年龄段</td>
+                            <!-- <td colspan="3" rowspan="2">地区</td> -->
+                        </tr>
+                        <tr>
+                            <td>男</td>
+                            <td>女</td>
+                            <td>0-6</td>
+                            <td>7-16</td>
+                            <td>17-45</td>
+                            <td>46-59</td>
+                            <td>&gt;=60</td>
+                        </tr>
+                    </thead>
+
+                    <tbody id="infoTotal">
+
+                    </tbody>
+                </table>
+                <div class="blank"></div>
+            </div>
+        </div>
+</body>
+<script type="text/javascript" src="../public/js/plugins/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="../public/js/echarts.min.js"></script>
+<script type="text/javascript" src="../commonPath.js"></script>
+<script type="text/javascript" src="js/commonInfo.js"></script>
+<script type="text/javascript" src="js/multipleIncidenceAnalysis.js"></script>
+
+</html>

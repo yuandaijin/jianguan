@@ -1,0 +1,123 @@
+.btnG.overHidden{
+    padding: 5px 22px;
+    border-bottom: 1px solid #999;
+}
+.chooseByTime{
+    padding: 10px 0;
+    text-align: center;
+    border-bottom: 1px solid #999;
+}
+.chooseOuter .borCcc{
+    width: 100px;
+    height: 30px;
+}
+.showTimeHeader{
+    font-size: 20px;
+    padding: 10px 0;
+}
+/*医疗争议数量统计表*/
+.numberTotal{
+    width: 95%;
+    margin: 10px auto;
+    border-color: #eee;
+}
+.numberTotal tr{
+    line-height: 45px;
+}
+.numberTotal tr td{
+    color: #999;
+}
+.numberTotal tr th{
+    background-color: #eee;
+}
+.numberTotal tr .orderChooseNo{
+    color: #2081c7;
+}
+.numberTotal tr .orderChooseNo:hover{
+    background-color: #2081c7;
+    color: white;
+}
+.headerSpan{
+    font-size: 18px;
+    display: inline-block;
+    padding: 10px 0;
+}
+
+/*统计详情展示*/
+/*input框不显示*/
+.treatStepTwo.tabTwo.x input,
+.treatStepTwo.tabTwo.x select,
+.treatStepTwo.tabTwo.x textarea{
+    border: none;
+    outline: none;
+}
+.treatStepTwo{
+    width: 920px;
+    margin: 0 auto;
+    box-shadow: #999 0 0 5px 5px;
+    padding: 10px;
+    background-color: white;
+}
+.positionA{
+    top: 50px;
+    width: 100%;
+}
+.treatStepTwo div{
+    width: 100%;
+}
+div.headTre{
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+.headTreN{
+    font-size: 18px;
+    margin: 15px auto;
+}
+.dashTable table input,
+.dashTable table textarea,
+.dashTable table select{
+    width: 260px;
+    height: 30px;
+    border: 1px solid #ccc;
+}
+.dashTable table td.paddingL{
+    width: 285px;
+}
+.dashTable table tr{
+    line-height: 50px;
+}
+.dashHead{
+    border-bottom: 1px dashed #ccc;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 10px 0;
+    margin: 10px 0;
+}
+.dashTable table td.paddingL{
+    width: 285px;
+}
+input.fullWidth{
+    width: 98%;
+    height: 28px;
+}
+select.fullWidth{
+    width: 99%;
+    height: 30px;
+}
+textarea.fullWidth{
+    width: 97%;
+    height: 130px;
+    padding: 5px;
+}
+.marginTopDash{
+    margin-top: 60px;
+}
+.next{
+    width: 150px;
+    height: 40px;
+    line-height: 40px;
+    color: white;
+    background-color: #2081c7;
+    border-radius: 3px;
+}

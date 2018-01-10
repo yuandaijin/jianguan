@@ -1,0 +1,110 @@
+table {
+    border-collapse: collapse;
+}
+.hide {
+    display: none;
+}
+#time-choose {
+    height: 28px;
+    margin: 50px;
+}
+.time-choose-warp {
+    width: 368px;
+    color: #666;
+    z-index: 19891114;
+    background-color: #fff;
+    position: absolute;
+    border: 1px solid #999;
+}
+
+.time-choose-title {
+    height: 40px;
+    line-height: 40px;
+    border-bottom: 1px solid #aaa;
+}
+.tmchose-prev-btn, .tmchose-next-btn {
+    display: inline-block;
+    font-size: 24px;
+    width: 40px;
+    text-align: center;
+    cursor: pointer;
+}
+.tmchose-prev-btn.disable, .tmchose-next-btn.disable {
+    color: #ccc;
+    cursor: not-allowed;
+}
+.tmchose-prev-btn {
+    float: left;
+}
+.tmchose-next-btn {
+    float: right;
+}
+.date-choosed {
+    display: inline-block;
+    width: 100px;
+    text-align: center;
+    padding-left: 20px;
+}
+.date-choosed+span {
+    color: #333;
+}
+
+.time-choose-content {
+    clear: both;
+    width: 100%;
+}
+.time-choose-content >tbody>tr>td {
+}
+.time-choose-content th, .time-choose-content >tbody>tr>td {
+    border-bottom: 1px solid #eee;
+    text-align: center;
+}
+.time-choose-content thead th {
+    line-height: 30px;
+    height: 30px;
+    /*padding: 0 20px;*/
+    font-size: 14px;
+    border-bottom: 1px solid #ccc;
+}
+.time-choose-content tbody th {
+    font-size: 14px;
+    border-right: 1px solid #eee;
+}
+.time-choose-content td {
+    line-height: 28px;
+    height: 28px;
+}
+.time-choose-content .inner {
+    width: 100%;
+}
+/*  .time-choose-content .inner td {
+    width: 33%;
+}*/
+.service-time-title {
+    width: 140px;
+    font-size: 14px;
+}
+.time-choose-content th.service-time-title {
+    width: 120px;
+}
+.time-choose-content th+th+th, .inner td+td {
+    width: 70px;
+}
+
+.col1 {
+    width: 100px;
+}
+.col2 {
+    width: 200px;
+}
+.col3,.col4 {
+    width: 100px;
+}
+table.inner tr.usable:hover {
+    cursor: pointer;
+    background-color: #eee;
+}
+table.inner tr.disabled {
+    color: #ccc;
+    cursor: not-allowed;
+}

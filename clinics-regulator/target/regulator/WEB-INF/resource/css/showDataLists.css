@@ -1,0 +1,210 @@
+a {
+	cursor: pointer;
+}
+select {
+	height: 28px;
+	min-width: 110px;
+	line-height: 28px;
+}
+
+
+/*订单页面外套*/
+.o-warp {
+	padding: 10px 37px 0 40px;
+}
+/*订单页面导航*/
+.o-nav a {
+	display: inline-block;
+	width: 90px;
+	line-height: 30px;
+	text-align: center;
+	border: 1px solid #ccc;
+	border-radius: 2px;
+	background-color: #fff;
+}
+.o-nav a+a {
+	margin-left: 10px;
+}
+.o-nav a.s-color {
+	color: #fff;
+	border: 1px solid #2081c7;
+	background-color: #2081c7;
+}
+/*订单页面标题*/
+.o-title {
+	font-size: 16px;
+	font-weight: bold;
+	text-align: center;
+	padding-top: 18px;
+}
+/*订单类内容主体*/
+.o-content {
+
+}
+
+/*三级导航*/
+.o-three-nav  {
+	color: #666;
+	height: 40px;
+	line-height: 40px;
+	padding: 0 12px;
+	background-color: #f2f2f2;
+}
+.o-three-nav li {
+	float: left;
+}
+/*选择下拉列表*/
+li.o-nav-list div {
+	float: right;
+	position: relative;
+	width: 145px;
+	padding-top: 5px;
+}
+li.o-nav-list dl {
+	position: absolute;
+	min-width: 108px;
+}
+li.o-nav-list dt {
+	padding-left: 8px;
+	line-height: 30px;
+}
+li.o-nav-list dd {
+	padding-left: 8px;
+	line-height: 24px;
+}
+
+
+/*时间选择*/
+.time-choose {
+	width: 88px;
+	font-size: 14px;
+	color: #666;
+	cursor: pointer;
+	padding-right: 12px;
+	border: 0;
+	background: url(../imgs/icon-arrow.png) no-repeat 85px 6px;
+}
+
+/*搜索框/搜索按钮*/
+.o-three-nav li.o-search-warp {
+	float: right;
+
+}
+.o-three-nav .dropdown {
+	margin-right: 20px;
+}
+.o-three-nav .dropdown-menu {
+	max-height: 200px;
+	overflow-y: auto;
+}
+.o-three-nav .dropdown-menu a  {
+    clear: both;
+    color: #333;
+    display: block;
+    font-weight: 400;
+    line-height: 1.42857;
+    padding: 3px 20px;
+    white-space: nowrap;
+}
+.o-three-nav .dropdown-menu *:hover {
+	background: #f5f5f5;
+	color: #262626;
+}
+.o-three-nav a.o-search {
+	display: inline-block;
+	width: 46px;
+	color: #fff;
+	text-align: center;
+	line-height: 30px;
+	border-radius: 2px;
+	background-color: #2081c7;
+}
+.o-three-nav .search-input {
+	width: 253px;
+	height: 28px;
+	float: left;
+	border-radius: 2px;
+	border: 1px solid #ccc;
+	padding-left: 32px;
+	margin-top: 5px;
+	margin-right: 10px;
+	background: #fff url(../imgs/i-search.png) no-repeat 3px 3px;
+}
+/*订单列表表格*/
+.o-table {
+	clear: both;
+}
+
+
+
+/*列表表格*/
+.o-table {
+	width: 100%;
+	table-layout:fixed;
+}
+.o-table .remark {
+	display: block;                     /*内联对象需加*/
+	max-width: 31em;
+	word-break: keep-all;           /* 不换行 */
+	white-space: nowrap;          /* 不换行 */
+	overflow: hidden;               /* 内容超出宽度时隐藏超出部分的内容 */
+	text-overflow: ellipsis;         /* 当对象内文本溢出时显示省略标记(...) ；需与overflow:hidden;一起使用。*/
+	-webkit-text-overflow: ellipsis;
+	-moz-text-overflow: ellipsis;
+	-ms-text-overflow: ellipsis;
+	-o-text-overflow：ellipsis;
+}
+.o-table th+th, .o-table td+td {
+	padding-left: 20px;
+}
+.o-table th, .o-table td {
+	width: 1.4%;
+	word-break: keep-all;           /* 不换行 */
+	white-space: nowrap;
+	overflow: hidden;
+	-webkit-text-overflow: ellipsis;
+	-moz-text-overflow: ellipsis;
+	-ms-text-overflow: ellipsis;
+	-o-text-overflow：ellipsis;
+}
+.o-table th {
+	line-height: 46px;
+	border-bottom: 1px dashed #b2b2b2;
+}
+.o-table td {
+	color: #666;
+	line-height: 50px;
+	border-bottom: 1px solid #e6e6e6;
+
+}
+.o-table td a {
+	display: block;
+	color: #2180c7;
+	line-height: 24px;
+}
+
+/*弹窗*/
+.popup-inner {
+	position: relative;
+	padding-bottom: 60px;
+	box-sizing: border-box;
+	height: 100%;
+}
+.popup-inner .btn-warp {
+	text-align: center;
+	position: absolute;
+	bottom: 20px;
+	right: 0;
+	left: 0;
+}
+.popup-inner .btn-warp a {
+	display: inline-block;
+	width: 90px;
+	line-height: 30px;
+	color: #fff;
+	background-color: #f16528;
+	border-radius: 2px;
+}
+.popup-inner .btn-warp a+a {
+	margin-left: 60px;
+}

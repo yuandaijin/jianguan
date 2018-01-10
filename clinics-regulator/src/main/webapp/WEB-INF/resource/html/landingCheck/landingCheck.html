@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>用户登录核查</title>
+		<link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/bootstrap-multiselect.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/font-awesome.min.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/style.min.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/function.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/employeeList.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/pageCode.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/component.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/jquery.Jcrop.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/location.css" />
+		<link rel="stylesheet" type="text/css" href="landingCheck.css" />
+	</head>
+
+	<body>
+		<div class="container">
+			<ul class="current">
+				<li>当前位置： &nbsp;<span class="areaShow">蒙自市</span>&nbsp;&gt;&gt;&nbsp;<span>诊所动态监测</span>&nbsp;&gt;&gt;&nbsp;<span>用户登录记录</span></li>
+				<li class="regionSelection">
+					<i></i>
+					<button class="returnMap">返回地图</button>
+				</li>
+			</ul>
+			<ul class="record">
+				<li class="clinicInfoTabBtn">用户登录核查</li>
+				<!--<li>核查记录</li>-->
+			</ul>
+			<div class="condition">
+				<span class="">登陆日期： <input type="text" id="start" class="time"/> - <input type="text" id="end" class="time"/></span>
+				<span class="leftShift">
+					核查地区：<input type="text" id="province" class="region" readonly="readonly"/><input type="text" class="region" id="city" readonly="readonly" /><input type="text" id="area" class="region" readonly="readonly"/>
+					<select class="region" id="region">
+						<!--<option value="0">文澜镇</option>-->
+					</select>
+				</span>
+			</div>
+			<div class="verification">
+				核查诊所：
+				<select name="" id="clinic" class="clinic">
+					<!--<option value="0">aaaaaa诊所名称</option>-->
+				</select>
+				<span id="query" class="query"><i><img src="../../imgs/big.png"/></i>查询</span>
+			</div>
+			<div class="sign">
+				用户登录记录
+			</div>
+			<table border="1" cellspacing="" cellpadding="" class="table">
+				<thead>
+					<tr>
+						<td class="frame">诊所</td>
+						<td class="frame">姓名</td>
+						<td class="frame">性别</td>
+						<td class="frame">年龄</td>
+						<td class="frame">科室</td>
+						<td class="frame">登录时间</td>
+						<td class="framly">操作</td>
+					</tr>
+				</thead>
+				<tbody id="addTr">
+				</tbody>
+			</table>
+		</div>
+
+		<div class="tcdPageCode" total="" current="" id="drugPage"></div>
+		<!--<div class="page" id="pageDiv">
+			到第 <input type="text" name="pageIndex" id="pageIndex" class="numberpages" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" /> 页<span class="jump" id="toIndexPage">确定</span>
+		</div>-->
+		<!--
+        	作者：1206950286@qq.com
+        	时间：2017-08-03
+        	描述：图片弹出
+        -->
+		<div id="picture" class="picture hide">
+			<div class="land">登录照片</div>
+			<div class="mediacy">
+				<img src="../../imgs/loginbctown.png" id="imgFile" />
+			</div>
+		</div>
+	</body>
+	<script src="../../js/libs/laydate.js"></script>
+	<script src="../../js/plugins/jquery-1.11.1.min.js"></script>
+	<script src="../../js/plugins/layer/layer.js"></script>
+	<script src="../../js/libs/jquery.validate.js"></script>
+	<script src="../../js/libs/jquery.page.js"></script>
+	<script src="../../js/libs/location.js"></script>
+	<script src="../../js/plugins/validate/card.js"></script>
+	<script src="../../js/libs/jquery.Jcrop.js"></script>
+	<script src="../../js/libs/location.js"></script>
+	<script src="landingCheck.js"></script>
+	<script src="../commonPath.js"></script>
+
+</html>

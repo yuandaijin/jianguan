@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:security="http://www.springframework.org/schema/security"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+		http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.2.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.2.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.2.xsd">
+	 <!-- 引入jdbc配置文件 -->
+     <context:property-placeholder location="classpath:jdbc.properties,classpath:dubbo.properties" ignore-unresolvable="true"/> 
+     <bean id="dataSource"
+		class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
+		<property name="driverClass" value="${jdbc.driver}" />
+		<property name="jdbcUrl" value="${jdbc.url}" />
+		<property name="user" value="${jdbc.user}" />
+		<property name="password" value="${jdbc.pwd}" />
+		<!--初始化时获取的连接数，取值应在minPoolSize与maxPoolSize之间。Default: 3 -->
+		<property name="initialPoolSize" value="3" />
+		<!--连接池中保留的最小连接数。-->
+		<property name="minPoolSize" value="3" />
+		<!--连接池中保留的最大连接数。Default: 15 -->
+		<property name="maxPoolSize" value="100" />
+		<!--最大空闲时间,60秒内未使用则连接被丢弃。若为0则永不丢弃。Default: 0 -->
+		<property name="maxIdleTime" value="7200" /> 
+		<!--当连接池中的连接耗尽的时候c3p0一次同时获取的连接数。Default: 3 -->
+		<property name="acquireIncrement" value="3" />	
+		<property name="preferredTestQuery" value="SELECT 1" />
+		<!--每60秒检查所有连接池中的空闲连接。Default: 0 -->
+		<property name="idleConnectionTestPeriod" value="120" />
+		</bean>
+        <!-- 创建SqlSessionFactory，同时指定数据源-->
+   		<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean"> 
+		      <property name="dataSource" ref="dataSource" /> 
+		      <property name="configLocation" value="classpath:mybatis-config.xml"/>
+		      <!-- 指定sqlMapConfig总配置文件，订制的environment在spring容器中不在生效-->
+		      <!--  
+		      <property  name="configLocation"  value="classpath:mybatis/sqlMapConfig.xml"/>
+		      -->
+		      <!--指定实体类映射文件，可以指定同时指定某一包以及子包下面的所有配置文件，mapperLocations和configLocation有一个即可，当需要为实体类指定别名时，可指定configLocation属性，再在mybatis总配置文件中采用mapper引入实体类映射文件 -->
+		     <property  name="mapperLocations"  value="classpath*:mapper/*.xml"/>
+  	 </bean> 
+  	
+	<!--  -->
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="com.huatuo.clinics.cms.db.mapper,com.huatuo.db.mapper" />
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
+    </bean>
+    
+    <!-- 配置事务管理器 -->
+	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+
+	<!-- 注解方式配置事物 -->
+	<!-- <tx:annotation-driven transaction-manager="transactionManager" /> -->
+
+	<!-- 拦截器方式配置事物 -->
+	<tx:advice id="transactionAdvice" transaction-manager="transactionManager">
+		<tx:attributes>
+			<tx:method name="add*" propagation="REQUIRED" />
+			<tx:method name="append*" propagation="REQUIRED" />
+			<tx:method name="insert*" propagation="REQUIRED" />
+			<tx:method name="save*" propagation="REQUIRED" />
+			<tx:method name="update*" propagation="REQUIRED" />
+			<tx:method name="modify*" propagation="REQUIRED" />
+			<tx:method name="edit*" propagation="REQUIRED" />
+			<tx:method name="delete*" propagation="REQUIRED" />
+			<tx:method name="remove*" propagation="REQUIRED" />
+			<tx:method name="repair" propagation="REQUIRED" />
+			<tx:method name="delAndRepair" propagation="REQUIRED" />
+
+			<tx:method name="get*" propagation="SUPPORTS" />
+			<tx:method name="find*" propagation="SUPPORTS" />
+			<tx:method name="load*" propagation="SUPPORTS" />
+			<tx:method name="search*" propagation="SUPPORTS" />
+			<tx:method name="datagrid*" propagation="SUPPORTS" />
+
+			<tx:method name="*" propagation="REQUIRED" />
+		</tx:attributes>
+	</tx:advice>
+	<aop:config>
+		<aop:pointcut id="transactionPointcut" expression="execution(* com.huatuo.clinics.cms.services..*.*(..))" />
+		<aop:advisor pointcut-ref="transactionPointcut" advice-ref="transactionAdvice" />
+	</aop:config>
+	
+	<import resource="../dubbo/huatuo-dubbo-all.xml" />
+	
+     <!-- 使用Spring组件扫描的方式来实现自动注入bean -->
+	<context:component-scan base-package="com.huatuo">
+		<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/> 
+	</context:component-scan>
+
+	<!-- 支持上传文件 -->  
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+    <property name="maxUploadSize" value="52428800"/>
+    </bean>
+    <bean class="com.huatuo.common.ApplicationContextUtil" />
+    
+   
+</beans>

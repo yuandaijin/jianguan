@@ -1,0 +1,396 @@
+
+/*********************当前概况**************************/
+#main .survey{
+	width: 100%;
+	height: 34px;
+	border-bottom: 1px dashed #d7d7d7;
+}
+#main .survey li{
+	float: left;
+	line-height: 35px;
+	text-align: center;
+}
+#main .survey li:nth-child(1){
+	width:100px;
+	height: 35px;
+	color: #ffffff;
+	background-color: #228acc;
+	line-height: 35px;
+	text-align: center;
+	margin-left:24px;
+}
+#main .survey li:nth-child(2){
+	width:100px;
+	height: 33px;
+	border: 1px solid #d7d7d7;
+}
+#main .survey li:nth-child(3){
+	width: 19px;
+	height: 13px;
+	background: url(../../images/导出.png) no-repeat;
+	margin-top: 11px;
+	margin-left: 660px;
+}
+#main .survey li:nth-child(4){
+	margin-left: 8px;
+}
+#main .survey li:nth-child(5){
+	width: 19px;
+	height: 13px;
+	background:url(../../images/打印.png) no-repeat;
+	margin-top: 11px;
+	margin-left: 48px;
+}
+#main .survey li:nth-child(6){
+	margin-left: 8px;
+}
+#main .disease{
+	width: 100%;
+	height: 74px;
+}
+#main .disease li{
+	float: left;
+	margin-top: 22px;
+}
+#main .disease  select{
+	width: 100px;
+	height: 28px;
+}
+#main .disease li:nth-child(1){
+	margin-left: 274px;
+	line-height: 74px;
+	margin-top: 0;
+}
+#main .disease li:nth-child(3){
+	margin-left: 34px;
+	line-height: 74px;
+	margin-top: 0;
+}
+#main .disease .ymonth{
+	width: 158px;
+	height: 24px;
+}
+#main .disease li:nth-child(6){
+	margin-left: 40px;
+	width: 90px;
+	height: 24px;
+	border: 1px solid #d7d7d7;
+	line-height: 26px;
+}
+#main .disease img{
+	display: inline-block;
+	width: 17px;
+	height: 16px;
+	margin-top: 5px;
+	margin-left: 18px;	
+}
+#main .disease  span{
+	position: relative;
+	left:3px;
+	top: -3px;	
+}
+/************************************辖区总体概况*****************************************************************/
+#main .area{
+	width: 100%;
+	height: 24px;
+	background-color: #f8f8f8;
+	border: 1px solid #f4f4f4;
+	margin-left: 24px;
+}
+#main .area li{
+	float: left;
+	line-height: 24px;
+	text-align: center;
+}
+#main .area li:nth-child(1){
+	width: 4px;
+	height: 24px;
+	background: url(../../images/分隔线.png) no-repeat;
+}
+#main .area li:nth-child(2){
+	width: 116px;
+	height: 24px;
+	background-color: #d5d5d5;
+	color: #333333;
+}
+#main .area li:nth-child(3){
+	width: 4px;
+	height: 24px;
+	background: url(../../images/分隔线.png) no-repeat;
+}
+#main .area li:nth-child(4){
+	width: 116px;
+	height: 24px;
+	background-color: #F8F8F8;
+	color: #666666;
+}
+#main .area li:nth-child(5){
+	width: 4px;
+	height: 24px;
+	background: url(../../images/分隔线.png) no-repeat;
+}
+#main .area li:nth-child(6){
+	width: 116px;
+	height: 24px;
+	background-color: #F8F8F8;
+	color: #666666;
+}
+/********************************************************************************/
+#main .clinicMedical{                     //医疗能力覆盖情况，诊所运营综合情况，诊所医疗质量情况
+	width: 100%;
+    height: 24px;
+    color: black;
+  	text-align: center;
+  	margin: 70px 0 45px 0;
+	font-size: 20px;
+}
+#main .clinicMedical span{
+	color: black;
+	font-size: 20px;
+}
+#main .alreadyExisting{ 
+					 //医疗能力覆盖情况内容
+	height: 20px;
+	line-height: 24px;
+	font-size: 16px;
+	color: #000;
+	margin-top: 15px;
+	text-align: center;
+}
+#main .region{
+	width:44px;
+	height:20px;
+	font-size: 14px;
+}
+#main .home{
+	width: 47px;
+	height: 20px;
+	font-size: 14px;
+}
+#main .medicalAbility{				
+	width:100%;
+	height: 400px;
+}
+/****************************图标左面的标题*************************/
+#main .service,#main .dayservice{
+	width: 25px;
+	height: 101px;
+	position: absolute;
+	z-index: 1;
+	line-height: 20px;
+	top: 830px;
+	text-align: center;
+}
+#main .service{
+	left: 70px;
+}
+#main .dayservice{
+	right: 80px;
+}
+#main .individual{
+	width: 25px;
+	height: 101px;
+	position: absolute;
+	z-index: 1;
+	line-height: 20px;
+	top: 255px;
+	left: 70px;
+	text-align: center;
+}
+#main .oneDisease{
+	width: 25px;
+	height: 101px;
+	position: absolute;
+	z-index: 1;
+	line-height: 20px;
+	top: 1805px;
+	left: 60px;
+	text-align: center;
+}
+@media (min-width: 100px) and (max-width: 1200px){
+	#main .individual{
+		top: 255px;
+		left: 55px;
+	}
+	#main .service,#main .oneDisease{
+		left: 60px;
+	}
+	#main .dayservice{
+		right: 50px;
+	}
+}
+/**********************************************************************************************/
+#main .administration{
+	height: 25px;
+	line-height: 25px;
+	margin-top: 20px;
+	text-align: center;
+	color: #000;
+}
+#main .administration .currentLocation{
+	width: 48px;
+	height: 18px;
+	position: relative;
+	top:-1px;
+	font-size: 14px;
+
+}
+/************************诊所医疗质量情况***********************************/
+#main .medicalQuality{   
+	width:100%;
+	height: 181px;
+	margin-top: 15px;
+}
+#main .medicalQuality .gridOuter{
+	width: 80%;
+	margin: 0 auto;
+	border:1px solid #000;
+}
+.gridOuter ul{
+	height: 40px;
+	overflow: hidden;
+	line-height: 40px;
+}
+#main .qualifications1,#main .qualifications3,#main .qualifications5{
+	background-color: #e5e5e5;
+}
+#main .qualifications{
+	width: 100%;
+	height: 29px;
+	margin-bottom: 9px;
+}
+#main .gridOuter li{
+	float: left;
+}
+#main .gridOuter li:nth-child(1){
+	width: 10%;
+	height: 40px;
+	text-align: center;
+	padding-top: 8px;
+}
+#main .gridOuter li:nth-child(2){
+	width: 15%;
+}
+#main .gridOuter li:nth-child(3),#main .gridOuter li:nth-child(4){
+	width: 30%;
+}
+#main .gridOuter .By,#main .gridOuter .yes,#main .gridOuter .prescription{
+	border: none;
+	background: transparent;
+}
+#main .gridOuter .By{
+	width: 17%;
+}
+#main .gridOuter .yes{
+	width: 5%;
+}
+#main .gridOuter .prescription{
+	width: 15%;
+}
+#main .multiple{
+	font-size: 20px;
+    color: #000;
+    text-align: center;
+    margin: 70px 0 40px 0;
+}
+#main .multiple span{
+	font-size: 20px;
+	color: #000;
+}
+#main .grade{
+	width: 100%;
+	height:400px;
+	text-align: center;
+}
+#main .ratingConditions{
+	color: #333333;
+	margin-left: 200px;
+	position: relative;
+	top: -50px;
+	left: 130px;
+}
+#main .ratingConditions .currentLocation{
+	width: 48px;
+	height: 18px;
+	margin-left: 175px;
+}
+
+#main .ratingForm {
+	width: 100%;
+	margin: 20px 0 40px 0;
+}
+#main .ratingForm table{
+	width: 80%;
+	border: 1px solid #999999;
+	height: 70px;
+	margin: 0 auto;
+}
+#main .ratingForm table thead,#main .ratingForm table tbody{
+	height: 36px;
+	line-height: 36px;
+}
+#main .ratingForm table thead{
+	background-color: #f1f1f1;
+}
+#main .ratingForm table thead td{
+	border-bottom: 1px solid #dddddd;
+}
+#main .ratingForm table td{
+	border-right: 1px solid #dddddd;
+	text-align: center;
+}
+#main .ratingForm ul{
+	float: left;
+}
+#main .ratingForm .ratingFormTitle li{
+	width: 100px;
+	height: 30px;
+	border-right: 1px solid #797979;
+	border-bottom: 1px solid #797979;
+	text-align: center;
+	line-height: 30px;
+} 
+#main .ratingForm .ratingTableValue li{
+	width: 100px;
+	height: 30px;
+	border-right: 1px solid #797979;
+	border-bottom: 1px solid #797979;
+	text-align: center;
+	line-height: 30px;
+} 
+#main .month{
+	height: 18px;
+	position: relative;
+	left: 910px;
+	top: -25px;
+	color: #333333;
+}
+#main .month .currentLocation{
+	width: 40px;
+	height: 20px;
+	line-height: 20px;
+
+}
+#main .month .one{
+	width: 20px;
+	height: 20px;
+	line-height: 20px;
+	text-align: center;
+}
+#main .month .location{
+	width:50px;
+	height: 20px;
+	line-height:20px;
+	text-align: center;
+}
+#main .ratingConditi{
+	width: 100%;
+	text-align: center;
+}
+#main .ratingConditi li{
+	float: left;
+	color: #333333;
+}
+#main .ratingConditi li select{
+	height: 24px;
+}

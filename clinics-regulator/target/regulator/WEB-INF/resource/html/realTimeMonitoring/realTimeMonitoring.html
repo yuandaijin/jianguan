@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="../../css/jqueryUI/jquery-ui.min.css">
+		<link rel="stylesheet" href="../../js/plugins/layer/skin/layer.css">
+		<link rel="stylesheet" href="css/commonV.css">
+		<link rel="stylesheet" href="css/realTimeMonitoring.css">
+		<title>Title</title>
+	</head>
+
+	<body>
+		<div class="container">
+			<!--头部-->
+			<ul class="current">
+				<li>当前位置： &nbsp;<span class="areaShow"></span>&nbsp;&gt;&gt;&nbsp;<span>诊所医疗质量</span>&nbsp;&gt;&gt;&nbsp;<span>动态监测</span></li>
+				<li class="regionSelection">
+					<i></i>
+					<button class="returnMap">返回地图</button>
+				</li>
+				<!--
+        <li class="regionSelection">区域选择：
+            <select class="city" id="areaChoose">
+                <option>双流县</option>
+            </select>
+            <button id="areaConfirm" class="confirm">确认</button>
+        </li>  
+        -->
+			</ul>
+			<!--实时历史tab-->
+			<aside class="preSamTabHeader overHidden">
+				<ul>
+					<li class="floatL curPointer active textCenter nowCondition" data-id="1">实时监测</li>
+					<li class="floatL curPointer textCenter" data-id="2">历史记录</li>
+				</ul>
+			</aside>
+			<!--地图-->
+			<div class="mapOuter">
+				<!--地图-地图记录-->
+				<div class="mapTab">
+					<div class="leftMap floatL">
+						<p class="textCenter"><span class="sureArea"></span>个体诊所医疗卫生行为动态监测图</p>
+						<div id="allmap" style="outline: 1px solid #ddd;margin-left: 10px;height:800px"></div>
+
+						<!--时间段内个体诊所列表-->
+						<div class="area-show">
+							<div class="effect">个区域诊所详情</div>
+								<div class="area-time hide">
+									<input type="text" readonly="readonly" id="startTime" class="borCcc"> 到
+									<input type="text" readonly="readonly" id="endTime" class="borCcc">
+
+									<input type="button" class="search-btn" id="searchBtn" value="搜索" />
+								</div>
+								<div class="area-list hide" id="areaList">
+									<p class="xingzheng">行政区域</p>
+									<p class="mayor-name show-off" id="areaName"></p>
+									<ul class="clinics-list" id="clinicsList" style="display: none">
+										<!--<li class="clinics-area">
+                				<p class="clinics-area-name show-off">红河镇</p>
+                				<ul class="clinics-area-list" style="display: none">
+                					<li>个体诊所A</li>
+                					<li>个体诊所A</li>
+                					<li>个体诊所A</li>
+                				</ul>
+                			</li>
+                			<li class="clinics-area">
+                                <p class="clinics-area-name show-off">清水镇</p>
+                                <ul class="clinics-area-list" style="display: none">
+                                    <li>个体诊所B</li>
+                                    <li>个体诊所B</li>
+                                    <li>个体诊所B</li>
+                                </ul>
+                			</li>-->
+									</ul>
+								</div>
+								
+						</div>
+						<!--巡查状态说明-->
+						<ul class="mark-condition">
+							<div class="description">状态说明</div>
+							<li class="state" style="color:#4eb218; background:url(images/xungreen.png) no-repeat 20px center;background-size:15px 20px; text-indent:40px;">--已巡查常规状态</li>
+							<li class="state" style="color:#0d85c0; background:url(images/xunblue.png) no-repeat 20px center;background-size:15px 20px; text-indent:40px;">--已巡查执行许可证三个月内到期</li>
+							<li class="state" style="color:#bd1a33; background:url(images/xunred.png) no-repeat 20px center;background-size:15px 20px; text-indent:40px;">--已巡查执行许可证已到期</li>
+							<li class="state" style="color:#4eb218; background:url(images/green.png) no-repeat 20px center;background-size:15px 20px; text-indent:40px;">--未巡查常规状态</li>
+							<li class="state" style="color:#0d85c0; background:url(images/blue.png) no-repeat 20px center;background-size:15px 20px; text-indent:40px;">--未巡查执行许可证三个月内到期</li>
+							<li class="state" style="color:#bd1a33; background:url(images/red.png) no-repeat 20px center;background-size:15px 20px; text-indent:40px;">--未巡查执行许可证已到期</li>
+						</ul>
+
+						<!--诊所详情弹框-->
+						<aside class="clinics-detail" id="clinicsDetail" style="display: none;">
+							<div class="detail-head">
+								<span id="clinicsName"></span>
+								<p class="close-clinics-detail" id="closeClinicsDetail">×</p>
+							</div>
+							<div class="clinics-information">
+								<div>联系人：<span id="clinicsLinkman">暂未获取</span></div>
+								<div>联系电话：<span id="clinicsPhone"></span></div>
+								<div>地址：<span id="clinicsAddress"></span></div>
+								<div>医疗机构执业许可证号：<span id="clinicsNo"></span></div>
+								<div>医疗机构执业许可证有效期限：自<span id="orgApply"></span>到<span id="orgTime"></span>（注：<span id="timeStation"></span>）</div>
+								<div>注意：<span id="isPatrol" style="color: #6196bb; cursor:pointer;"></span></div>
+								<div class="is-search">最近的巡查时间：<span id="latestTime"></span></div>
+								<div class="is-search">上一次的巡查时间：<span id="lastTime"></span></div>
+							</div>
+						</aside>
+
+						<!--诊所巡查录入弹框-->
+						<aside class="clinics-entering" id="clinicsEntering" style="display: none;">
+							<div class="entering-head">
+								<span id="enteringName"></span>
+							</div>
+							<table>
+								<tr>
+									<td class="tableKey">诊所负责人：</td>
+									<td class="tableVal">
+										<input type="text" value="" class="" id="leadingMan" readonly="readonly">
+									</td>
+								</tr>
+								<tr>
+									<td class="tableKey">地址：</td>
+									<td class="tableVal">
+										<input type="text" value="" class="" id="clinicAddr" readonly="readonly">
+									</td>
+								</tr>
+								<tr>
+									<td class="tableKey"><span style="color:red">*</span>巡查人：</td>
+									<td class="tableVal">
+										<input type="text" value="" class="" id="searchingMan">
+									</td>
+								</tr>
+								<tr>
+									<td class="tableKey"><span style="color:red">*</span>巡查负责人：</td>
+									<td class="tableVal">
+										<input type="text" value="" class="" id="searchingLeader">
+									</td>
+								</tr>
+								<tr>
+									<td class="tableKey"><span style="color:red">*</span>巡查时间：</td>
+									<td class="tableVal">
+										<input type="text" value="" class="borCcc" id="searchingTime" readonly="readonly">
+									</td>
+								</tr>
+								<tr>
+									<td class="tableKey"><span style="color:red">*</span>计划巡查时间：</td>
+									<td class="tableVal">
+										<input type="text" value="" class="fullWidth" id="searchingPlan" readonly="readonly">
+									</td>
+								</tr>
+								<tr>
+									<td class="tableKey"><span style="color:red">*</span>巡查结果：</td>
+									<td class="tableVal">
+										<textarea id="searchingResult"></textarea>
+									</td>
+								</tr>
+							</table>
+							<div class="entering-btn">
+								<p class="save-btn">保存</p>
+								<p class="cancel-btn">取消</p>
+							</div>
+						</aside>
+
+					</div>
+
+				</div>
+			</div>
+			<!--历史-->
+			<div class="history displayNo">
+				<!--查询条件-->
+				<div class="preSamQueryCondition">
+					<div class="overHidden">
+						<div class="leftFirst floatL">
+							关键词：
+						</div>
+						<div class="floatL leftSecond chooseOrderType">
+							<input type="text" class="borCcc orderNumber orderName" value="" style="width: 256px" />
+						</div>
+						<div class="leftFirst floatL">
+							事件发生日期：
+						</div>
+						<div class="floatL leftSecond chooseTime">
+							<input id="dateBegin" type="text" readonly="readonly" class="borCcc">
+						</div>
+					</div>
+					<div class="overHidden">
+						<div class="leftFirst floatL">
+							事件类型：
+						</div>
+						<div class="floatL leftSecond chooseOrderType">
+							<select class="borCcc orderNumber chooseType" style="width: 263px">
+								<option value="">全部</option>
+								<option value="医疗争议">医疗争议</option>
+								<option value="抗生素">抗生素违规使用</option>
+								<!--<option value="毒麻药违规使用">毒麻药违规使用</option>-->
+								<option value="传染病">传染病上报</option>
+							</select>
+						</div>
+						<div class="leftFirst floatL marLTwo">
+							地区：
+						</div>
+						<div class="floatL chooseArea">
+							<input type="text" class="borCcc provenceOrder" readonly="readonly">
+							<input type="text" class="borCcc cityOrder" readonly="readonly">
+							<input type="text" class="borCcc areaOrder" readonly="readonly">
+							<select name="" class="borCcc countyOrder"></select>
+						</div>
+						<div class="floatR preConditionQuery textCenter curPointer">
+							查询
+						</div>
+					</div>
+
+				</div>
+			</div>
+			<!--地图---右下角首次弹窗-->
+			<aside class="rbMessage displayNo">
+				<div class="layerHead">
+					<span></span>
+					<span class="floatR curPointer closeBottomPop">×</span>
+				</div>
+				<div class="textCenter">
+					<span class="popBeginTime">2012-01-01</span>至<span class="popEndTime">2012-01-01</span><br>共发生：
+				</div>
+				<div class="bpOutPad">
+					<div>毒麻药违规使用事件<span class="popInfoRb" data-id="毒麻药">0</span>起；</div>
+					<div>医疗争议事件<span class="popInfoRb" data-id="医疗争议">0</span>起；</div>
+					<div>抗生素违规使用事件<span class="popInfoRb" data-id="抗生素">0</span>起；</div>
+					<div>传染病上报事件<span class="popInfoRb" data-id="传染病">0</span>起；</div>
+					<div>医疗废物交接记录未按时更新<span class="popInfoRb" data-id="医疗废物">0</span>家诊所；</div>
+					<div>今日共计发生<span class="popInfoRbTotal">0</span>起；</div>
+				</div>
+				<div class="textCenter">
+					<a href="javascript:;" class="displayInB blueButton bottomPopDatail">查看详情</a>
+				</div>
+
+			</aside>
+			<!--地图---右下角十分钟弹窗-->
+			<aside class="rbMessageTen displayNo" style="right: 357px;">
+				<div class="layerHead">
+					<span></span>
+					<span class="floatR curPointer closeBottomPopTen">×</span>
+				</div>
+				<div class="textCenter">
+					<span class="popBeginTimeTen">2012-01-01</span>至<span class="popEndTimeTen">2012-01-01</span><br>共发生：
+				</div>
+				<div class="bpOutPad">
+					<div>毒麻药违规使用事件<span class="popInfoRbTen" data-id="毒麻药">0</span>起；</div>
+					<div>医疗争议事件<span class="popInfoRbTen" data-id="医疗争议">0</span>起；</div>
+					<div>抗生素违规使用事件<span class="popInfoRbTen" data-id="抗生素">0</span>起；</div>
+					<div>传染病上报事件<span class="popInfoRbTen" data-id="传染病">0</span>起；</div>
+					<div>医疗废物交接记录未按时更新<span class="popInfoRbTen" data-id="医疗废物">0</span>家诊所；</div>
+					<div>今日共计发生<span class="popInfoRbTotalTen">0</span>起；</div>
+				</div>
+				<div class="textCenter">
+					<a href="javascript:;" class="displayInB blueButton bottomPopDatailTen">查看详情</a>
+				</div>
+
+			</aside>
+			<!--地图---点击弹窗详情的表格(普通)-->
+			<div class="popDetailTable orderQueryTable orderQueryTablePrimary displayNo">
+				<div class="textCenter headTre" style="margin-bottom: 10px">
+					个体诊所医疗卫生监测事件具体情况
+				</div>
+				<table cellpadding="0" cellspacing="0">
+					<thead>
+						<tr>
+							<td>时间</td>
+							<td>地区</td>
+							<td>医疗卫生行为</td>
+							<td>诊所名称</td>
+							<td>详细地址</td>
+							<td>事实详情</td>
+							<td>操作</td>
+						</tr>
+					</thead>
+					<tbody>
+
+					</tbody>
+				</table>
+			</div>
+			<!--地图---点击弹窗详情的表格(累加)-->
+			<div class="popDetailTable orderQueryTable orderQueryTableAdd displayNo">
+				<div class="textCenter headTre" style="margin-bottom: 10px">
+					个体诊所医疗卫生监测事件具体情况
+				</div>
+				<table cellpadding="0" cellspacing="0">
+					<thead>
+						<tr>
+							<td>时间</td>
+							<td>地区</td>
+							<td>医疗卫生行为</td>
+							<td>诊所名称</td>
+							<td>详细地址</td>
+							<td>事实详情</td>
+							<td>操作</td>
+						</tr>
+					</thead>
+					<tbody>
+
+					</tbody>
+				</table>
+			</div>
+			<!--地图---表格详情的医疗争议统计表-->
+			<div class="treatStepTwo deBack displayNo">
+				<div class="textCenter headTre">医疗争议登记表</div>
+				<div class="dashTable">
+					<div class="dashHead">责任人信息</div>
+					<table>
+						<tr>
+							<td class="textRight">
+								<span style="color: red">*</span>发生诊所：
+							</td>
+							<td class="orName">
+								发生诊所
+							</td>
+							<td class="textRight paddingL">
+								<span style="color: red">*</span>鉴定状态：
+							</td>
+							<td>
+								<select name="" class="borCcc fullWidth identifyStatus x" readonly="readonly" disabled="disabled">
+									<option value="0">未鉴定</option>
+									<option value="1">已鉴定</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td class="textRight">
+								<span style="color: red">*</span>所属地区：
+							</td>
+							<td class="belongAT">
+								所属地区
+							</td>
+							<td class="textRight">
+								等级鉴定：
+							</td>
+							<td class="identifyGradeName">
+							</td>
+						</tr>
+						<tr>
+							<td class="textRight">
+								<span style="color: red">*</span>发生日期：
+							</td>
+							<td>
+								<input type="text" readonly="readonly" id="happenTime">
+							</td>
+							<td class="textRight">
+								分类鉴定：
+							</td>
+							<td class="identifyTypeName">
+							</td>
+						</tr>
+						<tr>
+							<td class="textRight">
+								<span style="color: red">*</span>登记日期：
+							</td>
+							<td class="dengDateT">
+								2012-02-02
+							</td>
+							<!--  <td class="textRight">
+                        最新修改时间：
+                    </td>
+                    <td class="newDateT">
+                        2012-02-02
+                    </td>-->
+						</tr>
+						<tr>
+							<td class="textRight">
+								<span style="color: red">*</span>争议原因：
+							</td>
+							<td colspan="3">
+								<textarea style="width: 99.5%;vertical-align: bottom" class="argueRT  tab2">haha</textarea>
+							</td>
+						</tr>
+					</table>
+
+				</div>
+				<div class="dashTable">
+					<div class="dashHead">争议相关人员信息</div>
+					<table>
+						<tr>
+							<th>责任人信息</th>
+						</tr>
+						<tr>
+							<td class="textRight" style="width: 96px">
+								<span style="color: red">*</span>责任人姓名：
+							</td>
+							<td>
+								<input type="text" value="" class="zrNameT  tab2">
+							</td>
+							<td class="textRight paddingL">
+								职称：
+							</td>
+							<td>
+								<select name="" class="chargeTitle x" disabled="disabled">
+									<option value="5">初级职称</option>
+									<option value="6">中级职称</option>
+									<option value="7">高级职称</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td class="textRight" style="width: 96px">
+								联系方式：
+							</td>
+							<td>
+								<input type="text" value="" class="zrrContact">
+							</td>
+						</tr>
+						<tr>
+							<th>患者信息</th>
+						</tr>
+						<tr>
+							<td class="textRight" style="width: 96px">
+								<span style="color: red">*</span>患者姓名：
+							</td>
+							<td>
+								<input type="text" value="" class="hzNameT  tab2">
+							</td>
+							<td class="textRight paddingL">
+								<span style="color: red">*</span>患者现状：
+							</td>
+							<td>
+								<input type="text" value="" class="hzXzT  tab2">
+							</td>
+						</tr>
+						<tr>
+							<td class="textRight" style="width: 96px">
+								联系方式：
+							</td>
+							<td>
+								<input type="text" value="" class="tabThzContact">
+							</td>
+							<td class="textRight paddingL">
+								亲属联系方式：
+							</td>
+							<td>
+								<input type="text" value="" class="tabTqsContact">
+							</td>
+						</tr>
+						<tr>
+							<th>上报人信息</th>
+						</tr>
+						<tr>
+							<td class="textRight" style="width: 96px">
+								<span style="color: red">*</span>上报人姓名：
+							</td>
+							<td class="sbrNameT">
+								上报人姓名
+							</td>
+							<td class="textRight paddingL">
+								联系方式：
+							</td>
+							<td class="scrContact">
+								13646346346
+							</td>
+						</tr>
+					</table>
+
+				</div>
+				<div class="dashTable">
+					<div class="dashHead">争议处置信息</div>
+					<table>
+						<tr>
+							<td class="textRight">
+								<span style="color: red">*</span>处置状态：
+							</td>
+							<td>
+								<select class="mercyStatus x" disabled="disabled">
+									<option value="0">待处置</option>
+									<option value="1">处置中</option>
+									<option value="2">已处置</option>
+								</select>
+							</td>
+							<td class="textRight paddingL">
+								<span style="color: red">*</span>司法机构是否介入：
+							</td>
+							<td class="examine">
+								<div class="result n" style="width: 141px">
+									<div style="width: 68px" class="result-txt n">是</div>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td class="textRight">
+								处置时间：
+							</td>
+							<td>
+								<input type="text" readonly="readonly" id="ManagementDate">
+							</td>
+							<td class="textRight paddingL">
+								处置负责人：
+							</td>
+							<td>
+								<input type="text" value="" class="czFzrT">
+							</td>
+						</tr>
+						<tr>
+							<td class="textRight">
+								处置办法：
+							</td>
+							<td colspan="3">
+								<textarea style="width: 99.5%;vertical-align: bottom" class="czMethod">haha</textarea>
+							</td>
+						</tr>
+					</table>
+
+				</div>
+				<div class="textCenter">
+					<a href="javascript:;" class="displayInB blueButton backToUp">返回</a>
+				</div>
+			</div>
+			<!--地图---表格详情的处方、电子病历-->
+			<div class="content-box tpl deBack displayNo">
+				<div class="floatL con-l">
+					<div class="orderQueryTable">
+						<div class="headTre textCenter">
+							事件基本情况
+						</div>
+						<table cellpadding="0" cellspacing="0">
+							<tr>
+								<td>时间：</td>
+								<td class="getTime">2012-01-01</td>
+							</tr>
+							<tr>
+								<td>地区：</td>
+								<td class="checkArea">2012-01-01</td>
+							</tr>
+							<tr>
+								<td>事实详情：</td>
+								<td class="detailGet">2012-01-01</td>
+							</tr>
+						</table>
+					</div>
+					<div class="orderQueryTable">
+						<div class="headTre textCenter">
+							诊所基本信息
+						</div>
+						<table cellpadding="0" cellspacing="0">
+							<tr>
+								<td>名称：</td>
+								<td class="orgName">--</td>
+							</tr>
+							<tr>
+								<td>地址：</td>
+								<td class="adress">2012-01-01</td>
+							</tr>
+							<tr>
+								<td>负责人：</td>
+								<td class="doctorName">2012-01-01</td>
+							</tr>
+							<tr>
+								<td>联系方式：</td>
+								<td class="orgPhone">2012-01-01</td>
+							</tr>
+						</table>
+					</div>
+					<div class="orderQueryTable">
+						<div class="headTre textCenter">
+							责任人基本信息
+						</div>
+						<table cellpadding="0" cellspacing="0">
+							<tr>
+								<td>姓名：</td>
+								<td class="doctorName">2012-01-01</td>
+							</tr>
+							<tr>
+								<td>职称：</td>
+								<td class="titlesClinical">2012-01-01</td>
+							</tr>
+							<tr>
+								<td>联系方式：</td>
+								<td class="doctorPhone">2012-01-01</td>
+							</tr>
+						</table>
+					</div>
+					<div class="orderQueryTable">
+						<div class="headTre textCenter">
+							患者基本信息
+						</div>
+						<table cellpadding="0" cellspacing="0">
+							<tr>
+								<td>姓名：</td>
+								<td class="patientName">2012-01-01</td>
+							</tr>
+							<tr>
+								<td>就诊号：</td>
+								<td class="visitNo">2012-01-01</td>
+							</tr>
+							<tr>
+								<td>联系方式：</td>
+								<td class="teleNum">2012-01-01</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+				<div class="floatL con-r">
+					<div class="type-title">
+						<span class="active" data-id="1">处方签</span>
+						<span data-id="2" class="medicalRecord">电子病例</span>
+					</div>
+					<div class="details-box sign">
+						<div class="des-title">
+							<h1 class="orgName">--诊所</h1>
+							<h2>处方笺</h2>
+							<div class="des-type">普通</div>
+							<p class="visitDate">开具日期： 0000-00-00</p>
+						</div>
+						<div class="person-des">
+							<table>
+								<tr>
+									<th>姓名：</th>
+									<td class="patientName">--</td>
+									<th>性别：</th>
+									<td class="sexName">--</td>
+									<th>年龄：</th>
+									<td class="age">--</td>
+									<th>就诊号：</th>
+									<td class="visitNo">--</td>
+								</tr>
+								<tr>
+									<th>科室：</th>
+									<td class="ordDepName">--</td>
+									<th>电话：</th>
+									<td class="teleNum">00000000000</td>
+									<th>住址：</th>
+									<td colspan="3" class="addr">----</td>
+								</tr>
+								<!--    <tr>
+                                <th>过敏史：</th>
+                                <td colspan="5" class="allergicDrugString">&#45;&#45;&#45;&#45;</td>
+                            </tr>-->
+							</table>
+						</div>
+						<div class="clinic">
+							<table>
+								<tr>
+									<th>临床诊断：</th>
+									<td class="dxType"> ----</td>
+								</tr>
+							</table>
+						</div>
+						<div class="prescribe overHidden">
+							<div>Rp</div>
+							<table cellspacing="0px" rules=rows border="1px" class="orderDTOs floatL">
+								<!--   <caption>Rp</caption>
+                           <tr class="prescribe-type">
+                               <th>序号</th>
+                               <th>药品名称</th>
+                               <th>规格</th>
+                               <th>剂量</th>
+                               <th>给药方式</th>
+                               <th>频率</th>
+                               <th>天数</th>
+                               <th>总量</th>
+                               <th>备注</th>
+                           </tr>
+                           <tbody class="">
+                               <tr>
+                                   <td>1</td>
+                                   <td>阿莫西林胶囊阿莫西林胶囊看</td>
+                                   <td>0.125毫克*24粒/盒</td>
+                                   <td>200g/2片</td>
+                                   <td>口服外用</td>
+                                   <td>每日两次</td>
+                                   <td>3天</td>
+                                   <td>2盒</td>
+                                   <td>饭后服用，才不是啊吧</td>
+                               </tr>
+                           </tbody>-->
+							</table>
+							<table cellspacing="0px" rules=rows border="1px" class="orderDTOsR floatL"></table>
+							<div class="clearBoth"></div>
+							<div class="chinaM">
+								<div>
+									<div class="totalNum">
+										<span>共</span>
+										<input type="text" class="borCcc repetition" value="">
+										<span>剂</span>
+									</div>
+									<div class="totalD">煎服法：
+										<textarea style="resize: none;" name="" cols="3" class="orderMemo"></textarea>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="doctor">
+							<!--  <p><span>医师(签章)：张三</span><span class="floatR">药师/士(调配)：张武</span></p>
+                      <p>药师(审核、核对、发药)：张宝</p>-->
+						</div>
+					</div>
+					<div class="details-box case displayNo">
+						<div class="person-des">
+							<table>
+								<tr>
+									<th>姓名：</th>
+									<td class="patientName">--</td>
+									<th>性别：</th>
+									<td class="sexName">--</td>
+									<th>年龄：</th>
+									<td class="age">--</td>
+									<th>就诊号：</th>
+									<td class="visitNo">--</td>
+								</tr>
+								<tr>
+									<th>科室：</th>
+									<td class="ordDepName">--</td>
+									<th>电话：</th>
+									<td class="teleNum">00000000000</td>
+									<th>就诊诊所：</th>
+									<td class="orgName">--</td>
+									<th>主治医师：</th>
+									<td class="doctorName">00000000000</td>
+									<!--  <th>住址：</th>
+                              <td colspan="3" class="addr">&#45;&#45;&#45;&#45;</td>-->
+								</tr>
+								<!--     <tr>
+                                 <th>过敏史：</th>
+                                 <td colspan="5" class="allergicDrugString">&#45;&#45;&#45;&#45;</td>
+                             </tr>-->
+							</table>
+						</div>
+						<div class="physical">
+							<table rules=rows>
+								<tr>
+									<th>主诉：</th>
+									<td class="chiefComplaint">早上起床恶心干呕，头晕目眩，四肢无力冒冷汗，手心较新塘腹泻基础上第不潇洒基础的卡上就是考虑的私家车的</td>
+								</tr>
+								<tr>
+									<th>现病史：</th>
+									<td class="presentIllness">糖尿病史，肺结核
+									</td>
+								</tr>
+								<tr>
+									<th>既往史：</th>
+									<td class="pastIllness">肺结核
+									</td>
+								</tr>
+								<tr>
+									<th>家族史：</th>
+									<td class="familyIllness">先天性心脏病</td>
+								</tr>
+								<tr>
+									<th>个人史：</th>
+									<td class="personalIllness">空间的司令部的空间三点半</td>
+								</tr>
+								<tr>
+									<th>药物过敏史：</th>
+									<td class="allergicHistory">阿莫西林克拉维酸钾过敏</td>
+								</tr>
+								<tr>
+									<th>门诊体检：</th>
+									<td class="bodyExam">体格正常，健康的办事处的不合适结婚是back基本上都</td>
+								</tr>
+								<tr>
+									<th>辅助检查：</th>
+									<td class="assistExam">健康速递才不会的边框is的句空间是不动产</td>
+								</tr>
+								<tr>
+									<th>门诊诊断：</th>
+									<td class="diagnoses">多病无大病</td>
+								</tr>
+								<tr>
+									<th>门诊处理：</th>
+									<td class="suggestion">住院</td>
+								</tr>
+								<tr>
+									<th>门诊医嘱：</th>
+									<td class="treatSuggetion">多喝水</td>
+								</tr>
+							</table>
+						</div>
+
+					</div>
+				</div>
+				<div class="textCenter positionA">
+					<a href="javascript:;" class="displayInB blueButton backToUp">返回</a>
+				</div>
+			</div>
+
+		</div>
+
+	</body>
+	<script src="../orderCheck/timePicker/jquery-1.7.1.min.js"></script>
+	<script src="../../js/plugins/jqueryUI/jquery-ui.minDate.js"></script>
+	<script src="../orderCheck/timePicker/jquery-ui-timepicker-zh-CN.js"></script>
+	<script src="../orderCheck/timePicker/jquery-ui-timepicker-addon.js"></script>
+	<script src="../../js/plugins/layer/layer.js"></script>
+	<script src="../commonPath.js"></script>
+	<!--地图-->
+	<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=3BKhqGu7zCibrEyvIIVvW7SYOmqeW7ma"></script>
+	
+	<script type="text/javascript">
+		// 百度地图API功能
+		var map = new BMap.Map("allmap",{minZoom:10,maxZoom:23});
+		//    map.enableScrollWheelZoom();//设置鼠标滚轮缩放事件
+		    //标注点的动画
+/*		    var point = new BMap.Point(103.4,23.37);
+		    map.centerAndZoom(point, 15);
+		    var marker = new BMap.Marker(point);  // 创建标注
+		    map.addOverlay(marker);               // 将标注添加到地图中
+		    marker.setAnimation(BMAP_ANIMATION_BOUNCE); //跳动的动画
+		    marker.addEventListener("click",attribute);
+		    map.centerAndZoom(point, 15);
+		    function attribute(){
+		        alert(1)
+		    }
+		    var opts = {
+		        position : point,    // 指定文本标注所在的地理位置
+		        offset   : new BMap.Size(15,-25)    //设置文本偏移量
+		    };
+		    var label = new BMap.Label("文星镇", opts);  // 创建文本标注对象
+		    label.setStyle({
+		        color : "blue",
+		        fontSize : "14px",
+		        height : "25px",
+		        lineHeight : "25px",
+		        fontFamily:"微软雅黑",
+		        borderColor:"blue",
+		        backgroundColor:'yellow'
+		    });
+		    map.addOverlay(label);*/
+
+		//地图样式
+		var mapStyle = [{
+				"featureType": "background",
+				"elementType": "all",
+				"stylers": {
+// 					"color": "#ffffff"
+				}
+			},
+			{
+				"featureType": "boundary",
+				"elementType": "all",
+				"stylers": {
+// 					"color": "#0000ff"
+				}
+			},
+			{
+				"featureType": "road",
+				"elementType": "all",
+				"stylers": {}
+			},
+			{
+				"featureType": "road",
+				"elementType": "all",
+				"stylers": {
+// 					"color": "#ffffff"
+				}
+			}
+		];
+		map.setMapStyle({
+			styleJson: mapStyle
+		});
+		map.enableScrollWheelZoom(true); //开启鼠标滚轮缩放
+
+		/*   function addlabel() {
+		       var pointArray = [
+		           new BMap.Point(121.716076,23.703799),
+		           new BMap.Point(112.121885,14.570616),
+		           new BMap.Point(123.776573,25.695422)];
+		       var optsArray = [{},{},{}];
+		       var labelArray = [];
+		       var contentArray = [
+		           "台湾是中国的！",
+		           "南海是中国的！",
+		           "钓鱼岛是中国的！"];
+		       for(var i = 0;i < pointArray.length; i++) {
+		           optsArray[i].position = pointArray[i];
+		           labelArray[i] = new BMap.Label(contentArray[i],optsArray[i]);
+		           labelArray[i].setStyle({
+		               color : "red",
+		               fontSize : "12px",
+		               height : "20px",
+		               lineHeight : "20px",
+		               fontFamily:"微软雅黑"
+		           });
+		           map.addOverlay(labelArray[i]);
+		       }
+		   }
+		   map.addEventListener("click",function(e){
+		       alert(e.point.lng + "," + e.point.lat);
+		   });
+		   function a(){
+		       document.getElementById('allmap').innerHTML = 'haha'
+		   }*/
+
+		    //画圈圈
+		/* var point = new BMap.Point(103.99551,30.549366);
+		 var circle = new BMap.Circle(point,50);
+		 map.addOverlay(circle);*/
+	</script>
+	<script src="js/realTimeMonitoring.js"></script>
+</html>

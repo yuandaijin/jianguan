@@ -1,0 +1,90 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>诊所资源--覆盖情况</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/info/conmon.css">
+	<link href="css/info/clinicsCoverage.css" rel="stylesheet" type="text/css">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=7">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+</head>
+<body>
+	<div id="main" class="container">
+		<ul class="current">
+			<li>当前位置： &nbsp;<span class="areaShow"></span>&nbsp;&gt;&gt;&nbsp;<span>诊所资源</span></li>
+			<li class="regionSelection">区域选择：
+				<select class="city" id="areaChoose">
+					<option>双流县</option>
+				</select>
+				<button id="areaConfirm" class="confirm">确认</button>
+			</li>
+			<li class="backBtn">
+				<i></i>
+				<button class="returnMap">返回地图</button>
+			</li>
+		</ul>
+		<div class="time">
+			<ul class="diseas">
+				<li>时间：</li>
+				<li>
+					<select id="timeStyle">
+						<option value="year">按年</option>
+						<option value="month">按月</option>
+					</select>
+				</li>
+				<li>
+					<select class="yearSelected" id="timeSelect">
+					</select>
+				</li>
+				<li>
+					<select class="monthSelected hide" id="">
+					</select>
+				</li>
+				<li id="searchInfo">
+					<i class="img"></i>
+					<span>查询</span>
+				</li>
+				<li>打印</li>
+				<li></li>
+				<li>导出</li>
+				<li></li>
+			</ul>
+		</div>
+		<!--<div class="clinicInfoHead">诊所医疗能力覆盖情况</div>-->
+
+		<div class="clinicInfoHead">
+			 截至<span class="yearShow"></span><span class="monthShow"></span><span class="areaShow">双流县</span>已有 <span id="totalNum"></span> 家诊所使用个体诊所信息管理系统 
+		</div>
+		<div class="tableHeader"><span class="areaShow" style="font-size: 20px">双流县</span>诊所医疗能力覆盖表</div>
+		<table class="clinicInfoTable" border="1" cellpadding="0" cellspacing="0">
+			<thead>
+				<tr class="tableHead">
+					<td>行政区域</td>
+					<td>诊所数量</td>
+					<td>医护数量</td>
+				</tr>
+			</thead>
+			<tbody id="coverInfo">
+			</tbody>
+		</table>
+		<div class="distribution">
+			<div class="clinic">
+				诊所数量(个)
+			</div>
+			<div class="clinicInfoChart" id="number"></div>
+			<div class="administration">
+				双流区各下级行政区划诊所数量分布				
+			</div>
+		</div>
+		<p class="chartExplain">注：图中标示下方为个体诊所数量 ，上方为医护比。</p>
+	</div>
+	<script src="js/plugins/jquery-1.11.1.min.js"></script>
+	<script src="js/echarts.min.js"></script>
+	<script type="text/javascript" src="../commonPath.js"></script>
+	<script type="text/javascript" src="js/info/commonInfo.js"></script>
+	<script src="js/info/clinicCoverage.js"></script>
+</body>
+</html>

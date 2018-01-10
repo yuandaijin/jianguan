@@ -1,0 +1,237 @@
+textarea{
+    resize: none;
+}
+/*第一步*/
+.treatStepOne{
+    width: 613px;
+    margin: 0 auto;
+}
+.treatStepOne div,.treatStepTwo div{
+    width: 100%;
+}
+div.headTre{
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+.headTreN{
+    font-size: 18px;
+    margin: 15px auto;
+}
+.treatStepOne .tableOne tr{
+    line-height: 60px;
+}
+.treatStepOne .tableOne input,
+.treatStepOne .tableOne select,
+.treatStepOne .tableOne textarea{
+    border: 1px solid #ccc;
+}
+input.fullWidth{
+    width: 98%;
+    height: 28px;
+}
+select.fullWidth{
+    width: 99%;
+    height: 30px;
+}
+textarea.fullWidth{
+    width: 97%;
+    height: 130px;
+    padding: 5px;
+}
+.belongAreaTre input,
+.belongAreaTre select
+{
+    width: 23%;
+}
+.argumentReasonTre{
+    padding-top: 20px;
+}
+.reasonTre.textRight{
+    padding-top: 0;
+    vertical-align: text-top;
+}
+.next{
+    width: 150px;
+    height: 40px;
+    line-height: 40px;
+    color: white;
+    background-color: #2081c7;
+    border-radius: 3px;
+}
+/*第二步*/
+.treatStepTwo{
+    width: 920px;
+    margin: 0 auto;
+}
+.dashHead{
+    border-bottom: 1px dashed #ccc;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 10px 0;
+    margin: 10px 0;
+}
+.dashTable table input,
+.dashTable table textarea,
+.dashTable table select{
+    width: 260px;
+    height: 30px;
+    border: 1px solid #ccc;
+}
+.dashTable table td.paddingL{
+    width: 285px;
+}
+.dashTable table tr{
+    line-height: 50px;
+}
+.marginTopDash{
+    margin-top: 60px;
+}
+/*第三步*/
+.treatStepThree{
+    margin: 0 auto;
+    width: 660px;
+}
+.treatStepThree table tr{
+    line-height: 60px;
+}
+.treatStepThree input{
+    width: 360px;
+    height: 30px;
+    border: 1px solid #ccc;
+}
+.treatStepThree select{
+    width: 365px;
+    height: 30px;
+    border: 1px solid #ccc;
+}
+.treatStepThree textarea{
+    width: 360px;
+    height: 135px;
+    border: 1px solid #ccc;
+    padding-left: 5px;
+}
+
+/*合格不合格*/
+.result {
+    position: relative;
+    width: 141px;
+    height: 26px;
+    background-color: #2081c7;
+    border-radius: 5px;
+    border: 1px solid #dddddd;
+}
+
+.result-txt {
+    position: absolute;
+    right: 0;
+    width: 61px;
+    height: 26px;
+    line-height: 26px;
+    text-align: center;
+    background-color: #f1f1f1;
+    border-radius: 3px;
+}
+.examine .result-n{
+    background-color: #cccccc;
+}
+.result-n .result-txt{
+    left: 0;
+}
+.result,.examine .result-n,.result-txt,.examine .resultn-txt{
+    -webkit-transition: all .15s linear;
+    -moz-transition: all .15s linear;
+    -ms-transition: all .15s linear;
+    -o-transition: all .15s linear;
+    transition: all .15s linear;
+}
+/*查询条件*/
+.preSamQueryCondition{
+    border-bottom: 1px solid #d9d9d9;
+    margin: 0 20px;
+}
+.preSamQueryCondition>div{
+    margin-bottom: 15px;
+}
+.preSamQueryCondition .leftFirst{
+    width: 120px;
+    text-align: right;
+}
+.preSamQueryCondition .chooseTime input{
+    width: 120px;
+}
+.preSamQueryCondition .chooseOrderType .borCcc{
+    width: 91px;
+}
+.preSamQueryCondition .chooseArea .borCcc{
+    width: 85px;
+}
+.preSamQueryCondition .chooseArea input.borCcc{
+    width: 80px;
+}
+.preSamQueryCondition .clinicName .borCcc{
+    width: 195px;
+}
+.preSamQueryCondition .preConditionQuery,
+.preSamQueryCondition .queryOrderTable
+{
+    width: 115px;
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid #2081c7;
+    color: #2081c7;
+}
+.preSamQueryCondition .preConditionQuery.disClick{
+    color: black;
+    background-color: #cccccc;
+    border: 1px solid #bbbbbb;
+    cursor: not-allowed;
+}
+
+/*抽查----医疗争议*/
+.orderQueryTable{
+    margin: 50px auto;
+    width: 95%;
+}
+.orderQueryTable table{
+    border:1px solid #999999;
+    text-align: center;
+    table-layout: fixed;
+    width: 100%;
+}
+.orderQueryTable table td{
+    line-height: 35px;
+    border-right:1px solid  #dddddd;
+    padding: 5px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    color: #333;
+}
+.orderQueryTable table tbody td{
+    border-top:1px solid  #dddddd;
+}
+.orderQueryTable table tbody .orderChooseNo
+{
+    color: #2081c7;
+}
+.orderQueryTable table tbody .orderChooseNo:hover{
+    background-color: #2081c7;
+    color: white;
+}
+.orderQueryTable table thead{
+    background-color: #f1f1f1;
+}
+.orderQueryTable table thead td{
+    font-weight: bold;
+}
+.orderQueryTable table tr:hover{
+    background-color: #f7f7f7;
+}
+/*input框不显示*/
+.treatStepTwo.tabTwo.x input,
+.treatStepTwo.tabTwo.x select,
+.treatStepTwo.tabTwo.x textarea{
+    border: none;
+    outline: none;
+}

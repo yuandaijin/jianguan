@@ -1,0 +1,228 @@
+.popup-inner {
+/* 	width: 757px; */
+	min-height: 440px;
+/* 	box-sizing: border-box; */
+	padding: 0 20px 60px 20px;
+}
+
+.first-btn {
+	margin-left: -120px;
+}
+/*总体公用样式*/
+.detail-alert, .detail-alert-head {
+    height: auto;
+    padding: 15px 0;
+}
+/*总体头部样式*/
+.detail-alert-head {
+    padding: 0;
+    border-bottom: solid 1px #eee;
+}
+table.detail caption {
+	line-height: 30px;
+}
+table.detail caption span {
+	padding-left: 20px;
+	color: #667;
+}
+table.detail {
+	clear: both;
+	margin-top: 20px;
+	width: 100%;
+}
+table.detail tr > * {
+	color: #666;
+	box-sizing: border-box;
+	padding-left: 5px;
+	border: 1px solid #eee;
+}
+.refund-reason {
+	clear: both;
+	margin-top: 20px;
+}
+#consume-detail-inner .btn-warp {
+	position: static;
+}
+.detail-alert-head > ul > li {
+    float: left;
+    font-weight: bold;
+}
+
+.detail-alert-head > ul > li:nth-of-type(2) {
+    float: right;
+}
+/*总体头部样式*/
+
+/*清除浮动*/
+.detail-alert:after, .detail-alert-head:after, .detail-con-alert:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+/*清除浮动*/
+
+.detail-con-alert {
+/*     width: 100%; */
+/*     float: left; */
+/*     border: solid 1px #eee; */
+}
+.detail-alert-head span {
+	display: inline-block;
+	min-width: 120px;
+}
+/*总体公用样式*/
+
+/*消费详情样式*/
+.tips {
+	padding-top: 10px;
+	clear: both;
+}
+.consum-detail {
+	color: #666;
+    border: 1px solid #eee;
+    margin-top: 60px;
+}
+/*消费详情内容样式*/
+.consum {
+	overflow: hidden;
+}
+#doctor-info {
+	width: 50%;
+	margin-right: 20px;
+	float: left;
+}
+#doctor-info .photo {
+	width: 120px;
+	height: 120px;
+	overflow: hidden;
+	float: left;
+	margin-right: 10px;
+}
+#doctor-info .photo img {
+	width: 100%;
+}
+#doctor-info .info {
+	line-height: 30px;
+}
+.consum > li:nth-of-type(1) {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+.patient-info {
+	margin-top: 30px;
+	border-top: 1px solid #eee;
+	line-height: 30px;
+}
+.patient-info span {
+	margin-left: 20px;
+}
+/* 取消原因 */
+.cancel-order-inner {
+	min-height: 160px;
+}
+.cancel-order-inner p {
+	width: 280px;
+}
+.cancel-order-inner label {
+	float: left;
+	line-height: 22px;
+}
+.datalist {
+	float: left;
+	width: 200px;
+	position: relative;
+}
+.errortips {
+	display: block;
+	height: 20px;
+    clear: both;
+    padding-left: 70px;
+    color: #ff6d2d;
+}
+.errortips label {
+	float: none;
+}
+.datalist input {
+	width: 100%;
+	height: 22px;
+	box-sizing: border-box;
+}
+.datalist ul {
+	display: none;
+	box-sizing: border-box;
+	width: 100%;
+	position: absolute;
+	background-color: #fff;
+	border: 1px solid #eee;
+}
+.datalist ul li {
+	padding-left: 5px;
+}
+.datalist ul li:hover {
+	color: #fff;
+	background-color: #4898d5;
+}
+.cancel-order-inner>p {
+	clear: both;
+	font-size: 12px;
+}
+/*消费详情样式*/
+
+/*取消订单详情样式*/
+.unsub-alert {
+/*     width: 100%; */
+/*     padding: 50px 0; */
+}
+/*取消订单详情内容*/
+.unsub-alert > li {
+    margin-bottom: 10px;
+}
+
+.unsub-alert > li > p {
+    width: 100px;
+    margin-left: 5px;
+    text-align: right;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.sub-alert {
+    border: none;
+}
+/*取消订单详情样式*/
+
+/*预定订单详情样式*/
+.detail-con-alert {
+    margin-top: 10px;
+    padding: 10px;
+}
+
+.detail-alert-head {
+    border: none;
+    padding: 0 10px;
+}
+/*预定详情内容*/
+.pre-alert {
+    width: 46%;
+    padding-right: 4%;
+    border-right: solid 1px #eee;
+    float: left;
+}
+.pre-con-alert li {
+    line-height: 2em;
+}
+
+.pre-title {
+    font-weight: bold;
+}
+/*预定详情内容右*/
+.con-alert-right {
+    overflow: hidden;
+    padding-left: 10px;
+}
+
+.con-alert-right > li:nth-of-type(1) {
+    border-bottom: solid 1px #eee;
+    padding-bottom: 10px;
+}
+/*预定订单详情样式*/

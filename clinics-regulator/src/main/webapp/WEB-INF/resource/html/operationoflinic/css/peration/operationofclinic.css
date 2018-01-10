@@ -1,0 +1,169 @@
+﻿.container .antibiotic {
+    margin: 0 auto;
+    width: 100%;
+    height: 380px;
+    margin-top: 30px;
+    position: relative;
+}
+
+table {
+    border-collapse: collapse;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+td,
+th {
+    border: 1px solid #d7d7d7;
+    padding: 0.5rem;
+    text-align: left;
+}
+
+
+/*******************标题字体********************************/
+
+.container .clinicInfoHead {
+    height: 30px;
+    font-size: 20px;
+    line-height: 30px;
+}
+
+.container .clinicInfoHeads {
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+  /*  background-color: #f8f8f8;*/
+  /*  border: 1px solid #f4f4f4;*/
+    color: #333333;
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+.container .namelist {
+    font-size: 16px;
+    text-align: center;
+    color: #666666;
+    margin-top: 30px;
+}
+
+.container .namelisto {
+    text-align: center;
+    color: #666666;
+    margin-top: 30px;
+}
+
+.tableContain {
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 40px;
+    overflow: auto;
+}
+.tableContain>table{
+    width: 100%;
+}
+
+
+/**************************************************/
+
+
+/*huangwei*/
+
+.tableHead {
+    background-color: #F1F1F1;
+}
+
+.service,
+.dayservice {
+    width: 25px;
+    height: 101px;
+    position: absolute;
+    z-index: 1;
+    line-height: 20px;
+    text-align: center;
+    top: 30px;
+}
+
+.service {
+    left: 5%;
+}
+
+.dayservice {
+    right: 5%;
+}
+
+
+/********2016年11月9日*************************/
+
+.container .diseas {
+    width: 98%;
+    height: 74px;
+    line-height: 74px;
+    margin-left: 21px;
+}
+
+.container .diseas li {
+    float: left;
+}
+
+.container .diseas li .img {
+    position: relative;
+    display: inline-block;
+    width: 17px;
+    height: 16px;
+    background: url(../../images/放大镜.png) no-repeat;
+    left: 12px;
+    top: 3px;
+}
+
+.container .diseas span {
+    position: relative;
+    left: 15px;
+}
+
+.container .diseas li:nth-child(5) {
+    margin-left: 40px;
+    width: 90px;
+    height: 28px;
+    border: 1px solid #d7d7d7;
+    line-height: 26px;
+    margin-top: 21px;
+    cursor: pointer;
+}
+
+.container .diseas li:nth-child(7),
+.container .diseas li:nth-child(9) {
+    width: 19px;
+    height: 13px;
+    float: right;
+    margin-top: 30px;
+}
+
+.container .diseas li:nth-child(7) {
+    background: url(../../images/打印.png) no-repeat;
+}
+
+.container .diseas li:nth-child(6) {
+    margin-left: 8px;
+    float: right;
+    margin-right: 50px;
+    border: none;
+}
+
+.container .diseas li:nth-child(9) {
+    background: url(../../images/导出.png) no-repeat;
+}
+
+.container .diseas li:nth-child(8) {
+    margin-left: 8px;
+    float: right;
+    margin-right: 30px;
+    margin-top: 0;
+}
+
+.container .diseas select {
+    width: 130px;
+    height: 30px;
+    border: 1px solid #d7d7d7;
+}
+
+.container .diseas li {}

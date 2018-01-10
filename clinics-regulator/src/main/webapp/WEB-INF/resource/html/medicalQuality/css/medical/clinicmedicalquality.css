@@ -1,0 +1,244 @@
+.container .medicalQuality{   
+	width:900px;
+	margin: 0 auto;
+	height: 181px;
+	margin-top: 30px;
+	
+}
+.container .qualifications{
+	width: 100%;
+	height: 29px;
+	margin-bottom: 9px;
+}
+.container .qualifications li{
+	float: left;
+}
+.container .qualifications li:nth-child(1){
+	width: 73px;
+	height: 29px;
+	border: 1px solid #797979;
+	margin-left: 130px;
+}
+.container .qualifications li:nth-child(2){
+	line-height: 29px;
+	margin-left: 40px;
+	width: 100px;
+	color: #0e5283;
+}
+.container .qualifications li:nth-child(3){
+	line-height: 29px;
+	margin-left: 40px;
+}
+.container .qualifications li:nth-child(4){
+	line-height: 29px;
+	margin-left: 31px;
+}
+.container .qualifications .By{
+	width: 80px;
+	height: 20px;
+	line-height: 20px;
+	text-align: center;
+}
+.container ul .prescription{
+	width: 42px;
+	height: 20px;
+}
+.container .qualifications .yes {
+    width: 32px;
+    height: 20px;
+}
+table {
+  border-collapse: collapse;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+td,th {
+  border: 1px solid #d7d7d7;
+  padding: 0.5rem;
+  text-align: left;
+}
+td{
+	height: 30px;
+	line-height: 30px;
+}
+/**************************************/
+.container .clinicInfoHead {
+	height: 30px;
+	font-size: 18px;
+	line-height: 30px;
+}
+.container .clinicInfoHeado{
+	font-size: 20px;
+	text-align: center;
+}
+.container .clinicInfoHeado .areaShow{
+	font-size: 20px;
+}
+/************************************************/
+.container .diseaset{
+	width: 100%;
+	height: 74px;
+}
+.container .diseaset li{
+	float: left;
+	margin-top: 22px;
+}
+.container .diseaset li:nth-child(2){
+	width: 19px;
+	height: 13px;
+	background:url(../../images/打印.png) no-repeat;
+	float: right;
+	margin-top: 25px;
+	cursor:pointer;
+}
+.container .diseaset li:nth-child(1){
+	margin-left: 8px;
+	float: right;
+	margin-right: 50px;
+	cursor:pointer;
+}
+.container .diseaset li:nth-child(4){
+	width: 19px;
+	height: 13px;
+	background:url(../../images/导出.png) no-repeat;
+	float: right;
+	margin-top: 25px;
+	cursor:pointer;
+}
+.container .diseaset li:nth-child(3){
+	margin-left: 8px;
+	float: right;
+	margin-right: 30px;
+	cursor: pointer;
+}
+
+
+.tableContain{
+	width: 90%;
+	overflow: auto;
+	margin: 60px auto;
+}
+
+
+/*hw*/
+#main .medicalQuality{
+	width:100%;
+	height: 181px;
+	margin-top: 15px;
+}
+#main .medicalQuality .gridOuter{
+	width: 80%;
+	margin: 0 auto;
+	border:1px solid #000;
+}
+.gridOuter ul{
+	height: 40px;
+	overflow: hidden;
+	line-height: 40px;
+}
+#main .qualifications1,#main .qualifications3,#main .qualifications5{
+	background-color: #e5e5e5;
+}
+#main .qualifications{
+	width: 100%;
+	height: 29px;
+	margin-bottom: 9px;
+}
+#main .gridOuter li{
+	float: left;
+}
+#main .gridOuter li:nth-child(1){
+	width: 10%;
+	height: 40px;
+	text-align: center;
+	padding-top: 8px;
+}
+#main .gridOuter li:nth-child(2){
+	width: 15%;
+}
+#main .gridOuter li:nth-child(3),#main .gridOuter li:nth-child(4){
+	width: 30%;
+}
+#main .gridOuter .By,#main .gridOuter .yes,#main .gridOuter .prescription{
+	border: none;
+	background: transparent;
+}
+#main .gridOuter .By{
+	width: 17%;
+}
+#main .gridOuter .yes{
+	width: 5%;
+}
+#main .gridOuter .prescription{
+	width: 15%;
+}
+#infoTotal tr:first-child{
+	background-color: #f1f1f1;
+}
+/********************2016年11月9日更改添加的样式*****************************************/
+.container .diseas{
+    width: 100%;
+    height: 74px;
+   	line-height: 74px;
+	margin-left: 21px;
+}
+.container .diseas li{
+	float: left;
+}
+.container .diseas li .img {
+    position: relative;
+    display: inline-block;
+    width: 17px;
+    height: 16px;
+    background: url(../../images/放大镜.png) no-repeat;
+    left: 12px;
+    top: 3px;
+}
+.container .diseas span {
+    position: relative;
+    left: 15px;
+}
+.container .diseas li:nth-child(4),.container .diseas li:nth-child(5){
+	margin-top: 22px;
+}
+.container .diseas li:nth-child(6) {
+    margin-left: 40px;
+    width: 90px;
+    height: 28px;
+    border: 1px solid #d7d7d7;
+    line-height: 26px;
+    margin-top: 21px;
+    cursor: pointer;
+}
+.container .diseas li:nth-child(8),.container .diseas li:nth-child(10){
+	width: 19px;
+	height: 13px;
+	float: right;
+	margin-top: 30px;
+}
+.container .diseas li:nth-child(8){
+	background:url(../../images/打印.png) no-repeat;
+}
+.container .diseas li:nth-child(7){
+	margin-left: 8px;
+	float: right;
+	margin-right: 50px;
+	border: none;
+}
+.container .diseas li:nth-child(10){
+	background:url(../../images/导出.png) no-repeat;
+}
+.container .diseas li:nth-child(9){
+	margin-left: 8px;
+	float: right;
+	margin-right: 30px;
+	margin-top: 0;
+}
+.container .diseas select {
+    width: 130px;
+    height: 30px;
+    border: 1px solid #d7d7d7;
+}
+.time{
+	padding-left: 0;
+}

@@ -1,0 +1,21 @@
+.operate-btns {
+	float: right;
+}
+.operate-btns a {
+	display: inline-block;
+	line-height: 24px;
+	padding: 0 4px;
+	background-color: #fff;
+	border: 1px solid #ccc;
+	border-radius: 2px;
+}
+.operate-btns a:hover {
+	background-color: #2081c7;
+    border: 1px solid #2081c7;
+    color: #fff;
+}
+.seat-area {
+	height: 22px;
+	border-radius: 2px;
+	border: 1px solid #ccc;
+}

@@ -1,0 +1,253 @@
+.container {
+	width: 100%;
+	overflow: hidden;
+	padding: 0;
+}
+
+.current {
+	width: 100%;
+	height: 41px;
+	background-color: #f2f2f2;
+	border-bottom: 1px solid #e0e0e0;
+	color: #666666;
+}
+
+.container .current li {
+	line-height: 40px;
+	float: left;
+	margin-left: 21px;
+}
+
+.container .current span {
+	color: #666666;
+}
+
+.container .current .returnMap {
+	height: 26px;
+	line-height: 22px;
+	border: none;
+	background-color: #f3f3f3;
+	color: #666666;
+	margin-left: 75px;
+	cursor: pointer;
+	outline: none;
+}
+
+.container .current .regionSelection {
+	float: right;
+	margin-right: 50px;
+}
+
+.container .current .regionSelection i {
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	background: url(../../imgs/back.png) no-repeat;
+	margin-left: 45px;
+	top: 10px;
+	cursor: pointer;
+}
+
+.record {
+	width: 97%;
+	margin: 0 auto;
+	overflow: hidden;
+	height: 33px;
+	border-bottom: 1px solid #374156;
+}
+
+.record .clinicInfoTabBtn {
+	color: #ffffff;
+	background-color: #374156;
+	width: 146px;
+	height: 33px;
+	border: 1px solid #d7d7d7;
+	line-height: 33px;
+	text-align: center;
+	float: left;
+	cursor: pointer;
+}
+
+.condition {
+	width: 100%;
+	height: 45px;
+	padding-left: 50px;
+	margin-top: 45px;
+	font-size: 16px;
+}
+
+.condition .time {
+	width: 126px;
+	height: 28px;
+	border: 1px solid #cccccc;
+}
+
+.condition .region {
+	width: 100px;
+	height: 28px;
+	border: 1px solid #cccccc;
+	margin-left: 15px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.condition .leftShift {
+	margin-left: 45px;
+}
+
+.verification {
+	font-size: 16px;
+	padding-left: 50px;
+}
+
+.verification .clinic {
+	width: 400px;
+	height: 28px;
+}
+
+.verification .query {
+	display: inline-block;
+	width: 120px;
+	height: 32px;
+	border: 1px solid #2081C7;
+	line-height: 32px;
+	text-align: center;
+	cursor: pointer;
+	margin-left: 50px;
+}
+
+.verification .query i {
+	position: relative;
+	top: -2px;
+	left: -3px;
+}
+
+.sign {
+	width: 100%;
+	height: 80px;
+	line-height: 80px;
+	text-align: center;
+	font-size: 22px;
+	color: #333333;
+}
+
+.table {
+	width: 96%;
+	margin: 0 auto;
+	margin-top: 10px;
+	text-align: center;
+	border: 1px solid #999999;
+}
+
+.table thead {
+	font-size: 16px;
+	color: #666666;
+	font-weight: bold;
+	background: #F1F1F1;
+}
+
+.table td {
+	height: 40px;
+	line-height: 40px;
+}
+
+.table tbody tr:hover {
+	background: #ededed;
+}
+
+.table tbody {
+	font-size: 16px;
+}
+
+.table .frame {
+	border-top: 1px solid #dddddd;
+	border-right: 1px solid #dddddd;
+}
+
+.framely {
+	color: #2081c7;
+	cursor: pointer;
+	line-height: 40px;
+	text-align: center;
+}
+
+tbody .viewPhotos {
+	color: #2081C7;
+	cursor: pointer;
+}
+
+tbody .viewPhotos:hover {
+	background: #2081C7;
+	color: #FFFFFF;
+}
+
+.picture img {
+	width: 100%;
+}
+
+.picture .land {
+	width: 100%;
+	height: 60px;
+	text-align: center;
+	line-height: 60px;
+	font-size: 22px;
+}
+
+.picture .mediacy {
+	width: 320px;
+	height: 320px;
+	margin: 0 auto;
+}
+
+.page {
+	float: right;
+	color: #9A9A9A;
+	font-size: 16px;
+	margin-right: 60px;
+	margin-top: -54px;
+}
+
+.tcdPageCode {
+	padding: 27px 0 27px;
+	text-align: center;
+	color: #ccc;
+}
+
+.numberpages {
+	display: inline-block;
+	width: 46px;
+	height: 24px;
+	border: 1px solid #cccccc;
+	outline: none;
+}
+
+.tcdPageCode span.current {
+	display: inline-block;
+	width: 30px;
+	height: 25px;
+	line-height: 25px;
+	padding: 0 10px;
+	margin: 0 2px;
+	color: #fff;
+	background-color: #428bca;
+	border: 1px solid #428bca;
+	border-radius: 4px;
+	vertical-align: middle;
+	text-align: center;
+}
+
+.jump {
+	display: inline-block;
+	width: 60px;
+	height: 26px;
+	border: 1px solid #cccccc;
+	text-align: center;
+	line-height: 26px;
+	cursor: pointer;
+	border-radius: 3px;
+	margin-left: 15px;
+	position: relative;
+	color: #ffffff;
+	background-color: #428bca;
+}

@@ -1,0 +1,331 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>诊所运营综合情况-服务总量</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=7">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" type="text/css" href="css/commonidentical.css" />
+    <link rel="stylesheet" type="text/css" href="css/peration/totalclinicservice.css" />
+</head>
+
+<body>
+    <div class="container">
+        <ul class="current">
+            <li>当前位置： &nbsp;<span class="areaShow"></span>&nbsp;&gt;&gt;&nbsp;诊所医疗质量&nbsp;&gt;&gt;&nbsp;<a>诊所服务总量</a></li>
+            <li class="regionSelection">区域选择：
+                <select id="areaChoose" class="city">
+						<!--<option >双流区</option>		-->
+					</select>
+                <button id="areaConfirm" class="confirm">确认</button>
+                <i></i>
+                <button class="returnMap">返回地图</button>
+            </li>
+        </ul>
+        <ul class="clinicInfoTab trendUl">
+            <li id="nowCondition" data-id="0" class="clinicInfoTabBTn trendNow">当前概况</li>
+            <li id="timeTrend" data-id="1" class="trendNow">时间趋势</li>
+            <li class="spWidth">打印</li>
+            <li class="spWidth"></li>
+            <li class="spWidth">导出</li>
+            <li class="spWidth"></li>
+        </ul>
+
+
+        <!-- 当前概况开始 -->
+        <div id="condition" class="nowProfile">
+
+            <!-- 当前概况的时间选择开始 -->
+            <div id="nowTimeChoose" class="time">
+                <ul class="clinicInfoTab ">
+                    <li>时间：</li>
+                    <li id="nowYear" data-id="year" class="">
+                        <select name="">
+								<option value="year">年度</option>
+								<option value="month">月度</option>
+								<!--<option value="">天</option>-->
+							</select>
+                    </li>
+                </ul>
+                <ul id="nowYearChoose" class="diseaseo hide">
+                    <li>
+                        <select name="" class="nowChooseYear yearSelected">
+								
+							</select>
+                    </li>
+                    <li>
+                    </li>
+                    <li class="chooseByTime">
+                        <i class="img"></i>
+                        <span>查询</span>
+                    </li>
+                </ul>
+                <ul id="nowMonthChoose" class="diseaseo">
+                    <li>
+                        <select name="" class="nowMonthChooseYear yearSelected">
+								
+							</select>
+                    </li>
+                    <li>
+                        <select name="" class="nowMonthChooseMonth monthSelected">
+							</select>
+                    </li>
+                    <li class="chooseByTime">
+                        <i class="img"></i>
+                        <span>查询</span>
+                    </li>
+                </ul>
+            </div>
+            <!-- 当前概况的时间选择结束 -->
+
+
+
+
+            <div class="nowProfile">
+                <div class="nowSituation">
+                    <ul class="area">
+                        <li class="active areaTotal">辖区总体概况</li>
+                        <li class="areaNext">下级区划概况</li>
+                        <li class="areaAvg">平均门诊量概况</li>
+                        <li class="areaInfo">信息总表</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="first areaList">
+                <div class="namelist">
+                    <span class="showTime" style="font-size: 20px"></span><span class="areaShow" style="font-size: 20px">双流区</span>个体诊所门诊量概况分析
+                </div>
+                <div class="coverytr">
+                    个体诊所初复诊门诊量统计
+                </div>
+                <div class="antibiotic">
+                    <div class="currency">
+                        <div class="transverse">
+                            门<br>诊<br>量<br>︵<br>人<br>次<br>︶
+                        </div>
+                        <div id="situationNum" class="returnChart"></div>
+                    </div>
+                    <div class="currency">
+                        <div class="transverse">
+                            门<br>诊<br>量<br>︵<br>人<br>次<br>︶
+                        </div>
+                        <div id="situationRelative" class="returnChart"></div>
+                    </div>
+                    <div class="currency">
+                        <div class="transverse">
+                            门<br>诊<br>量<br>︵<br>人<br>次<br>︶
+                        </div>
+                        <div id="situationCompare" class="returnChart"></div>
+                    </div>
+                </div>
+                <div class="coverytr">
+                    个体诊所中西医门诊量统计
+                </div>
+                <div class="antibiotic">
+                    <div class="currency">
+                        <div class="transverse">
+                            门<br>诊<br>量<br>︵<br>人<br>次<br>︶
+                        </div>
+                        <div id="professionNum" class="returnChart"></div>
+                    </div>
+                    <div class="currency">
+                        <div class="transverse">
+                            门<br>诊<br>量<br>︵<br>人<br>次<br>︶
+                        </div>
+                        <div id="professionRelative" class="returnChart"></div>
+                    </div>
+                    <div class="currency">
+                        <div class="transverse">
+                            门<br>诊<br>量<br>︵<br>人<br>次<br>︶
+                        </div>
+                        <div id="professionCompare" class="returnChart"></div>
+                    </div>
+                </div>
+                <div class="clinicInfoHeads">
+                    <span class="showTime" style="font-size: 16px"></span><span class="areaShow" style="font-size: 16px">双流区</span>个体诊所门诊总量及环比、同比分析
+                </div>
+                <table class="nowTable">
+                    <tr class="tableHead">
+                        <td></td>
+                        <td>门诊总量</td>
+                        <td>环比增长率</td>
+                        <td>同比增长率</td>
+                        <td>初诊量</td>
+                        <td>环比增长率</td>
+                        <td>同比增长率</td>
+                        <td>复诊量</td>
+                        <td>环比增长率</td>
+                        <td>同比增长率</td>
+                        <td>中医门诊</td>
+                        <td>环比增长率</td>
+                        <td>同比增长率</td>
+                        <td>西医门诊</td>
+                        <td>环比增长率</td>
+                        <td>同比增长率</td>
+                    </tr>
+                    <tr>
+                        <td class="areaShow">双流区</td>
+                        <td id="menTotal"></td>
+                        <td id="huanData"></td>
+                        <td id="tongData"></td>
+                        <td id="chuData"></td>
+                        <td id="huanAdd"></td>
+                        <td id="tongAdd"></td>
+                        <td id="fuData"></td>
+                        <td id="lvAdd"></td>
+                        <td id="zhangAdd"></td>
+                        <td id="zhongData"></td>
+                        <td id="zhonghuan"></td>
+                        <td id="zhongtong"></td>
+                        <td id="xiData"></td>
+                        <td id="xihuan"></td>
+                        <td id="xitong"></td>
+
+                    </tr>
+                </table>
+                <div class="blank"></div>
+            </div>
+            <div class="second areaList hide">
+                <div class="namelist">
+                    <span class="showTime" style="font-size: 20px"></span><span class="areaShow" style="font-size: 20px">双流区</span>各下级行政区划个体诊所门诊量概况分析
+                </div>
+                <div class="currencyDown">
+                    <div class="transverse">
+                        门<br>诊<br>量<br>︵<br>人<br>次<br>︶
+                    </div>
+                    <div id="trendChart" class="antibiotic"></div>
+                </div>
+                <div class="clinicInfoHeads">
+                    <span class="showTime" style="font-size: 20px"></span><span class="areaShow" style="font-size: 20px">双流区</span>各下级行政区划个体诊所初、复诊门诊量情况
+                </div>
+                <div class="currencyDown">
+                    <div class="transverse">
+                        门<br>诊<br>量<br>︵<br>人<br>次<br>︶
+                    </div>
+                    <div id="chinaAndForeign" class="antibiotic"></div>
+                </div>
+                <div class="clinicInfoHeads">
+                    <span class="showTime" style="font-size: 20px"></span><span class="areaShow" style="font-size: 20px">双流区</span>各下级行政区划个体诊所中、西医门诊量情况
+                </div>
+                <div class="blank"></div>
+            </div>
+            <div class="third areaList hide">
+                <div class="clinicInfoHeads">
+                    <span class="showTime" style="font-size: 20px"></span><span class="areaShow" style="font-size: 20px">双流区</span>各下级行政区划个体诊所平均门诊量概况
+                </div>
+                <div class="currencyDown">
+                    <div class="transverse">
+                        平<br>均<br>门<br>诊<br>量<br>︵<br>人<br>次<br>︶
+                    </div>
+                    <div id="numDistribute" class="antibiotic"></div>
+                </div>
+                <div class="namelisto">
+                    <span class="showTime" style="font-size: 16px"></span><span class="areaShow" style="font-size: 16px">双流区</span>各下级行政区划个体诊所平均门诊量
+                </div>
+                <div class="blank"></div>
+            </div>
+
+
+            <div class="fourch areaList hide">
+                <div class="clinicInfoHeads">
+                    <span class="showTime" style="font-size: 20px"></span><span class="areaShow" style="font-size: 20px">双流区</span>个体诊所门诊量信息总表
+                </div>
+                <div class="namelisto">
+                    <span class="showTime" style="font-size: 16px"></span><span class="areaShow" style="font-size: 16px">双流区</span>个体诊所门诊量概况
+                </div>
+                <table id="infoTotal" class="totalTable">
+                    <tr class="tableHead">
+                        <td rowspan="2">行政区域规划</td>
+                        <td rowspan="2">门诊总量(人次)</td>
+                        <td colspan="2">就诊类型</td>
+                        <td colspan="2">就诊类型</td>
+                        <td rowspan="2">各诊所平均门诊量（人次）</td>
+                    </tr>
+                    <tr class="tableHead">
+                        <td>初诊</td>
+                        <td>复诊</td>
+                        <td>西医门诊</td>
+                        <td>中医门诊</td>
+                    </tr>
+
+                </table>
+                <div class="blank"></div>
+            </div>
+        </div>
+        <!-- 当前概况结束 -->
+
+
+        <div id="timeFoward" class="hide" style="width: 100%">
+            <!--时间趋势的时间选择开始-->
+            <div id="trendTimeChoose" class="time">
+                <div class="trendUlOuter">
+                    <ul id="timeControl" class="clinicInfoTab">
+                        <li>时间：</li>
+                        <li id="trendYear" data-id="year" class="">
+                            <select name="">
+									<option value="year">年度</option>
+									<option value="month">月度</option>
+									<!--<option value="">天</option>-->
+								</select>
+                        </li>
+                    </ul>
+                    <ul id="trendYearChoose" class="diseaseo">
+                        <li>
+                            <select name="" class="trendYearChooseStart yearSelected">
+								</select> 至&nbsp;
+                        </li>
+                        <li>
+                            <select name="" class="trendYearChooseEnd yearSelected">
+								</select>
+                        </li>
+                        <li class="queryTrend">
+                            <i class="img"></i>
+                            <span>查询</span>
+                        </li>
+                    </ul>
+                    <ul id="trendMonthChoose" class="diseaset hide">
+                        <li><select name="" class="trendMonthChooseYear yearSelected">
+							</select>
+                        </li>
+                        <li>
+                            <select name="" class="trendMonthChooseBegin monthSelected">
+								</select>
+                        </li>
+                        <li>
+                            &nbsp;至
+                            <select name="" class="trendMonthChooseEnd monthSelected">
+								</select>
+                        </li>
+                        <li class="queryTrend">
+                            <i class="img"></i>
+                            <span>查询</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="clinicInfoHeads"><span class="showTime" style="font-size: 20px"></span><span class="areaShow" style="font-size: 20px">双流区</span>个体诊所门诊量概况分析</div>
+                <div id="firstAndSecond" class="antibiotic">
+
+                </div>
+                <div class="clinicInfoHeads"><span class="showTime" style="font-size: 20px"></span><span class="areaShow" style="font-size: 20px">双流区</span>个体诊所初、复诊门诊量变化情况</div>
+                <div id="eastAndWest" class="antibiotic">
+
+                </div>
+                <div class="clinicInfoHeads"><span class="showTime" style="font-size: 20px"></span><span class="areaShow" style="font-size: 20px">双流区</span>个体诊所中西医门诊量变化情况</div>
+                <div class="blank"></div>
+            </div>
+
+            <!-- 时间趋势时间选择结束 -->
+        </div>
+
+</body>
+<script type="text/javascript" src="../public/js/plugins/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="../public/js/echarts.min.js"></script>
+<script type="text/javascript" src="../commonPath.js"></script>
+<script type="text/javascript" src="js/commonInfo.js"></script>
+<script type="text/javascript" src="js/totalclinicservice.js"></script>
+
+</html>

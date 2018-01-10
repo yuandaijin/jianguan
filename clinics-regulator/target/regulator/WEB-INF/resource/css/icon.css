@@ -1,0 +1,289 @@
+﻿.i-main-nav-nestDoc i{
+    width: 30px;
+    height: 30px;
+    background: url(../imgs/i-main-nav-bg.png) no-repeat 0 0
+}
+
+.i-main-nav-nestDoc.active i,.i-main-nav-nestDoc:hover i{
+    background: url(../imgs/i-main-nav-bg.png) no-repeat 0 -35px
+}
+
+.i-main-nav-records i{
+    width: 30px;
+    height: 30px;
+    background: url(../imgs/i-main-nav-bg.png) no-repeat -135px 0
+}
+
+.i-main-nav-records.active i,.i-main-nav-records:hover i{
+    background: url(../imgs/i-main-nav-bg.png) no-repeat -135px -35px
+}
+
+.i-main-nav-healthconsultact i{
+    width: 30px;
+    height: 30px;
+    background: url(../imgs/i-main-nav-bg.png) no-repeat -268px 0
+}
+
+.i-main-nav-healthconsultact.active i,.i-main-nav-healthconsultact:hover i{
+    background: url(../imgs/i-main-nav-bg.png) no-repeat -268px -35px
+}
+
+.i-main-nav-serviceOrder i{
+    width: 30px;
+    height: 30px;
+    background: url(../imgs/i-main-nav-bg.png) no-repeat -420px 0
+}
+
+.i-main-nav-serviceOrder.active i,.i-main-nav-serviceOrder:hover i{
+    background: url(../imgs/i-main-nav-bg.png) no-repeat -420px -39px
+}
+
+.i-main-nav-remoteDistance i{
+    width: 30px;
+    height: 30px;
+    background: url(../imgs/i-main-nav-bg.png) no-repeat -491px 0
+}
+
+.i-main-nav-remoteDistance.active i,.i-main-nav-remoteDistance:hover i{
+    background: url(../imgs/i-main-nav-bg.png) no-repeat -491px -39px
+}
+
+.i-docleave{
+    
+}
+
+.i-successx30{
+    width: 30px;
+    height: 30px;
+    background: url(../imgs/successx30.png) no-repeat center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 20160322添加 */
+.icon {
+	display: inline-block;
+}
+/*首页手机图标*/
+.i-phone {
+	width: 10px;
+	height: 19px;
+	background: url(../imgs/icons_001.png) no-repeat;
+}
+/*首页导航栏分割线*/
+.i-split-line {
+	height: 22px;
+	background: url(../imgs/icons_001.png) no-repeat -20px 0;
+}
+/*用户名输入框图标*/
+.i-username {
+	width: 37px;
+	height: 20px;
+	background: url(../imgs/icons_001.png) no-repeat 10px -25px;
+}
+.i-username-focus {
+	width: 37px;
+	height: 20px;
+	background: red url(../imgs/icons_001.png) no-repeat -20px -25px;
+}
+/*密码输入框图标*/
+.i-userpwd {
+	width: 37px;
+	height: 20px;
+	background: url(../imgs/icons_001.png) no-repeat 10px -55px;
+}
+.i-userpwd-focus {
+	width: 37px;
+	height: 20px;
+	background: url(../imgs/icons_001.png) no-repeat -20px -55px;
+}
+/*错误提示图标*/
+.i-errortips {
+	width: 14px;
+	height: 14px;
+	background: url(../imgs/icons_001.png) no-repeat -30px 0;
+}
+/*成功提示图标*/
+.i-success {
+	width: 14px;
+	height: 14px;
+	background: url(../imgs/icons_001.png) no-repeat -65px 0;
+}
+/*消息图标*/
+.i-message {
+	width: 18px;
+	height: 15px;
+	background: url(../imgs/icons_001.png) no-repeat 0 -85px;
+}
+/*地图导向图标*/
+.i-guide {
+	width: 18px;
+	height: 24px;
+	background: url(../imgs/icons_001.png) no-repeat -30px -80px;
+}
+/*名医戳*/
+.i-doctor-badge {
+	width: 53px;
+	height: 53px;
+	background: url(../imgs/icons_001.png) no-repeat 0 -110px;
+}
+/*搜索放大镜图标*/
+.i-search {
+	width: 14px;
+	height: 16px;
+	background: url(../imgs/icons_001.png) no-repeat 0 -190px;
+}
+.i-search {
+	width: 14px;
+	height: 16px;
+	background: url(../imgs/icons_001.png) no-repeat 0 -190px;
+}
+/*滚动播放向前*/
+.i-scroll-prev {
+	width: 36px;
+	height: 58px;
+	background: url(../imgs/icons_001.png) no-repeat 0 -206px;
+}
+/*滚动播放向后*/
+.i-scroll-next {
+	width: 36px;
+	height: 58px;
+	background: url(../imgs/icons_001.png) no-repeat -36px -206px;
+}
+/*医院小图标*/
+.i-hospital {
+	width: 22px;
+	height: 22px;
+	background: url(../imgs/icons_001.png) no-repeat 0 -270px;
+}
+/*医生小图标*/
+.i-doctor {
+	width: 22px;
+	height: 22px;
+}
+/*服务星级小图标*/
+.u-start i {
+    width: 28px;
+    height: 25px;
+	background: url(../imgs/icons_001.png) no-repeat -30px -300px;
+}
+.u-start i.active-large {
+	background: url(../imgs/icons_001.png) no-repeat 0 -300px;
+}
+/*视频问诊*/
+.i-video {
+	width: 70px;
+	height: 70px;
+	background: url(../imgs/i-operation_001.png) no-repeat;
+}
+/*图文资询*/
+.i-consultation {
+	width: 70px;
+	height: 70px;
+	background: url(../imgs/i-operation_001.png) no-repeat -80px 0;
+}
+/*在线预约*/
+.i-subscribe {
+	width: 70px;
+	height: 70px;
+	background: url(../imgs/i-operation_001.png) no-repeat -160px 0;
+}
+
+/*服务设置页*/
+/*视频问诊图标*/
+.i-serverset-video {
+	width: 22px;
+	height: 26px;
+	background: url(../imgs/icons_001.png) no-repeat -30px -330px;
+}
+.i-serverset-video.active {
+	background: url(../imgs/icons_001.png) no-repeat 0 -330px;
+}
+/*图文咨询图标*/
+.i-serverset-ceefax {
+	width: 20px;
+	height: 18px;
+	background: url(../imgs/icons_001.png) no-repeat -30px -360px;
+}
+.i-serverset-ceefax.active {
+	background: url(../imgs/icons_001.png) no-repeat 0 -360px;
+}
+/*在线预约图标*/
+.i-serverset-order {
+	width: 22px;
+	height: 22px;
+	background: url(../imgs/icons_001.png) no-repeat -30px -385px;
+}
+.i-serverset-order.active {
+	background: url(../imgs/icons_001.png) no-repeat 0 -385px;
+}
+/*快速提问图标*/
+.i-serverset-questions {
+	width: 20px;
+	height: 20px;
+	background: url(../imgs/icons_001.png) no-repeat -30px -410px;
+}
+.i-serverset-questions.active {
+	background: url(../imgs/icons_001.png) no-repeat 0 -410px;
+}
+/*家庭医生*/
+.i-serverset-familydoc {
+	width: 18px;
+	height: 23px;
+	background: url(../imgs/icons_001.png) no-repeat -30px -435px;
+}
+.i-serverset-familydoc.active {
+	background: url(../imgs/icons_001.png) no-repeat 0 -435px;
+}
+.i-checkbox-checked {
+	width: 14px;
+	height: 10px;
+	background: url(../imgs/icons_001.png) no-repeat -50px -30px;
+}
+
+
+
+/*----------按钮----------*/
+/*搜索按钮*/
+.btn-search {
+	display: inline-block;
+	width: 46px;
+	color: #fff;
+	text-align: center;
+	line-height: 30px;
+	border-radius: 2px;
+	background-color: #2081c7;
+}

@@ -1,0 +1,99 @@
+/*详情页面样式 */
+.news-warp {
+	width: 80%;
+	margin: 0 auto;
+	padding: 10px 0 100px;
+}
+.m-news .title {
+	font-size: 18px;
+	line-height: 30px;
+	border-bottom: 1px solid #666;
+	margin-bottom: 20px;
+}
+.m-news .content {
+	color: #444;
+}
+.news-summary .content {
+	min-height: 50px;
+}
+.news-content .content {
+	min-height: 250px;
+}
+.s-and-c {
+	padding: 5px 0;
+	padding-left: 10px;
+	border: 1px solid #ccc;
+}
+#summary {
+	width: 98%;
+	min-height: 100px;
+}
+#content {
+	width: 98%;
+	min-height: 250px;
+}
+.s-and-c {
+	resize: vertical;
+}
+.t2 {
+	width: 98%;
+	min-height: 20px;
+	padding: 5px 0;
+	padding-left: 10px;
+	resize: vertical;
+	border: 1px solid #ccc;
+}
+
+
+
+/*展示*/
+.show-newsdetail .news-title {
+	text-align: center;
+}
+.show-newsdetail textarea {
+	width: 98%;
+	border: none;
+	background-color: #fff;
+	resize: none;
+}
+.show-newsdetail .news-title+.news-title {
+	margin-bottom: 40px;
+}
+.show-newsdetail .news-title dt {
+	display: none;
+}
+.show-newsdetail #title {
+	font-size: 24px;
+	height: 30px;
+}
+.show-newsdetail #time {
+	color: #666;
+}
+.show-newsdetail .news-title textarea {
+	text-align: center;
+	padding: 0;
+}
+.show-newsdetail .news-title span {
+	color: #666;
+}
+.show-newsdetail .news-title h1 {
+	font-size: 28px;
+}
+
+
+
+.btn-warp a {
+    display: inline-block;
+    width: 90px;
+    line-height: 30px;
+    color: #fff;
+    background-color: #f16528;
+    border-radius: 2px;
+}
+.btn-warp a+a {
+    margin-left: 60px;
+}
+.btn-warp {
+    text-align: center;
+	padding-bottom: 60px;
+}

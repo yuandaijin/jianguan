@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=7">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<title>诊所资源--人员概况</title>
+		<link rel="stylesheet" type="text/css" href="./css/lq.datetimepick.css" />
+		<link rel="stylesheet" type="text/css" href="css/style.min.css">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="css/info/conmon.css">
+		<link rel="stylesheet" type="text/css" href="css/info/personSituation.css">
+	</head>
+
+	<body>
+		<div class="o-wrap container" id="main">
+			<ul class="current">
+				<li>当前位置： &nbsp;<span class="areaShow"></span>&nbsp;&gt;&gt;&nbsp;诊所资源&nbsp;&gt;&gt;&nbsp;<span>诊所人员概况</span></li>
+				<li class="regionSelection">区域选择：
+					<select class="city" id="areaChoose">
+						<option>双流县</option>
+					</select>
+					<button id="areaConfirm" class="confirm">确认</button>
+				</li>
+				<li class="backBtn">
+					<i></i>
+					<button class="returnMap">返回地图</button>
+				</li>
+			</ul>
+			<ul class="clinicInfoTab print">
+				<li id="nowCondition" class="clinicInfoTabBtn active">当前概况</li>
+				<li id="timeTrend" class="clinicInfoTabBtn">时间趋势</li>
+				<li>打印</li>
+				<li></li>
+				<li>导出</li>
+				<li></li>
+			</ul>
+
+			<!-- 当前概况开始 -->
+			<div id="condition" class="nowSituation">
+				<div class="time">
+					<ul class="disease">
+						<li>时间：</li>
+						<li>
+							<select id="timeStyle" name="">
+								<option value="year">按年</option>
+								<option value="month">按月</option>
+							</select>
+						</li>
+						<li>
+							<select name="" class="nowSituationYear yearSelected">
+								<option value="2016">2016年</option>
+							</select>
+						</li>
+						<li>
+							<select name="" class="nowSituationMonth monthSelected hide">
+							</select>
+						</li>
+						<li class="four">
+							<i class="img"></i>
+							<span class="queryByTime">查询</span>
+						</li>
+					</ul>
+				</div>
+
+				<ul class="area">
+					<li class="active areaTotal">辖区总体概况</li>
+					<li class="areaNext">下级区划概况</li>
+					<li class="areaAvg">平均概况分布</li>
+					<li class="areaInfo">信息总表</li>
+				</ul>
+				<!-- 辖区总体概况开始 -->
+				<div class="clinicsInfoNav areaList">
+					<p class="endTime">
+						截止<span class="showYear" style="font-size: 20px"></span> <span class="showMonth" style="font-size: 20px"></span><span class="areaShow" style="font-size: 20px">双流县</span>个体诊所行政区划分布
+					</p>
+
+					<p class="coverytr">
+						个体诊所人员岗位分布
+					</p>
+					<div>
+						注：图中标示为 人员总量 ; 医护比。例：420000:1.4 表示人员总量为420000人，医护比为1.4:1
+					</div>
+					<div class="clinicInfoDetail">
+						<div class="numWrap chart">
+							<div id="situationNum" class="clinicsChart"></div>
+							<p class="yName">人员数量(个)</p>
+							<p class="chartInfo">个体诊所数量总计</p>
+						</div>
+
+						<div class="relativeWrap chart">
+							<div id="situationRelative" class="clinicsChart"></div>
+							<p class="yName">人员数量(个)</p>
+							<p class="chartInfo">个体诊所数量环比</p>
+						</div>
+
+						<div class="compareWrap chart">
+							<div id="situationCompare" class="clinicsChart"></div>
+							<p class="yName">人员数量(个)</p>
+							<p class="chartInfo">个体诊所数量同比</p>
+						</div>
+					</div>
+
+					<p class="coverytr">
+						个体诊所医生职称分布
+					</p>
+					<div class="professionDetail clinicInfoDetail">
+						<div class="numWrap chart">
+							<div id="professionNum" class="clinicsChart"></div>
+							<p class="yName">人员数量(个)</p>
+							<p class="chartInfo">个体诊所医生数量总计</p>
+						</div>
+
+						<div class="relativeWrap chart">
+							<div id="professionRelative" class="clinicsChart"></div>
+							<p class="yName">人员数量(个)</p>
+							<p class="chartInfo">个体诊所医生数量环比</p>
+						</div>
+
+						<div class="compareWrap chart">
+							<div id="professionCompare" class="clinicsChart"></div>
+							<p class="yName">人员数量(个)</p>
+							<p class="chartInfo">个体诊所医生数量同比</p>
+						</div>
+					</div>
+
+					<div class="numSummarize">
+						<p class="summarizeTitle">
+							<span class="showYear" style="font-size: 16px">2016年</span> <span class="showMonth" style="font-size: 16px">1月</span><span class="areaShow" style="font-size: 16px">双流县</span>个体诊所人员总量及环比、同比概况
+						</p>
+						<table>
+							<tr class="tableHead">
+								<td>行政区划</td>
+								<td>医护比</td>
+								<td>诊所人员数量</td>
+								<td>环比增长率</td>
+								<td>同比增长率</td>
+								<td>医生数量</td>
+								<td>环比增长率</td>
+								<td>同比增长率</td>
+							</tr>
+							<tr>
+								<td class="areaShow">双流县</td>
+								<td id="numPercent">1.8：1</td>
+								<td id="sumNumber">4700000</td>
+								<td id="momAdd">10.63%</td>
+								<td id="anAdd">34.29</td>
+								<td id="docNum">370000</td>
+								<td id="docMum">10.63%</td>
+								<td id="docAn">34.29%</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+				<!-- 辖区总体概况结束 -->
+
+				<!-- 下级区划概况开始 -->
+				<div class="lowerDistrict areaList hide">
+					<p class="classEndtime">
+						截止<span class="showYear" style="font-size: 20px">2016年</span> <span class="showMonth" style="font-size: 20px">1月</span><span class="areaShow" style="font-size: 20px">双流县</span>各下级行政区划个体诊所人员构成概况
+					</p>
+					<div class="coverytr">下级行政区划个体诊所不同岗位人员分布概况</div>
+					<div class="positionDistribute">
+						<div id="distributeChart" class="distributeChart"></div>
+						<p class="yName">人员数量(个)</p>
+					</div>
+					<p class="clinicInfoHead">
+						<span class="showYear" style="font-size: 16px">2016年</span> <span class="showMonth" style="font-size: 16px">1月</span><span class="areaShow" style="font-size: 16px">双流县</span>各下级行政区划个体诊所人员岗位分布
+					</p>
+					<div class="coverytr">下级行政区划个体诊所医生职称分布概况</div>
+					<div class="jobDistribute">
+						<div id="jobChart" class="distributeChart"></div>
+						<p class="yName">人员数量(个)</p>
+					</div>
+					<p class="chartInfo">
+						<span class="showYear" style="font-size: 16px">2016年</span> <span class="showMonth" style="font-size: 16px">1月</span><span class="areaShow" style="font-size: 16px">双流县</span>各下级行政区划个体诊所医生职称分布
+					</p>
+					<div>
+
+					</div>
+				</div>
+				<!-- 下级区划概况结束 -->
+
+				<!-- 平均分布概况开始 -->
+				<div class="evenDistribution areaList hide">
+					<p class="evenTitle">
+						<span class="showYear" style="font-size: 20px">2016年</span> <span class="showMonth" style="font-size: 20px">1月</span><span class="areaShow" style="font-size: 20px">双流县</span>各下级行政区划个体诊所医疗服务能力分布概况
+					</p>
+					<p class="coverytr">各下级行政区划个体诊所人员数量的平均分布</p>
+					<p class="distritExplain">注：标签数字分别表示个体诊所平均人员数量及医护比，如A镇的标签数字为8.6，1.4，表示A镇平均每个诊所有8.6位工作人员，医护比为1.4。</p>
+					<div class="evenDistribute">
+						<div id="evenChart" class="evenChart"></div>
+						<p class="yName">平均人数(人)</p>
+					</div>
+					<p class="evenTitle">
+						<span class="showYear" style="font-size: 20px">2016年</span> <span class="showMonth" style="font-size: 20px">1月</span><span class="areaShow" style="font-size: 20px">双流县</span>各下级行政区划个体诊所人员数量的平均分布
+
+					</p>
+					<p class="coverytr">各下级行政区划个体诊所医生职称水平的平均分布</p>
+					<div class="evenDistribute">
+						<div id="levelChart" class="evenChart"></div>
+						<p class="yName">平均人数(人)</p>
+					</div>
+					<p class="evenTitle">
+						<span class="showYear" style="font-size: 20px">2016年</span> <span class="showMonth" style="font-size: 20px">1月</span><span class="areaShow" style="font-size: 20px">双流县</span>各下级行政区划个体诊所医生职称的平均分布
+					</p>
+				</div>
+				<!-- 平均分布概况结束 -->
+
+				<!-- 信息总表开始 -->
+				<div class="infoTotal areaList hide">
+					<p class="totalTitle">
+						截止 <span class="showYear" style="font-size: 20px">2016年</span> <span class="showMonth" style="font-size: 20px">1月</span><span class="areaShow" style="font-size: 20px">双流县</span>个体诊所人员构成信息总表
+					</p>
+					<div class="cent">
+						表1 <span class="showYear">2016年</span> <span class="showMonth">1月</span><span class="areaShow">双流县</span>个体诊所人员构成信息总表
+					</div>
+					<table id="infoTotalTable" class="totalTable">
+						<tr class="tableHead">
+							<td rowspan="2">行政区域规划</td>
+							<td rowspan="2">医护比</td>
+							<td rowspan="2">总人数（人）</td>
+							<td colspan="3">岗位</td>
+							<td colspan="3">职称</td>
+							<td rowspan="2">平均人员数量</td>
+						</tr>
+						<tr class="tableHead">
+							<td>医生</td>
+							<td>护士</td>
+							<td>其他</td>
+							<td>高级</td>
+							<td>中级</td>
+							<td>初级</td>
+						</tr>
+
+					</table>
+				</div>
+				<!-- 信息总表结束 -->
+			</div>
+			<!-- 当前概况结束 -->
+
+			<!-- 时间趋势开始 -->
+			<div id="trend" class="timeTrend hide">
+				<div class="timeControl timeChooseOuter">
+					<p>
+						<span>时间：</span>
+						<select name="" class="yearAndDay" id="">
+							<option value="year">年趋势</option>
+							<option value="month">月趋势</option>
+							<!--<option value="">天趋势</option>-->
+						</select>
+					</p>
+					<p class="timeSelect year">
+						<select class="yearBeginYear yearSelected">
+						</select>
+						<span>至</span>
+						<select class="yearEndYear yearSelected">
+						</select>
+					</p>
+					<p class="timeSelect month hide">
+						<select class="monthBeginYear yearSelected">
+						</select>
+						<select class="monthBeginMonth monthSelected">
+						</select>
+						<span>至</span>
+						<select class="monthEndMonth monthSelected">
+						</select>
+						<p class="query">
+							<i class="img"></i>
+							<span class="queryByTrend">查询</span>
+						</p>
+					</p>
+				</div>
+
+				<!-- 个体诊所人员构成概况分析开始 -->
+				<div class="numChange">
+					<div class="coverytr">
+						个体诊所人员构成时间趋势
+					</div>
+					<p class="changeTitle">
+						<span class="beginTitle" style="font-size: 20px">2016年1月</span>至 <span class="endTitle" style="font-size: 20px">2016年12月</span><span class="areaShow" style="font-size: 20px">双流县</span>个体诊所人员构成概况分析
+					</p>
+
+					<!-- 个体诊所数量变化趋势分析表开始 -->
+					<div class="numChangeChart">
+						<div id="trendChart" class="numChart"></div>
+						<p class="yName">人员数量(个)</p>
+
+					</div>
+					<!-- 个体诊所数量变化趋势分析表结束 -->
+
+					<p class="numExplain">
+						<span class="beginTitle" style="font-size: 16px">2016年1月</span>至 <span class="endTitle" style="font-size: 16px">2016年12月</span><span class="areaShow" style="font-size: 16px">双流县</span>个体诊所人员构成变化情况
+					</p>
+					<p class="chartExplain">注：图中标示为 人员总量 ; 医护比。例：420000:1.4 表示人员总量为420000人，医护比为1.4:1</p>
+				</div>
+				<!-- 个体诊所人员构成概况分析结束 -->
+
+			</div>
+			<!-- 时间趋势结束 -->
+
+		</div>
+	</body>
+	<script type="text/javascript" src="./js/plugins/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="./js/libs/selectUi.js"></script>
+	<script type="text/javascript" src="./js/libs/lq.datetimepick.js"></script>
+	<script type="text/javascript" src="js/plugins/echarts.min.js"></script>
+	<script type="text/javascript" src="../commonPath.js"></script>
+	<script type="text/javascript" src="js/info/commonInfo.js"></script>
+	<script type="text/javascript" src="js/info/personSituation.js"></script>
+
+</html>

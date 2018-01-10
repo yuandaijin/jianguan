@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>诊所运营综合情况</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=7">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<link rel="stylesheet" type="text/css" href="css/commonidentical.css" />
+		<link rel="stylesheet" type="text/css" href="css/peration/operationofclinic.css" />
+	</head>
+
+	<body>
+		<div class="container">
+			<ul class="current">
+				<li>当前位置： &nbsp;<span class="areaShow"></span>&nbsp;&gt;&gt;&nbsp;<span>诊所运营情况</span></li>
+				<li class="regionSelection">区域选择：
+					<select class="city" id="areaChoose">
+					<!--	<option>双流区</option>-->
+					</select>
+					<button id="areaConfirm" class="confirm">确认</button>
+					<i></i>
+					<button class="returnMap">返回地图</button>
+				</li>
+			</ul>
+			<div class="clinicInfoHead">诊所运营综合情况</div>
+			<!-- 当前概况开始 -->
+			<div id="condition" class="nowProfile">
+				<div class="time">
+					<ul class="diseas">
+						<li>时间：</li>
+						<li>
+							<select id="queryBy">
+								<option value="year">按年</option>
+								<option value="month">按月</option>
+							</select>
+						</li>
+						<li>
+							<select class="yearSelected">
+							</select>
+						</li>
+						<li>
+							<select class="monthSelected">
+							</select>
+						</li>
+						<li id="searchInfo">
+							<i class="img"></i>
+							<span>查询</span>
+						</li>
+						<li>打印</li>
+						<li></li>
+						<li>导出</li>
+						<li></li>
+					</ul>
+				</div>
+				<div class="coverytr">
+					<span class="areaShow" style="font-size: 20px">双流区</span>个体诊所运营情况概览
+				</div>
+				<div class="antibiotic">
+					<div class="service">
+						服务总量(人)
+					</div>
+					<div class="dayservice">
+						人均服务人次(人)
+					</div>
+					<div id="operate" class="antibiotic">
+					</div>
+
+					<div class="tableContain">
+						<table>
+							<thead id="infoHead" class="tableHead">
+							</thead>
+							<tbody id="infoBody">
+							</tbody>
+						</table>
+					</div>
+					<div class="blank"></div>
+				</div>
+			</div>
+		</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="../public/js/plugins/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="../public/js/echarts.min.js"></script>
+	<script type="text/javascript" src="../commonPath.js"></script>
+	<script type="text/javascript" src="js/commonInfo.js"></script>
+	<script type="text/javascript" src="js/operationofclinic.js"></script>
+
+</html>

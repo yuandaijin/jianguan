@@ -1,0 +1,37 @@
+.platform-account-nav h1 {
+	font-size: 18px;
+	color: #333;
+	overflow: hidden;
+	border-bottom: 1px solid #ccc;
+	margin-bottom: 10px;
+}
+.platform-account-nav h1 span {
+	font-size: 14px;
+	color: #666;
+}
+.platform-account-nav .binding-account-btn {
+	display: none;
+	
+	width: 100px;
+	float: right;
+	line-height: 24px;
+	font-size: 14px;
+	border: 0;
+	text-decoration: underline;
+}
+.operate-btns {
+	float: right;
+}
+.operate-btns a {
+	display: inline-block;
+	line-height: 24px;
+	padding: 0 4px;
+	background-color: #fff;
+	border: 1px solid #ccc;
+	border-radius: 2px;
+}
+.operate-btns a:hover {
+	background-color: #2081c7;
+    border: 1px solid #2081c7;
+    color: #fff;
+}

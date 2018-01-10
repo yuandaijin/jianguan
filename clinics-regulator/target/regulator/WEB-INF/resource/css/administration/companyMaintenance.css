@@ -1,0 +1,132 @@
+.add-company a.disable { 
+	cursor: not-allowed;
+}
+.add-company .add-enable {
+	color: #18a740;
+}
+.add-company .add-disable {
+	color: #ed3a3a;
+}
+
+
+
+
+
+.popup-warp {
+	background-color: #000; /* background color for IE */
+	filter: alpha(opacity=20); /* opacity filter for IE */
+	background-color: rgba(0, 0, 0, 0.2); /* for other browsers */
+	*zoom:1;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+.popup-warp>div {
+	position: relative;
+	top: 50%;
+	height: 516px;
+}
+/*#withdrawals-popup-warp {*/
+#update-popup-warp {
+	position: relative;
+	bottom: 50%;
+	bottom: 50%;
+	width: 775px;
+	font-size: 16px;
+	margin: 0 auto;
+    filter: progid:DXImageTransform.Microsoft.Glow(color='#969696',Direction=135, Strength=5);for ie6,7,8  
+    background-color: #969696;  
+    -moz-box-shadow: 0 0 10px #000;/*firefox*/  
+    -webkit-box-shadow: 0 0 10px #000;/*webkit*/  
+    box-shadow: 0 0 10px #000;/*opera或ie9*/   
+}
+#update-popup-warp h1 {
+	line-height: 40px;
+	background-color: #e6e6e6; 
+	padding-left: 20px;
+}
+#update-popup-warp .popup-close {
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	float: right;
+	cursor: pointer;
+	margin: 12px 20px 0 0;
+	background: url(../../imgs/i-popup-close_0001.png) no-repeat;
+}
+.popup-inner {
+	font-size: 16px;
+	overflow: hidden;
+	background-color: #fff;
+	padding: 40px 85px 29px 103px;
+}
+#update-popup-inner>ul> li  {
+	min-width: 40%;    
+	float: left;
+    padding-right: 50px;
+	height: 50px;
+}
+#update-popup-inner .errortips  {
+	display: block;
+	padding-left: 90px;
+}
+.popup-inner .store-selector .text {
+	min-width: 138px;
+	height: 26px;
+}
+/*选择下拉列表*/
+.popup-inner .update-type-list {
+	left: -15px;
+	width: 158px;
+}
+.popup-inner .update-type-list dt, .popup-inner .update-type-list dd {
+	line-height: 26px;
+}
+.popup-inner .s-choose-before dt {
+	background: url(../../imgs/icon-arrow.png) no-repeat 135px 10px;
+}
+.popup-inner .s-choose-after dt {
+	background: url(../../imgs/icon-arrow.png) no-repeat 135px -20px;
+}
+.popup-inner .time-choose {
+	background: url(../../imgs/icon-arrow.png) no-repeat 135px 10px;
+}
+.popup-inner .right {
+	float: right;
+	zoom: 1;
+}
+.popup-inner input {
+	width: 148px;
+	height: 26px;
+	padding-left: 10px;
+	border: 1px solid #d2d2d2;
+}
+.popup-inner .time-choose {
+	padding-right: 0;
+}
+#update-popup-inner .update-type-list {
+	top: -3px;
+	border: 1px solid #d2d2d2;
+}
+
+
+/*按钮*/
+.popup-inner .btn-warp-maintain {
+	clear: both;
+	text-align: center;
+	padding-top: 43px;
+	margin-left: -150px;
+}
+.update-btn {
+	display: inline-block;
+	width: 90px;
+	line-height: 30px;
+	color: #fff;
+	border-radius: 2px;
+	background-color: #f16528;
+}
+.update-btn+a {
+	margin-left: 60px;
+}

@@ -1,0 +1,8 @@
+/* 
+  原本没有moon文件 一直报错：
+
+ "NetworkError: 404 Not Found - http://localhost:8080/huatuo-cms/resource/js/plugins/layer/skin/moon/style.css" */
+
+ 找不到引入这个文件的link节点。为防止报错添加了这个空的文件
+ 
+*/

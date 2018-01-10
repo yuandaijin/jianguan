@@ -1,0 +1,79 @@
+/*reast*/
+body {margin: 0;font-size: 14px;}
+h1,h2,h3,h4,h5,h6,p {font-weight: normal; margin: 0; padding: 0;}
+ul,li,dl,dt,dd {list-style: none; padding: 0; margin: 0;}
+table,td,th{border-collapse: collapse; padding: 0; margin: 0;}
+a {cursor: pointer;text-decoration: none;}
+img {border: none;}
+em {font-style: normal;}
+i {display: inline-block;vertical-align: middle;font-style: normal;}
+.hide {display: none;}
+.g-left {float: left;}
+.g-right {float: right;}
+/*可用*/
+.usable {cursor: pointer;}
+/*禁用*/
+.disabled {cursor: not-allowed;}
+.errortips {display: inline-block; height: 20px; color: #f16528;}
+.errortips label {display: inline-block; padding-left: 15px;}
+/*必填想提示星号*/
+.must-write-star {color: #f16428;}
+input.text {padding-left: 3px;}
+
+.shadow {
+    filter: progid:DXImageTransform.Microsoft.Glow(color='#969696',Direction=135, Strength=5); /*for ie6,7,8*/  
+    background-color: #969696;  
+    -moz-box-shadow: 0 0 10px #666;/*firefox*/  
+    -webkit-box-shadow: 0 0 10px #666;/*webkit*/  
+    box-shadow: 0 0 10px #666;/*opera或ie9*/   
+}
+
+
+
+
+
+
+
+.g-warp {
+	width: 1000px;
+	margin: 0 auto;
+	overflow: hidden;
+	zoom: 1;
+}
+.main-warp .g-warp {
+	padding: 0 10px;
+	background-color: #fff;
+}
+/*二维码*/
+.g-code-warp {
+	width: 1000px;
+	margin: 0 auto;
+	position: relative;
+}
+.tcdPageCode {
+	padding: 80px 0 38px;
+}
+
+
+
+
+/*-------组件---------*/
+/*搜索组件*/
+.search-warp {
+	position: relative;
+}
+.search-warp>input {
+	height: 28px;
+	border: 1px solid #ccc;
+	border-radius: 2px;
+	padding-left: 36px;
+	margin-right: 18px;
+}
+.search-warp i {
+	position: absolute;
+	left: 6px;
+	top: 8px;
+	width: 24px;
+	border-right: 1px solid #ccc;
+}
+

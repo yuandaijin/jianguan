@@ -1,0 +1,46 @@
+<configuration>
+	<property name="log_dir" value="../logs/"/>
+	<property name="standardDateTime" value="%d{yyyy-MM-dd}"/>
+	<property name="fullStandardDateTime" value="%d"/>
+	<!-- 控制台输出 -->
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder charset="UTF-8">
+			<pattern>${fullStandardDateTime} %p[%t] %c{0}:%L - %m%n</pattern>
+		</encoder>
+	</appender>
+	
+	<appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${log_dir}/clinics-regulator_${standardDateTime}.log</fileNamePattern>
+		</rollingPolicy>
+		<encoder>
+			<pattern>${fullStandardDateTime} %p[%t] %c{0}:%L - %m%n</pattern>
+		</encoder>
+	</appender>
+	
+	<logger name="com.huatuo.clinics.cms" level="INFO">
+	    <appender-ref ref="FILE" />
+	</logger>
+	
+	<logger name="org.springframework" level="TRACE">
+	    <appender-ref ref="FILE" />
+	</logger>
+	
+	<appender name="SQLFILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${log_dir}/sql_${standardDateTime}.log</fileNamePattern>
+		</rollingPolicy>
+		<encoder>
+			<pattern>${fullStandardDateTime} %p[%t] %c{0}:%L - %m%n</pattern>
+		</encoder>
+	</appender>
+	
+	<logger name="com.huatuo.clinics.cms.db" level="DEBUG" additivity="false">
+	    <appender-ref ref="SQLFILE" />
+	</logger>
+	
+	<root level="INFO">
+		<appender-ref ref="STDOUT" />
+	</root>
+
+</configuration>

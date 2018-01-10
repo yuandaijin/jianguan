@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>诊所运营综合情况-服务费用</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=7">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" type="text/css" href="css/commonidentical.css" />
+    <link rel="stylesheet" type="text/css" href="css/peration/serviceCharge.css" />
+</head>
+
+<body>
+    <div class="container">
+        <ul class="current">
+            <li>当前位置： &nbsp;<span class="areaShow"></span>&nbsp;&gt;&gt;&nbsp;诊所医疗质量&nbsp;&gt;&gt;&nbsp;<span>诊所服务费用</span></li>
+            <li class="regionSelection">区域选择：
+                <select class="city" id="areaChoose">
+						<!--<option>双流区</option>	-->
+					</select>
+                <button id="areaConfirm" class="confirm">确认</button>
+                <i></i>
+                <button class="returnMap">返回地图</button>
+            </li>
+        </ul>
+       <!--  <ul class="clinicInfoTab">
+            <li id="nowCondition" class="clinicInfoTabBTn">年度</li>
+        </ul> -->
+
+        <!-- 当前概况开始 -->
+        <div id="condition" class="nowProfile">
+            <div class="time">
+                <ul class="diseas">
+                    <li>时间：</li>
+                    <li>
+                        <select id="queryBy">
+                            <option value="year">按年</option>
+							<option value="month">按月</option>
+						</select>
+                    </li>
+                    <li>
+                        <select class="yearSelected">
+
+							</select>
+                    </li>
+                    <li>
+                        <select class="monthSelected">
+							
+							</select>
+                    </li>
+                    <li id="searchInfo" style="cursor: pointer;">
+                        <i class="img"></i>
+                        <span>查询</span>
+                    </li>
+                    <li>打印</li>
+                    <li></li>
+                    <li>导出</li>
+                    <li></li>
+                </ul>
+            </div>
+            <div class="nowSituation">
+                <ul class="area">
+                    <li class="totalNav active">
+                        辖区总体概况
+                        <div class="subordinate">
+                            <div id="numSubmit" class="active">平均服务费用</div>
+                            <div id="classSubmit">各类型诊所费用</div>
+                        </div>
+                    </li>
+                    <li id="infoTotal">信息总表</li>
+                </ul>
+
+            </div>
+        </div>
+        <!--
+            	时间：2016-08-19
+            	描述：第一页图表
+            -->
+        <div class="first areaList show">
+            <div class="clinicInfoHeadt">
+                <span class="showTime">2016年</span><span class="areaShow">双流区</span>个体诊所就诊费用概况分析
+            </div>
+            <div class="coverytr">
+                个体诊所平均就诊费用概况
+            </div>
+            <div class="antibiotic">
+                <div class="serviceProfile">
+                    <div class="passengers">
+                        服务费用(元)
+                    </div>
+                    <div id="proportionOfPrescriptions" class="servicePerson"></div>
+                    <div class="serviceChain">
+                        2016年人均就诊费用
+                    </div>
+                </div>
+                <div class="serviceProfile">
+                    <div class="passengers">
+                        服务费用(元)
+                    </div>
+                    <div id="timeChains" class="servicePerson"></div>
+                    <div class="serviceChain">
+                        人均就诊费用环比
+                    </div>
+                </div>
+            </div>
+            <div class="clinicInfoHeads">
+                <span class="showTime">2016年</span><span class="areaShow">双流区</span>个体诊所人均就诊费用及环比分析
+            </div>
+            <table>
+                <tr class="tableHead">
+                    <td>行政区域</td>
+                    <td>人均服务费用</td>
+                    <td>环比增长率</td>
+                </tr>
+                <tr>
+                    <td class="areaShow">双流区</td>
+                    <td id="dayAvg">10</td>
+                    <td id="huanAdd">+25%</td>
+                </tr>
+                </tr>
+            </table>
+            <div class="blank"></div>
+        </div>
+
+        <div class="second areaList hide">
+            <div class="clinicInfoHeadt">
+                <span class="showTime">2016年</span><span class="areaShow">双流区</span>各类型个体诊所人均就诊费用概况分析
+            </div>
+            <div class="antibiotic">
+                <div class="serviceProfile">
+                    <div class="passengers">
+                        服务费用(元)
+                    </div>
+                    <div id="numDistribute" class="servicePerson"></div>
+                    <div class="serviceChain">
+                        不同类型诊所人均就诊费用分布
+                    </div>
+                </div>
+                <div class="serviceProfile">
+                    <div class="passengers">
+                        服务费用(元)
+                    </div>
+                    <div id="distribution" class="servicePerson"></div>
+                    <div class="serviceChain">
+                        不同规模诊所人均就诊费用分布
+                    </div>
+                </div>
+            </div>
+            <div class="clinicInfoHeads">
+                <span class="showTime">2016年</span><span class="areaShow">双流区</span>不同类型个体诊所人均就诊费用分布
+            </div>
+            <table>
+                <tr class="tableHead">
+                    <td rowspan="2"></td>
+                    <td colspan="5">诊所类型</td>
+                    <td colspan="3">诊所规模</td>
+                </tr>
+                <tr class="tableHead">
+                    <td>普通</td>
+                    <td>中医</td>
+                    <td>中西医结合</td>
+                    <td>口腔</td>
+                    <td>其他</td>
+                    <td>小型诊所</td>
+                    <td>中型诊所</td>
+                    <td>大型诊所</td>
+                </tr>
+                <tr>
+                    <td class="areaShow">双流区</td>
+                    <td id="ordinaryData">20</td>
+                    <td id="chinaData">12</td>
+                    <td id="foreinData">11</td>
+                    <td id="mouthData">6</td>
+                    <td id="otherData">4</td>
+                    <td id="smallData">16</td>
+                    <td id="midData">7</td>
+                    <td id="bigData">11</td>
+                </tr>
+            </table>
+            <div class="blank"></div>
+        </div>
+
+        <div class="third areaList hide">
+            <div class="namelist">
+                <span class="showTime">2016年</span><span class="areaShow">双流区</span>个体诊所就诊费用信息总表
+            </div>
+            <div class="clinicInfoHeads">
+                <span class="showTime">2016年</span><span class="areaShow">双流区</span>个体诊所人均就诊费用信息汇总
+            </div>
+            <table>
+                <tr class="tableHead">
+                    <td rowspan="2">行政区域规划</td>
+                    <td rowspan="2">区域人均就诊费用(元)</td>
+                    <td colspan="5">诊所类型</td>
+                    <td colspan="3">诊所规模</td>
+                </tr>
+                <tr class="tableHead">
+                    <td>普通</td>
+                    <td>中医</td>
+                    <td>中西医结合</td>
+                    <td>口腔</td>
+                    <td>其他</td>
+                    <td>小型诊所</td>
+                    <td>中型诊所</td>
+                    <td>大型诊所</td>
+                </tr>
+                <tr>
+                    <td class="areaShow">双流镇</td>
+                    <td id="renJun">11</td>
+                    <td id="puTong">15</td>
+                    <td id="zhongYi">20</td>
+                    <td id="zhongXi">12</td>
+                    <td id="kouQiang">11</td>
+                    <td id="qiTa">6</td>
+                    <td id="xiaoXing">4</td>
+                    <td id="zhongXing">16</td>
+                    <td id="daXing">7</td>
+                </tr>
+            </table>
+            <div class="blank"></div>
+        </div>
+
+    </div>
+</body>
+<script type="text/javascript" src="../public/js/plugins/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="../public/js/echarts.min.js"></script>
+<script type="text/javascript" src="../commonPath.js"></script>
+<script type="text/javascript" src="js/commonInfo.js"></script>
+<script src="js/serviceCharge.js"></script>
+
+</html>

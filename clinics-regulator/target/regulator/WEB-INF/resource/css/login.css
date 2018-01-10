@@ -1,0 +1,53 @@
+html,body{width:100%;height:100%;margin:0}.ml60{margin-left:60px}.line{margin-top:20px;margin-right:40px;width:1px;height:100px;background:url(../imgs/line.png) no-repeat center center}input::-ms-clear{display:none}input[type="password"]::-ms-reveal{display:none}.u-btn{padding: 0;font-size:20px;height:30px;line-height:30px;background:#2081c7;font-weight:normal;color:#fff;background-image:none;text-align: center;width: 310px}.u-btn:hover{background:#1499e0;background-image:none;filter:none}.m-checkbox.dib{vertical-align:bottom}.m-checkbox input{height:16px;width:16px;margin-right:5px;color:#046fb2}.m-checkbox label{font-size:14px;color:#046fb2}.m-checkbox *{vertical-align:middle}.m-ipt{position:relative;margin-bottom:20px}.m-ipt:hover input{border-color:#0287db}.m-ipt input{width:100%;height:40px;line-height:40px;border-radius: 5px;text-indent:0.5em;border: 1px solid white;}.m-ipt i{position:absolute;top:8px;left:-45px;width:30px;height:35px;font-style:normal;line-height:20px;text-align:right}.m-ipt label{position:absolute;top:5px;left:5px;width:100%;height:20px;cursor:text;display:none}.m-ipt .i-passwd{color:#999;background:url(../imgs/password.png) no-repeat}.m-ipt .i-username{color:#999;background:url(../imgs/user.png) no-repeat}.m-imgtxt{width: 100%}.m-imgtxt .img{display: inline-block;vertical-align: text-bottom;}.m-imgtxt>.img>img{margin-bottom: -10px}.m-imgtxt h3{font-size:45px;color:#32f3ff;display: inline-block}.g-mn{position:relative;top:20%;}.g-mn .g-mnl{position:relative;width: 100%;text-align: right;margin-top: 40px}.g-mn .g-mnr{margin-top:8%;width:38%;position: relative}.g-ft{text-align:center;height:30px;margin:-70px 0 0}.g-wrap{width:1000px;margin:0 auto;height:520px;min-height:100%;_height:100%}
+		#login-background{
+			width: 400px;
+			height: 280px;
+			border-radius: 3px;
+			background: url("<%=path %>/resource/imgs/loginbcsmall.png") no-repeat 0px 196px;
+			background-color: #f1f4f6;
+			box-shadow: #2c73bd 0 0 10px 3px;
+			opacity: 0.8;
+		}
+
+		.loginForm{
+		    position: absolute;
+		    top: 0;
+		    right: 0;
+		}
+    	#login-content .errortips  {
+    		display: block;
+			height: 30px;
+    	}
+@media (min-width: 1200px) and (max-width: 1366px) {
+    .g-mn .g-mnr {
+        margin-top: 65px;
+        width: 38%;
+        position: relative;
+    }
+    .g-mn .g-mn{
+    	 margin-top:0px;
+    }
+    .g-mn .g-mnl{
+    	margin-top:0px;
+    }
+    .m-imgtxt h3{
+    	 font-size: 40px;
+    }
+    .loginForm{
+    	width: 75%;
+    }
+    .u-btn{
+    	width:285px;
+    }
+    #login-background{
+		width: 360px;
+		height: 230px;
+	}
+	.loginForm{
+		right:40px;
+		top: -18px
+	}
+	#login-content .errortips {
+    height: 20px;
+}
+}

@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>区域个体诊所信息总览</title>
+	<link rel="stylesheet" type="text/css" href="css/info/conmon.css">
+	<link href="css/info/individualClinic.css" rel="stylesheet" type="text/css">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=7"></meta>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+</head>
+<body>
+	<div id="main">
+		<ul class="current">
+			<li>当前位置： &nbsp;<span class="areaShow"></span>&nbsp;&gt;&gt;&nbsp;<span>诊所综合信息概览</span></li>
+			<li class="regionSelection">区域选择：
+				<select id="areaChoose" class="city" id="">
+				</select>
+				<button id="areaConfirm" class="confirm">确认</button>
+
+			</li>
+			<li class="backBtn">
+				<i></i>
+				<button class="returnMap">返回地图</button>
+			</li>
+		</ul>
+		<div class="clinicMedical">诊所医疗能力覆盖情况</div>	
+		<div class="alreadyExisting">
+			截至本月<span style="font-size: 16px;" class="areaShow">双流县</span>已有 <span id="allNum"></span> 家诊所使用个体诊所信息管理系统
+		</div>
+		<div class="medicalAbility" id="numDistribute">	
+		</div>
+		<div class="individual">
+				诊所数量(个)
+			</div>
+		<div class="administration">
+			<span class="areaShow">双流县</span>各下级行政区划诊所数量分布
+		</div>
+		<div class="clinicMedical"><!-- <span class="lastMonths"></span> -->诊所运营综合情况</div>
+		<div class="alreadyExisting">
+			本月<span class="areaShow" style="font-size: 16px;color: #000;">双流县</span>个体诊所门诊总量共计<span id="avgNum"></span>人次，诊所平均服务效率为<span id="avgNumEffi"></span>人次
+		</div>
+		<div class="medicalAbility" id="operate">
+			
+		</div>
+		<div class="service">
+				服务总量(人)
+			</div>
+		<div class="dayservice">
+			诊所日平均服务人数
+		</div>
+		<div class="administration">
+			<span style="color: #000;" class="areaShow">双流县</span>个体诊所运营情况概览
+		</div>
+		<div class="clinicMedical">诊所医疗质量情况</div>
+		<div class="administration">
+			<span class="areaShow">双流县</span>个体诊所医疗质量情况概览
+		</div>
+		<div class="medicalQuality">
+			<div class="gridOuter">
+				<ul class="qualifications1">
+					<li><img src="images/资质监管.png" alt=""></li>
+					<li>资质监管</li>
+					<li style="width: 60%">截至本月有 <span id="daoQi" class="yes"></span> 家诊所《医疗机构执业许可证》6个月内即将到期</li>
+				</ul>
+				<ul class="qualifications2">
+					<li><img src="images/医疗服务规范.png" alt=""></li>
+					<li>医疗服务规范</li>
+					<li>本月电子处方合格率 <span id="passPerrcent"></span> </li>
+					<li>电子病历合格率<span id="heGe" class="prescription"></span></li>
+				</ul>
+				<ul class="qualifications3">
+					<li><img src="images/合理用药.png" alt=""></li>
+					<li>合理用药</li>
+					<li>本月抗生素使用占比<span id="zhanBi" class="prescription"></span></li>
+					<li>输液处方占比&nbsp;<span id="shuBi" class="prescription"></span></li>
+				</ul>
+				<ul class="qualifications4">
+					<li><img src="images/医疗事故统计.png" alt=""></li>
+					<li>医疗事故统计</li>
+					<li>本月共发生 <span id="accidentStatic">0</span> 起医疗事故</li>
+				</ul>
+				<ul class="qualifications5">
+					<li><img src="images/服务满意度.png" alt=""></li>
+					<li>服务满意度</li>
+					<li>本月服务满意度合格率达 <span id="satisfidPercent">100%</span></li>
+				</ul>
+			</div>
+
+		</div>
+
+		<div class="multiple"><!-- <span class="lastMonths"></span> -->居民多发疾病综合情况</div>
+		<div class="administration">
+			本月居民前往诊所就诊前十病种如下.
+		</div>
+		<div class="medicalAbility" id="topTen">
+			
+		</div>
+		<div class="oneDisease">
+				各病种占比(%)
+		</div>
+		<div class="administration">
+			<span class="areaShow">双流县</span>个体诊所就诊疾病前十病种分布
+		</div>
+		<div class="multiple">诊所评级综合情况</div>
+		<div class="administration">
+			本月诊所评级综合情况如下.
+		</div>
+		<div class="grade" id="grade">
+				
+		</div>
+		<div class="ratingConditi">
+			<div>
+				<span class="areaShow"></span>个体诊所评级情况
+			</div>
+		</div>
+		<div class="ratingForm">
+			<table>
+				<thead>
+					<td></td>
+					<td>一星级</td>
+					<td>二星级</td>
+					<td>三星级</td>
+					<td>四星级</td>
+					<td>五星级</td>
+				</thead>
+				<tbody>
+				<td>百分比</td>
+				<td>一星级</td>
+				<td>二星级</td>
+				<td>三星级</td>
+				<td>四星级</td>
+				<td>五星级</td>
+				</tbody>
+			</table>
+		</div>
+
+	</div>
+	<script src="js/plugins/jquery-1.11.1.min.js"></script>
+	<script src="js/echarts.min.js"></script>
+	<script src="../commonPath.js"></script>
+	<script src="js/info/commonInfo.js"></script>
+	<script src="js/info/individualClinic.js"></script>
+</body>
+</html>

@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../../css/jqueryUI/jquery-ui.min.css">
+    <link rel="stylesheet" href="../../js/plugins/layer/skin/layer.css">
+    <link rel="stylesheet" href="css/commonV.css">
+    <link rel="stylesheet" href="css/PrescriptionSampling.css">
+    <title>Title</title>
+</head>
+<body>
+    <div class="container">
+        <!--头部-->
+        <ul class="current">
+            <li>当前位置： &nbsp;<span class="areaShow"></span>&nbsp;&gt;&gt;&nbsp;<span>诊所动态监测</span>&nbsp;&gt;&gt;&nbsp;<span>诊所医疗质量</span</li>
+            <li class="regionSelection">
+                <i></i>
+                <button class="returnMap">返回地图</button>
+            </li>
+        </ul>
+        <!--抽查记录tab-->
+        <div class="preSamTabHeader overHidden">
+            <ul>
+                <li class="floatL curPointer active textCenter preSamOrderCheck">处方抽查</li>
+                <li class="floatL curPointer textCenter preSamOrderRecord">抽查记录</li>
+            </ul>
+        </div>
+        <!--处方抽查-->
+        <div id="preSamOrderCheck">
+            <!--查询条件-->
+            <div class="preSamQueryCondition">
+                <div class="overHidden">
+                    <div class="leftFirst floatL">
+                        处方开具日期：
+                    </div>
+                    <div class="floatL leftSecond chooseTime">
+                        <input id="dateBegin" type="text" readonly="readonly" class="borCcc"> -
+                        <input type="text" id="dateEnd" readonly="readonly" class="borCcc">
+                    </div>
+                    <div class="leftFirst floatL marLTwo">
+                        处方抽查地区：
+                    </div>
+                    <div class="floatL chooseArea">
+                        <input type="text" class="borCcc provenceOrder" readonly="readonly">
+                        <input type="text" class="borCcc cityOrder" readonly="readonly">
+                        <input type="text" class="borCcc areaOrder" readonly="readonly">
+                        <select name="" class="borCcc countyOrder">
+                            <option value="街道">街道</option>
+                        </select> 镇/街道
+                    </div>
+                </div>
+                <div class="overHidden">
+                    <div class="leftFirst floatL">
+                        处方数量：
+                    </div>
+                    <div class="floatL leftSecond chooseOrderType">
+                        <input type="text" class="borCcc orderNumber" value="1"/>
+                        <span>处方类型：</span>
+                        <select name="" id="" class="borCcc orderType">
+                            <option value="西药处方">全部</option>
+                        </select>
+                    </div>
+                    <div class="leftFirst floatL marLTwo">
+                        诊所名称：
+                    </div>
+                    <div class="floatL clinicName">
+                        <input type="text" class="borCcc clinicDefinition" value="">
+                    </div>
+                    <div class="floatR preConditionQuery textCenter curPointer">
+                        查询
+                    </div>
+                </div>
+            </div>
+            <!--查询结果-->
+            <div class="preSamQueryResult" style="display: none">
+                <table>
+                    <tr>
+                        <td class="textRight preSamQueryResultHead">本次抽查范围：</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="textRight">抽查时段：</td>
+                        <td><span class="resultBeginTime order">2016-09-09</span> 至 <span class="resultEndTime order">2016-09-09</span></td>
+                    </tr>
+                    <tr>
+                        <td class="textRight">抽查地区：</td>
+                        <td><span class="resultProvence">四川省</span><span class="resultCity">成都市</span><span class="resultArea">双流县</span><span class="resultCounty order">合江镇</span></td>
+                    </tr>
+                    <tr>
+                        <td class="textRight">抽查诊所：</td>
+                        <td><span class="resultClinicName">空</span></td>
+                    </tr>
+                    <tr>
+                        <td class="textRight">处方类型：</td>
+                        <td><span class="resultOrderType order">西药处方</span></td>
+                    </tr>
+                    <tr>
+                        <td class="textRight">抽查数量：</td>
+                        <td><span class="resultOrderNum order">200</span></td>
+                    </tr>
+                    <tr>
+                        <td class="textRight">审核人：</td>
+                        <td><span class="resultUserName">哈哈</span></td>
+                    </tr>
+                    <tr>
+                        <td class="textRight">抽查日期：</td>
+                        <td><span class="checkNowDate">2016-09-09</span></td>
+                    </tr>
+                </table>
+                <div class="preSamQuerySure textCenter curPointer">
+                    开始抽查
+                </div>
+            </div>
+            <!--抽查内容laowen-->
+            <div class="content-box tpl displayNo">
+                <div class="floatL con-l">
+                    <table class="table-style information">
+                        <tr><th class="th-head">待审处方基本信息：</th></tr>
+                        <tr><th>开具日期：</th><td class="visitDate"></td></tr>
+                        <tr><th>诊所名称：</th><td class="orgName"></td></tr>
+                        <tr><th> 医生姓名：</th><td class="doctorName"></td></tr>
+                        <tr><th>执业范围：</th><td class="ordDepName"></td></tr>
+                        <tr><th>医生职称：</th><td class="titlesClinical"></td></tr>
+                    </table>
+                    <table class="table-style examine tplShow">
+                        <tr><th class="th-head">处方审查结果：</th>
+                            <td>
+                                <div class="result x">
+                                    <div class="result-txt">合格</div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="reason-tr x">
+                            <th>不合格原因：</th>
+                            <td>
+                                <select class="reason unOk">
+                                    <option value="开具人员不具备相关资质">开具人员不具备相关资质</option>
+                                    <option value="处方内容不完整">处方内容不完整</option>
+                                    <option value="处方分类不正确">处方分类不正确</option>
+                                    <option value="其他">其他</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr class="other x">
+                            <th>备注：</th>
+                            <td><textarea class="edit unOk" rows="3" cols="20"></textarea></td>
+                        </tr>
+                        <tr>
+                            <th></th>
+                            <td><p class="pagination">第  <span class="currentPage">1</span> / <span class="totalPage"></span>  张</p></td>
+                        </tr>
+                        <tr>
+                            <th></th>
+                            <td class="pag-btn">
+                                <div class="preSamOver">结束审核</div>
+                                <div class="orderNextPage">下一张</div>
+                            </td>
+                        </tr>
+                    </table>
+                    <table class="table-style examine displayNo tplHide">
+                        <tr><th class="th-head">处方审查结果：</th>
+                            <td>
+                                <div class="result u result-n">
+                                    <div class="result-txt">不合格</div>
+                                </div>
+                                <div class="result l displayNo">
+                                    <div class="result-txt">合格</div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="reason-tr u">
+                            <th>不合格原因：</th>
+                            <td>
+                            </td>
+                        </tr>
+                        <tr class="other u">
+                            <th>备注：</th>
+                            <td><textarea class="edit" rows="3" cols="20"></textarea></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="floatL con-r">
+                    <div class="type-title">
+                        <span class="active" data-id="1">处方签</span>
+                        <span  data-id="2">电子病例</span>
+                    </div>
+                    <div class="details-box sign">
+                        <div class="des-title">
+                            <h1 class="orgName">--诊所</h1>
+                            <h2>处方笺</h2>
+                            <div class="des-type">普通</div>
+                            <p class="visitDate">开具日期： 0000-00-00</p>
+                        </div>
+                        <div class="person-des">
+                            <table>
+                                <tr>
+                                    <th>姓名：</th>
+                                    <td class="patientName">--</td>
+                                    <th>性别：</th>
+                                    <td class="sexName">--</td>
+                                    <th>年龄：</th>
+                                    <td class="age">--</td>
+                                    <th>就诊号：</th>
+                                    <td class="visitNo">--</td>
+                                </tr>
+                                <tr>
+                                    <th>科室：</th>
+                                    <td class="ordDepName">--</td>
+                                    <th>电话：</th>
+                                    <td class="teleNum">00000000000</td>
+                                    <th>住址：</th>
+                                    <td colspan="3" class="addr">----</td>
+                                </tr>
+                            <!--    <tr>
+                                    <th>过敏史：</th>
+                                    <td colspan="5" class="allergicDrugString">&#45;&#45;&#45;&#45;</td>
+                                </tr>-->
+                            </table>
+                        </div>
+                        <div class="clinic">
+                            <table>
+                                <tr>
+                                    <th>临床诊断：</th>
+                                    <td class="dxType"> ----</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="prescribe overHidden">
+                            <div>Rp</div>
+                            <table cellspacing="0px" rules=rows border="1px" class="orderDTOs floatL">
+                             <!--   <caption>Rp</caption>
+                                <tr class="prescribe-type">
+                                    <th>序号</th>
+                                    <th>药品名称</th>
+                                    <th>规格</th>
+                                    <th>剂量</th>
+                                    <th>给药方式</th>
+                                    <th>频率</th>
+                                    <th>天数</th>
+                                    <th>总量</th>
+                                    <th>备注</th>
+                                </tr>
+                                <tbody class="">
+                                    <tr>
+                                        <td>1</td>
+                                        <td>阿莫西林胶囊阿莫西林胶囊看</td>
+                                        <td>0.125毫克*24粒/盒</td>
+                                        <td>200g/2片</td>
+                                        <td>口服外用</td>
+                                        <td>每日两次</td>
+                                        <td>3天</td>
+                                        <td>2盒</td>
+                                        <td>饭后服用，才不是啊吧</td>
+                                    </tr>
+                                </tbody>-->
+                            </table>
+                            <table cellspacing="0px" rules=rows border="1px" class="orderDTOsR floatL"></table>
+                            <div class="clearBoth"></div>
+                            <div class="chinaM">
+                                <div>
+                                    <div class="totalNum">
+                                        <span>共</span>
+                                        <input type="text" class="borCcc repetition" value="">
+                                        <span>剂</span>
+                                    </div>
+                                    <div class="totalD">煎服法：
+                                        <textarea style="resize: none;" name="" cols="3" class="orderMemo"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="doctor">
+                          <!--  <p><span>医师(签章)：张三</span><span class="floatR">药师/士(调配)：张武</span></p>
+                            <p>药师(审核、核对、发药)：张宝</p>-->
+                        </div>
+                    </div>
+                    <div class="details-box case displayNo">
+                        <div class="person-des">
+                            <table>
+                                <tr>
+                                    <th>姓名：</th>
+                                    <td class="patientName">--</td>
+                                    <th>性别：</th>
+                                    <td class="sexName">--</td>
+                                    <th>年龄：</th>
+                                    <td class="age">--</td>
+                                    <th>就诊号：</th>
+                                    <td class="visitNo">--</td>
+                                </tr>
+                                <tr>
+                                    <th>科室：</th>
+                                    <td class="ordDepName">--</td>
+                                    <th>电话：</th>
+                                    <td class="teleNum">00000000000</td>
+                                    <th>就诊诊所：</th>
+                                    <td class="orgName">--</td>
+                                    <th>主治医师：</th>
+                                    <td class="doctorName">00000000000</td>
+                                  <!--  <th>住址：</th>
+                                    <td colspan="3" class="addr">&#45;&#45;&#45;&#45;</td>-->
+                                </tr>
+                           <!--     <tr>
+                                    <th>过敏史：</th>
+                                    <td colspan="5" class="allergicDrugString">&#45;&#45;&#45;&#45;</td>
+                                </tr>-->
+                            </table>
+                        </div>
+                        <div class="physical">
+                            <table rules=rows>
+                                <tr>
+                                    <th>主诉：</th>
+                                    <td class="chiefComplaint">早上起床恶心干呕，头晕目眩，四肢无力冒冷汗，手心较新塘腹泻基础上第不潇洒基础的卡上就是考虑的私家车的</td>
+                                </tr>
+                                <tr>
+                                    <th>现病史：</th>
+                                    <td class="presentIllness">糖尿病史，肺结核
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>既往史：</th>
+                                    <td class="pastIllness">肺结核
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>家族史：</th>
+                                    <td class="familyIllness">先天性心脏病</td>
+                                </tr>
+                                <tr>
+                                    <th>个人史：</th>
+                                    <td class="personalIllness">空间的司令部的空间三点半</td>
+                                </tr>
+                                <tr>
+                                    <th>药物过敏史：</th>
+                                    <td class="allergicHistory">阿莫西林克拉维酸钾过敏</td>
+                                </tr>
+                                <tr>
+                                    <th>门诊体检：</th>
+                                    <td class="bodyExam">体格正常，健康的办事处的不合适结婚是back基本上都</td>
+                                </tr>
+                                <tr>
+                                    <th>辅助检查：</th>
+                                    <td class="assistExam">健康速递才不会的边框is的句空间是不动产</td>
+                                </tr>
+                                <tr>
+                                    <th>门诊诊断：</th>
+                                    <td class="diagnoses">多病无大病</td>
+                                </tr>
+                                <tr>
+                                    <th>门诊处理：</th>
+                                    <td class="suggestion">住院</td>
+                                </tr>
+                                <tr>
+                                    <th>门诊医嘱：</th>
+                                    <td class="treatSuggetion">多喝水</td>
+                                </tr>
+                            </table>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--抽查记录-->
+        <div id="preSamOrderRecord" style="display: none">
+            <!--查询条件-->
+            <div class="preSamQueryCondition">
+                <div class="overHidden">
+                    <div class="leftFirst floatL">
+                        处方抽查日期：
+                    </div>
+                    <div class="floatL leftSecond chooseTime">
+                    <!--    <inputclass="ui_timepicker borCcc" type="text" readonly="readonly">-
+                        <input class="ui_timepicker borCcc" type="text" readonly="readonly">-->
+                        <input id="dateBeginR"  type="text" readonly="readonly" class="borCcc"> -
+                        <input id="dateEndR" type="text" readonly="readonly" class="borCcc">
+                    </div>
+                    <div class="leftFirst floatL marLTwo">
+                        处方抽查地区：
+                    </div>
+                    <div class="floatL chooseArea">
+                        <input type="text" class="borCcc provence r" readonly="readonly">
+                        <input type="text" class="borCcc city r" readonly="readonly">
+                        <input type="text" class="borCcc area r" readonly="readonly">
+                        <select name="" class="borCcc county r">
+                            <option value="街道">街道</option>
+                        </select> 镇/街道
+                    </div>
+                </div>
+                <div class="overHidden">
+                    <div class="leftFirst floatL">
+                        抽查诊所：
+                    </div>
+                    <div class="floatL clinicName">
+                        <input type="text" class="borCcc clinicDefinition r" value="">
+                    </div>
+                    <div class="floatR queryOrderTable textCenter curPointer">
+                        查询
+                    </div>
+                </div>
+            </div>
+            <!--查询列表-->
+            <div class="orderQueryTable total displayNo">
+                <table cellpadding="0" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <td>序号</td>
+                            <td>抽查时段</td>
+                            <td>抽查地区</td>
+                            <td>抽查诊所</td>
+                            <td>处方类型</td>
+                            <td>抽查数量</td>
+                            <td>合格率</td>
+                            <td>合格处方数</td>
+                            <td>不合格处方数</td>
+                            <td>审核人</td>
+                            <td>抽查日期</td>
+                        </tr>
+                    </thead>
+                    <tbody class="showDetailTBodyF">
+                        <tr>
+                     <!--       <td>1</td>
+                            <td class="orderChooseDay" title="1"><span> 2012-01-01 </span>至 <span> 2012-01-01 </span></td>
+                            <td class="orderChooseArea" title="1"><span>四川</span>省<span>成都</span>市<span>双流</span>区<span>太平</span>镇</td>
+                            <td class="orderChooseClinic" title="1">分分诊所分分诊所分分诊所分分诊所分分诊所分分诊所</td>
+                            <td class="orderChooseType" title="1">西药处方</td>
+                            <td class="orderChooseAmount" title="1">200</td>
+                            <td class="orderChoosePercent" title="1">12%</td>
+                            <td class="orderChooseOk" title="1">133</td>
+                            <td class="orderChooseNo curPointer" title="1">233</td>
+                            <td class="orderChoosePerson" title="1">哈哈</td>
+                            <td class="orderChooseDate" title="1">2012-09-09</td>-->
+                        </tr>
+                    </tbody>
+
+                </table>
+            </div>
+            <!--不合格列表-->
+            <div class="orderQueryTable detail textCenter displayNo overHidden">
+                <div class="head">
+                    <span class="orDetailTaStartTime">2012-01-01</span>
+                    <span>至</span>
+                    <span class="orDetailTaEndTime">2012-01-01</span>
+                    <span>双流区处方抽查<span class="unUseOrder">不合格</span>处方信息表</span>
+                </div>
+                <table cellpadding="0" cellspacing="0" class="showDetailS">
+                    <thead>
+                        <tr>
+                            <td>序号</td>
+                            <td>处方开具日期</td>
+                            <td>抽查地区</td>
+                            <td>诊所名称</td>
+                            <td>医生名称</td>
+                            <td>是否合格</td>
+                            <td>不合格原因</td>
+                            <td>备注</td>
+                            <td>操作</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                         <!--   <td>1</td>
+                            <td title="1">2012-01-01</td>
+                            <td title="1"><span>四川</span>省<span>成都</span>市<span>双流</span>区<span>太平</span>镇</td>
+                            <td title="1">分分诊所分分诊所分分诊所分分诊所分分诊所分分诊所</td>
+                            <td title="1">西药处方</td>
+                            <td title="1">200</td>
+                            <td title="1">12%</td>
+                            <td title="1" class="showDetail curPointer">133</td>-->
+                        </tr>
+                    </tbody>
+
+                </table>
+                <div class="floatR backToTotal textCenter curPointer">
+                    返回
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!--审核情况弹窗-->
+    <template id="preSamExamineLayer">
+        <div class="preSamQueryResult preSamExamineLayer">
+            <div class="layerHead">
+                <div class="floatR closeLayer curPointer">×</div>
+            </div>
+            <table>
+                <tr>
+                    <td class="textRight preSamQueryResultHead">本次处方审核情况：</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="textRight">抽查时段：</td>
+                    <td class="checkDateShow"></td>
+                </tr>
+                <tr>
+                    <td class="textRight">抽查地区：</td>
+                    <td class="checkAreaShow"></td>
+                </tr>
+                <tr>
+                    <td class="textRight">处方类型：</td>
+                    <td class="orderTypeShow"></td>
+                </tr>
+                <tr>
+                    <td class="textRight">抽查数量：</td>
+                    <td class="checkCountShow"></td>
+                </tr>
+                <tr>
+                    <td class="textRight">合格处方数：</td>
+                    <td class="qualifiedNoShow"></td>
+                </tr>
+                <tr>
+                    <td class="textRight">不合格处方数：</td>
+                    <td class="unqualifiedNoShow"></td>
+                </tr>
+                <tr>
+                    <td class="textRight">审核人：</td>
+                    <td class="userNameShow"></td>
+                </tr>
+                <tr>
+                    <td class="textRight">抽查日期：</td>
+                    <td class="checkTimeShow"></td>
+                </tr>
+            </table>
+            <div class="preSamExamine textCenter curPointer">
+                确定
+            </div>
+        </div>
+    </template>
+    <!--审核情况警告框-->
+    <template id="preSamExaError">
+        <div class="preSamExaError">
+            <div class="tipText y">
+                <span class="errorRed"> ！</span><span> 是否结束处方审核？</span>
+            </div>
+            <div class="tipText n">
+                <span> 目前还未完成预设的处方审核工作，<br>是否结束并保存当前审核记录？</span>
+            </div>
+            <div class="sureButton">
+                <div class="displayInB sure curPointer textCenter">是</div>
+                <div class="displayInB refuse curPointer textCenter">否</div>
+            </div>
+        </div>
+    </template>
+    <!--不合格详细弹窗-->
+    <div id="orderQueryTableDetail" class="displayNo" style="font-size: 12px">
+        <div class="orderQueryTableDetail">
+            <div class="layerHead">
+                <div class="floatR closeLayer curPointer">×</div>
+            </div>
+            <div class="showDetailOrderNo content-box"></div>
+        </div>
+    </div>
+
+</body>
+
+
+<script src="timePicker/jquery-1.7.1.min.js"></script>
+<!--<script src="timePicker/jquery-ui-1.8.17.custom.min.js"></script>-->
+<!--<script src="timePicker/jquery-ui-timepicker-addon.js"></script>-->
+<!--<script src="timePicker/jquery-ui-timepicker-zh-CN.js"></script>-->
+<script src="../../js/plugins/jqueryUI/jquery-ui.minDate.js"></script>
+<script src="../../js/plugins/layer/layer.js"></script>
+<script src="../commonPath.js"></script>
+<script src="js/prescriptionSampling.js"></script>
+
+</html>

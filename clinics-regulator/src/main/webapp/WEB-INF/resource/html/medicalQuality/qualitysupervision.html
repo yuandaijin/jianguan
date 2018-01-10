@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>诊所医疗质量-资质监管</title>
+		<link rel="stylesheet" type="text/css" href="css/commonidentical.css" />
+		<link rel="stylesheet" type="text/css" href="css/medical/qualitysupervision.css" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=7">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	</head>
+
+	<body>
+		<div class="container">
+			<ul class="current">
+				<li>当前位置： &nbsp; <span class="areaShow"></span> &nbsp;&gt;&gt;&nbsp;诊所医疗质量&nbsp;&gt;&gt;&nbsp;<span>资质监管</span></li>
+				<li class="regionSelection">区域选择：
+					<select class="city" id="areaChoose">
+						<!--<option>双流区</option>	-->
+					</select>
+					<button id="areaConfirm" class="confirm">确认</button>
+					<i></i>
+					<button class="returnMap">返回地图</button>
+				</li>
+			</ul>
+			<!-- 当前概况开始 -->
+			<div id="condition" class="nowProfile">
+				<div class="time">
+					<ul class="diseas">
+						<li>时间：</li>
+						<li>
+							<select id="timeStyle">
+								<!-- <option value="year">按年</option>
+								<option value="month">按月</option> -->
+								<option value="day">按天</option>
+							</select>
+						</li>
+						<li>
+							<select class="yearSelected">
+							</select>
+						</li>
+						<li>
+							<select class="monthSelected">
+							</select>
+						</li>
+						<li>
+							<select class="daySelected">
+							</select>
+						</li>
+						<li id="searchInfo">
+							<i class="img"></i>
+							<span>查询</span>
+						</li>
+						<li>打印</li>
+						<li></li>
+						<li>导出</li>
+						<li></li>
+					</ul>
+				</div>
+			<!--	<div class="nowSituation">
+					<ul class="area">
+						<li class="active">诊所资质</li>
+					</ul>
+				</div>-->
+				<div class="namelist">
+					截至 <span class="yearShow" style="font-size: 20px;"></span> <span class="monthShow" style="font-size: 20px;"></span> <span  class="dayShow" style="font-size: 20px;"></span><span class="areaShow">双流区</span>已有 <span id="clinicsNum">30</span>家诊所《医疗机构执业许可证》6个月内即将到期
+				</div>
+				<div class="clinicInfoHeads">
+					<span class="yearShow" style="font-size: 16px;"></span> <span class="monthShow"></span> <span  class="dayShow"></span><span class="areaShow">双流区</span>6个月内到期诊所名单
+				</div>
+				<div style="text-align: center;">
+					表1 <span class="yearShow"></span> <span class="monthShow"></span> <span  class="dayShow"></span><span class="areaShow">双流区</span>6个月内到期诊所名单
+				</div>
+				<table>
+					<thead class="tableHead">
+						<tr>
+							<td>行政区划</td>
+							<td>诊所名称</td>
+							<td>起始时间</td>
+							<td>到期时间</td>
+							<td>诊所法人</td>
+							<td>联系方式</td>
+							<td>诊所详细地址</td>
+							<td>状态</td>
+						</tr>
+					</thead>
+					<tbody id="infoTable">
+						
+					</tbody>
+				</table>
+				<div class="blank"></div>
+		</div>
+	</body>
+
+	<script src="../public/js/plugins/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="../public/js/echarts.min.js"></script>
+	<script type="text/javascript" src="../commonPath.js"></script>
+	<script src="js/commonInfo.js"></script>
+	<script src="js/qualitysupervision.js"></script>
+
+</html>

@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>区域居民健康-特定病种分析</title>
+</head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=7">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<link rel="stylesheet" type="text/css" href="css/commonidentical.css" />
+<link rel="stylesheet" type="text/css" href="css/conmon.css" />
+<link rel="stylesheet" type="text/css" href="css/resident/specificDiseaseAnalysis.css" />
+
+<body>
+    <div class="container">
+        <ul class="current">
+            <li>当前位置： &nbsp;<span class="areaShow"></span>&nbsp;&gt;&gt;&nbsp;区域居民健康&nbsp;&gt;&gt;&nbsp;<span>特定病种分析</span></li>
+            <li class="regionSelection">区域选择：
+                <select class="city" id="areaChoose">
+						<option>双流区</option>
+					</select>
+                <button id="areaConfirm" class="confirm">确认</button>
+            </li>
+            <li class="map">
+                <i></i>
+                <button class="returnMap">返回地图</button>
+            </li>
+        </ul>
+        <ul class="clinicInfoTab chooseTrend">
+            <li id="nowCondition" class="active" data-id="0">当前概况</li>
+            <li id="timeTrend" data-id="1">时间趋势</li>
+            <p>打印</p>
+            <p></p>
+            <p>导出</p>
+            <p></p>
+        </ul>
+
+        <div id="nowSituation" class="nowProfile show">
+
+            <div class="time">
+                <ul class="nowTimeChoose">
+                    <li>时间：</li>
+                    <li class="chooseByYear">
+                        <select>
+								<option value="year">年度</option>
+								<option value="quarter">季度</option>
+								<option value="month">月度</option>
+								<option value="day">天</option>
+							</select>
+                    </li>
+                </ul>
+                <ul class="diseaset yearY nowTimeList hide">
+                    <li></li>
+                    <li>
+                        <select class="yearByYear yearSelected">
+							</select>
+                    </li>
+                    <li class="queryByNow">
+                        <i class="img"></i>
+                        <span>查询</span>
+                    </li>
+                </ul>
+
+                <ul class="diseaseo quarterY nowTimeList hide">
+                    <li></li>
+                    <li>
+                        <select name="" class="quarterChooseYear yearSelected">
+							</select>
+                    </li>
+                    <li>
+                        <select name="" class="quarterChooseQuater quarterSelected">
+							</select>
+                    </li>
+                    <li class="queryByNow">
+                        <i class="img"></i>
+                        <span>查询</span>
+                    </li>
+                </ul>
+
+                <ul class="diseaseo monthY nowTimeList">
+                    <li></li>
+                    <li>
+                        <select name="" class="monthChooseYear yearSelected">
+							</select>
+                    </li>
+                    <li>
+                        <select name="" class="monthChooseMonth monthSelected">
+							</select>
+                    </li>
+                    <li class="queryByNow">
+                        <i class="img"></i>
+                        <span>查询</span>
+                    </li>
+                </ul>
+                <!--
+                    	作者：1206950286@qq.com
+                    	时间：2016-11-09
+                    	描述：按天查询
+                    -->
+                <ul class="disea dayY nowTimeList hide">
+                    <li></li>
+                    <li>
+                        <select name="" class="dayChooseYear yearSelected">
+							</select>
+                    </li>
+                    <li>
+                        <select name="" class="dayChooseMonth monthSelected">
+							</select>
+                    </li>
+                    <li>
+                        <select name="" class="daySelected">
+							</select>
+                    </li>
+                    <li class="queryByNow">
+                        <i class="img"></i>
+                        <span>查询</span>
+                    </li>
+                </ul>
+            </div>
+
+            <ul class="clinicInfoTab chooseDisease diseaseNow">
+                <li class="active" data-id="00057" data-code="00060">流行性感冒</li>
+                <li data-id="00058" data-code="00061">感染性腹泻</li>
+                <li data-id="00059" data-code="00062">手足口病</li>
+            </ul>
+            <div class="nowSituation diseaseTab">
+                <ul class="area">
+                    <li class="active" data-id="0">特定病种概况</li>
+                    <li data-id="1">特定病种特征</li>
+                    <li data-id="2">特定病种信息总表</li>
+                </ul>
+            </div>
+            <!--
+                	时间：2016-08-18
+                	描述：第一页图标
+                -->
+            <div class="first areaList show">
+                <div class="clinicInfoHeads">
+                    <span class="timeShow"></span><span class="areaShow">双流区</span>个体诊所<span class="diseaseType"></span>发生概况
+                </div>
+                <div class="coverytr">
+                    个体诊所<span class="diseaseType" style="font-size: 20px;color: #000000;"></span>发病概况
+                </div>
+                <div class="antibiotic">
+                    <div class="currency">
+                        <div class="transverse">
+                            发病人数(人)
+                        </div>
+                        <div id="proportionOfPrescriptions" class="qualifiedRate"></div>
+                        <div class="vertical">
+                            个体诊所<span class="diseaseType"></span>种发病总量
+                        </div>
+                    </div>
+                    <div class="currency">
+                        <div class="transverse">
+                            发病人数(人)
+                        </div>
+                        <div id="prescriptionRing" class="qualifiedRate"></div>
+                        <div class="vertical">
+                            个体诊所<span class="diseaseType"></span>种发病环比
+                        </div>
+                    </div>
+                    <div class="currency">
+                        <div class="transverse">
+                            发病人数(人)
+                        </div>
+                        <div id="prescriptionYear" class="qualifiedRate"></div>
+                        <div class="vertical">
+                            个体诊所<span class="diseaseType"></span>种发病同比
+                        </div>
+                    </div>
+                </div>
+
+                <div class="clinicInfoHeads">
+                    <span class="timeShow"></span><span class="areaShow">双流区</span>个体诊所<span class="diseaseType"></span>发生概况发病情况同比及环比分析
+                </div>
+                <table>
+                    <tr class="tableHead">
+                        <td></td>
+                        <td>发病人数</td>
+                        <td>环比增长率</td>
+                        <td>同比增长率</td>
+                    </tr>
+                    <tr>
+                        <td><span class="areaShow">双流区</span></td>
+                        <td id="zongShu">300</td>
+                        <td id="tongBi">25%</td>
+                        <td id="huanBi">50%</td>
+                    </tr>
+                </table>
+                <div class="blank"></div>
+            </div>
+
+            <div class="second areaList hide">
+                <div class="clinicInfoHeads">
+                    <span class="timeShow"></span><span class="areaShow">双流区</span>个体诊所<span class="diseaseType"></span>发病特征分析
+                </div>
+                <div class="coverytr">
+                    特定病种高发地区分布
+                </div>
+                <div class="antibiotic">
+                    <div class="transverse">
+                        发病人数(人)
+                    </div>
+                    <div id="numDistribute" class="antibiotics"></div>
+                </div>
+                <div class="clinicInfoHeads">
+                    个体诊所<span class="diseaseType"></span>种发病高发地区分布
+                </div>
+                <div class="antibiotica">
+                    <div class="specificDisease">特定病种性别分布</div>
+                    <div class="specificDisease">特定病种年龄分布</div>
+                    <div id="gender" class="circle"></div>
+                    <div id="age" class="circle"></div>
+                    <div class="distribution">
+                        个体诊所<span class="diseaseType"></span>种发病性别分布
+                    </div>
+                    <div class="distribution">
+                        个体诊所<span class="diseaseType"></span>种发病年龄分布
+                    </div>
+                </div>
+                <div class="blank"></div>
+            </div>
+
+            <div class="third areaList hide">
+                <div class="clinicInfoHeads">
+                    <span class="timeShow"></span><span class="areaShow">双流区</span>个体诊所<span class="diseaseType"></span>种发病高发地区分布
+                </div>
+                <div class="namelisto">
+                    <span class="timeShow"></span><span class="areaShow">双流区</span>个体诊所<span class="diseaseType"></span>种发病概况
+                </div>
+                <table>
+                    <thead>
+                        <tr class="tableHead">
+                            <td rowspan="2">特定病种</td>
+                            <td colspan="3">患病人数</td>
+                            <td colspan="2">性别占比</td>
+                            <td colspan="5">年龄段</td>
+                            <td colspan="3" rowspan="2">地区</td>
+                        </tr>
+                        <tr class="tableHead">
+                            <td>总量</td>
+                            <td>环比</td>
+                            <td>同比</td>
+                            <td>男</td>
+                            <td>女</td>
+                            <td>0-6</td>
+                            <td>7-16</td>
+                            <td>17-45</td>
+                            <td>46-59</td>
+                            <td>&gt;=60</td>
+                        </tr>
+                    </thead>
+                    <tbody id="infoTotal">
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="blank"></div>
+            </div>
+        </div>
+
+        <div id="timeForward" class="hide" style="width: 100%;">
+            <div class="time">
+                <ul class="yearAndDay trendTimeChoose show">
+                    <li>时间：</li>
+                    <li>
+                        <select>
+								<option value="year">年趋势</option>
+								<option value="month">月趋势</option>
+								<option value="day">日趋势</option>
+							</select>
+                    </li>
+                </ul>
+                <ul class="diseasek yearY trendTimeList">
+                    <li></li>
+                    <li>
+                        <select name="" class="trendByYearBegin yearSelected">
+							</select>&nbsp;至 &nbsp;
+                    </li>
+                    <li>
+                        <select name="" class="trendByYearEnd yearSelected">
+							</select>
+                    </li>
+                    <li class="queryByTrend">
+                        <i class="img"></i>
+                        <span>查询</span>
+                    </li>
+
+                </ul>
+                <ul class="diseasef monthY trendTimeList hide">
+                    <li></li>
+                    <li>
+                        <select name="" class="trendByYear yearSelected">
+							</select>
+                    </li>
+                    <li>
+                        <select name="" class="trendByMonthBegin monthSelected">
+							</select>
+                    </li>
+                    <li>
+                        &nbsp;至
+                        <select name="" class="trendByMonthEnd monthSelected">
+							</select>
+                    </li>
+                    <li class="queryByTrend">
+                        <i class="img"></i>
+                        <span>查询</span>
+                    </li>
+                </ul>
+                <ul class="diseasef dayY trendTimeList hide">
+                    <li></li>
+                    <li>
+                        <select class="trendByYear yearSelected">
+							</select>
+                    </li>
+                    <li>
+                        <select class="monthSelected trendStartMonth">
+							</select>
+                    </li>
+                    <li>
+                        <select class="trendStartDay daySelected">
+							</select> &nbsp;至 &nbsp;
+                        <select class="trendEndDay daySelected">
+							</select>
+                    </li>
+                    <li class="queryByTrend">
+                        <i class="img"></i>
+                        <span>查询</span>
+                    </li>
+                </ul>
+            </div>
+            <ul class="clinicInfoTab chooseDisease diseaseTrend">
+                <li class="active" data-id="00057" data-code="00060">流行性感冒</li>
+                <li data-id="00058" data-code="00061">感染性腹泻</li>
+                <li data-id="00059" data-code="00062">手足口病</li>
+            </ul>
+            <div class="clinicInfoHeads">
+                <span class="timeShow"></span><span class="areaShow">双流区</span>个体诊所<span class="diseaseType"></span>种发病概况分析
+            </div>
+            <div class="antibiotic">
+                <div class="transverse">
+                    发病人数(人)
+                </div>
+                <div id="changeSituation" class="antibiotics"></div>
+            </div>
+            <div class="namelisto">
+                <span class="timeShow"></span><span class="areaShow">双流区</span>个体诊所<span class="diseaseType"></span>种发病变化情况
+            </div>
+            <div class="blank"></div>
+        </div>
+
+    </div>
+</body>
+<script type="text/javascript" src="../public/js/plugins/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="../public/js/echarts.min.js"></script>
+<script type="text/javascript" src="../commonPath.js"></script>
+<script type="text/javascript" src="js/commonInfo.js"></script>
+<script type="text/javascript" src="js/specificDiseaseAnalysis.js"></script>
+
+</html>

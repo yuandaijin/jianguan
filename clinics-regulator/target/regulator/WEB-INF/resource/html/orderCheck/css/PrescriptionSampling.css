@@ -1,0 +1,468 @@
+/*查询条件*/
+.preSamQueryCondition{
+    border-bottom: 1px solid #d9d9d9;
+    margin: 0 20px;
+}
+.preSamQueryCondition>div{
+    margin-bottom: 15px;
+}
+.preSamQueryCondition .leftFirst{
+    width: 120px;
+    text-align: right;
+}
+.preSamQueryCondition .chooseTime input{
+    width: 120px;
+}
+.preSamQueryCondition .chooseOrderType .borCcc{
+    width: 91px;
+}
+.preSamQueryCondition .chooseArea .borCcc{
+    width: 85px;
+}
+.preSamQueryCondition .chooseArea input.borCcc{
+    width: 80px;
+}
+.preSamQueryCondition .clinicName .borCcc{
+    width: 195px;
+}
+.preSamQueryCondition .marLTwo{
+   margin-left: 5%;
+}
+.preSamQueryCondition .preConditionQuery,
+.preSamQueryCondition .queryOrderTable
+{
+    margin-right: 13%;
+    width: 115px;
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid #2081c7;
+    color: #2081c7;
+}
+.preSamQueryCondition .preConditionQuery.disClick{
+    color: black;
+    background-color: #cccccc;
+    border: 1px solid #bbbbbb;
+    cursor: not-allowed;
+}
+/*查询结果*/
+.preSamQueryResult{
+    margin: 90px auto 0 auto;
+    width: 500px;
+}
+.preSamQueryResult table{
+    width: 100%;
+}
+.preSamQueryResult .preSamQuerySure{
+    width: 180px;
+    height: 35px;
+    border-radius: 3px;
+    line-height: 35px;
+    background-color: #2081c7;
+    color: white;
+    margin: 20px 30%;
+}
+.preSamQueryResult .preSamQueryResultHead{
+    color: black;
+}
+.preSamQueryResult td{
+    line-height: 35px;
+}
+.preSamQueryResult .textRight{
+    line-height: 35px;
+    color: #666666;
+}
+/*审核情况弹窗*/
+.preSamExamineLayer.preSamQueryResult{
+    margin: 0;
+    width: 100%;
+}
+.preSamExamineLayer .preSamExamine{
+    color: white;
+    background-color: #2081c7;
+    height: 30px;
+    width: 85px;
+    line-height: 30px;
+    border-radius: 3px;
+    margin: 20px 0 20px 345px;
+}
+/*审核情况警告框*/
+.preSamExaError .tipText{
+    width: 100%;
+    text-align: center;
+    margin-top: 110px;
+}
+.preSamExaError .tipText span{
+    font-size: 20px;
+}
+.preSamExaError .tipText .errorRed{
+    color: #f14d4d;
+    font-size: 24px;
+    font-weight: bold;
+}
+.preSamExaError .sureButton{
+    width: 34%;
+    margin: 50px auto;
+}
+.preSamExaError .sureButton div{
+    width: 80px;
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid #2081c7;
+    border-radius: 3px;
+}
+.preSamExaError .sureButton .sure{
+    color: #2081c7;;
+}
+.preSamExaError .sureButton .refuse{
+    color: white;
+    background-color: #2081c7;
+    margin-left: 20px;
+}
+.preSamExaError .sureButton .sure:hover{
+    background-color: #2081c7;
+    color: white;
+}
+.preSamExaError .sureButton .refuse:hover{
+    background-color: white;
+    color: #2081c7;
+}
+
+/*抽查记录查询列表*/
+.orderQueryTable{
+    margin: 50px auto;
+    width: 95%;
+}
+.orderQueryTable table{
+    border:1px solid #999999;
+    text-align: center;
+    table-layout: fixed;
+}
+.orderQueryTable table td{
+   line-height: 35px;
+    border-right:1px solid  #dddddd;
+    padding: 5px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    color: #333;
+}
+.orderQueryTable table tbody td{
+    border-top:1px solid  #dddddd;
+}
+.orderQueryTable table tbody .orderChooseOk,
+.orderQueryTable table tbody .orderChooseNo,
+.orderQueryTable.detail .showDetail
+{
+    color: #2081c7;
+}
+.orderQueryTable table tbody .orderChooseNo:hover,
+.orderQueryTable.detail .showDetail:hover{
+    background-color: #2081c7;
+    color: white;
+}
+.orderQueryTable table thead{
+    background-color: #f1f1f1;
+}
+.orderQueryTable table thead td{
+    font-weight: bold;
+}
+.orderQueryTable table tr:hover{
+    background-color: #f7f7f7;
+}
+/*抽查记录查询列表不合格列表*/
+.orderQueryTable.detail .head{
+    margin: 20px auto;
+}
+.orderQueryTable.detail .head span{
+    font-size: 16px;
+}
+.backToTotal{
+    width: 150px;
+    height: 35px;
+    line-height: 35px;
+    border: 1px solid black;
+    margin-top: 15px;
+}
+
+
+/*laowen*/
+.content-box{
+    overflow: hidden;
+    margin-top: 8px;
+}
+
+.des-title, .person-des, .clinic, .prescribe {
+    border-bottom: 1px solid #999999;
+}
+
+.con-l {
+    width: 31%;
+}
+
+.con-l .table-style {
+    border: 0;
+    margin: 35px 0 0 1%;
+}
+
+.con-l .table-style th, .person-des th, .clinic th,.physical th {
+    text-align: right;
+    color: #666666;
+    font-weight: normal;
+}
+
+.con-l .table-style th {
+    width: 150px;
+}
+
+.con-l .table-style td {
+    width: 64%;
+}
+
+.con-l .table-style td, .con-l .table-style .th-head ,.person-des td, .clinic td,.physical td{
+    color: #333333;
+}
+
+/*处方结果btn*/
+.result {
+    position: relative;
+    width: 141px;
+    height: 26px;
+    background-color: #28c75c;
+    border-radius: 5px;
+    border: 1px solid #dddddd;
+}
+
+.result-txt {
+    position: absolute;
+    right: 0;
+    width: 61px;
+    height: 26px;
+    line-height: 26px;
+    text-align: center;
+    background-color: #f1f1f1;
+    border-radius: 3px;
+}
+.examine .result-n{
+    background-color: #f16528;
+}
+.result-n .result-txt{
+    left: 0;
+}
+.result,.examine .result-n,.result-txt,.examine .resultn-txt{
+    -webkit-transition: all .15s linear;
+    -moz-transition: all .15s linear;
+    -ms-transition: all .15s linear;
+    -o-transition: all .15s linear;
+    transition: all .15s linear;
+}
+/*处方结果下拉列表*/
+.reason-tr,.other{
+    display: none;
+}
+.reason {
+    padding-left: 5px;
+    width: 100%;
+    height: 34px;
+}
+
+.edit {
+    padding: 5px;
+    resize: none;
+    width: 94%;
+    height: 140px;
+}
+
+.pagination {
+    text-align: center;
+    color: #666666;
+}
+
+.pag-btn div {
+    margin: 0 auto;
+    display: inline-block;
+    width: 45%;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 5px;
+    border: 1px solid #2081c7;
+    text-align: center;
+    color: #2081c7;
+    cursor: pointer;
+}
+
+.pag-btn div:hover {
+    color: white;
+    background-color: #2081c7;
+}
+
+/*右侧内容*/
+.con-r {
+    width: 69%;
+}
+/*分类标签*/
+.type-title{
+    overflow: hidden;
+}
+.type-title span{
+    display: inline-block;
+    float: left;
+    width: 134px;
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+    border: 1px solid #bbbbbb;
+}
+.type-title .active{
+    background-color: #2081c7;
+    color: #fff;
+    border: 1px solid #2081c7;
+}
+/*处方签*/
+.details-box {
+    width: 98%;
+    border: 1px solid #999999;
+}
+
+.des-title {
+    position: relative;
+    margin: 25px 0 7px 0;
+}
+
+.des-title h1, .des-title h2 {
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+    font-size: 22px;
+    text-align: center;
+    font-weight: normal;
+}
+
+.des-type {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    width: 57px;
+    height: 17px;
+    line-height: 17px;
+    text-align: center;
+    border: 1px solid black;
+    font-size: 14px;
+}
+
+.des-title p {
+    margin: 0;
+    padding-right: 12px;
+    font-size: 14px;
+    text-align: right;
+}
+
+/*详细资料*/
+.person-des{
+    padding: 20px 0;
+}
+.person-des table, .clinic table {
+    width: 100%;
+}
+
+.person-des th, .clinic th {
+    width: 100px;
+}
+
+
+/*临床*/
+.clinic {
+    padding: 12px 0;
+}
+
+/*药方*/
+.prescribe table {
+    margin: 25px 2%;
+    width: 96%;
+    text-align: center;
+    font-size: 14px;
+    border-color: #999999;
+}
+
+.prescribe div {
+    margin: 10px 2%;
+    width: 96%;
+    font-size: 25px;
+    color: black;
+    text-align: left;
+}
+.prescribe .chinaM {
+    margin: 25px 2%;
+    width: 96%;
+    font-size: 16px;
+    color: black;
+    background-color: #f2f2f2;
+}
+.prescribe .totalNum,.prescribe .totalD{
+    margin: 10px auto;
+    font-size: 16px;
+    padding: 15px;
+}
+.prescribe .totalNum {
+    width: 33%;
+}
+.prescribe .totalD {
+    width: 80%;
+}
+.prescribe .totalD textarea{
+    width: 90%;
+    vertical-align: text-top;
+}
+
+.prescribe tr {
+    height: 40px;
+    border-color: #dddddd;
+}
+
+.prescribe .prescribe-type {
+    height: 43px;
+    background-color: #f1f1f1;
+    border-top-color: #999999;
+}
+
+/*医师签章*/
+.doctor {
+    padding: 10px 0;
+}
+
+.doctor p {
+    margin: 0 auto;
+    width: 96%;
+    line-height: 2;
+}
+
+/*电子病例*/
+.physical table{
+    width: 100%;
+}
+.physical table tr{
+    height: 54px;
+    border-color: #dddddd;
+}
+.physical th{
+    width: 100px;
+}
+
+@media screen and (max-width: 1400px)  {
+    .orderQueryTable table{
+        width: 1090px;
+    }
+    *{
+        font-size:12px;
+    }
+    .preSamQueryResult .preSamQueryResultHead{
+        font-size: 16px;
+    }
+}
+@media (min-width: 1400px) and (max-width: 1920px)  {
+    .orderQueryTable table{
+        width: 1600px;
+    }
+    .preSamQueryResult .preSamQueryResultHead{
+        font-size: 20px;
+    }
+}

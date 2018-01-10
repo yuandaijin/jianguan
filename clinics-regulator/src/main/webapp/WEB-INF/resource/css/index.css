@@ -1,0 +1,30 @@
+.i-arrowdb{background:url(../imgs/i-arrowdb.png) no-repeat center center;width:18px;height:18px}
+#personInfo{
+   font-size:8px;
+}
+.userinfo{
+    list-style: none;
+    position: absolute;
+    padding: 0;
+	right:80px;
+}
+.divclass{
+	float:right;
+	font-size:13px;
+	margin-top:8px;
+}
+.Hui-iconfont{
+	margin-right:1px;
+	
+}
+.xtsz{
+	margin-right:6px;
+}
+.xtsz a{
+	color:#999;
+}
+.userinfo a{
+	color:#999;
+}
+
+

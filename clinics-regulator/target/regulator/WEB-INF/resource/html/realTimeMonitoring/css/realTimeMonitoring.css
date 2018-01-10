@@ -1,0 +1,880 @@
+body {
+	position: relative;
+}
+
+
+/*实时监测*/
+
+.mapTab {
+	height: 600px;
+	width: 100%;
+	overflow: hidden;
+}
+
+.mapTab>div,
+.mapTab>div>div {
+	height: 100%;
+	position: relative;
+}
+
+.mapTab p {
+	font-size: 16px;
+	margin-bottom: 10px;
+}
+
+.leftMap {
+	width: 98%;
+}
+
+.rightCord {
+	width: 38%;
+	margin-right: 2%;
+}
+
+
+/*实时监测右边记录*/
+
+.cordTable {
+	width: 100%;
+	padding-left: 15%;
+}
+
+.cordTable tr td {
+	padding: 10px 0;
+}
+
+.wordSpacingTd {
+	word-spacing: 10px;
+}
+
+.cordTable .displayInB {
+	width: 30px;
+	height: 15px;
+	line-height: 15px;
+	border-radius: 2px;
+	text-align: center;
+	cursor: pointer;
+	color: white;
+}
+
+.cordTable .displayInB.one {
+	background-color: #2081c7;
+}
+
+.cordTable .displayInB.two {
+	background-color: #52c679;
+}
+
+.cordTable .displayInB.three {
+	background-color: #7d9dd7;
+}
+
+.cordTable .displayInB.four {
+	background-color: #bc8bd1;
+}
+
+.cordTable .displayInB.five {
+	background-color: #1ecaca;
+}
+
+.cordTable .displayInB.six {
+	background-color: #ecb243;
+}
+
+.cordTable .displayInB.seven {
+	background-color: #f67272;
+}
+
+.cordTable tr .displayInB.active {
+	cursor: not-allowed;
+	color: black;
+	background-color: transparent;
+}
+
+
+/*底部通知消息弹窗*/
+
+.rbMessage,
+.rbMessageTen {
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	width: 355px;
+	height: 335px;
+	background-color: white;
+	box-shadow: #8B91A0 -2px 9px 9px 2px;
+	z-index: 999;
+}
+
+.rbMessage .layerHead,
+.rbMessageTen .layerHead {
+	background-color: #2081c7;
+}
+
+.rbMessage .layerHead .floatR,
+.rbMessageTen .layerHead .floatR {
+	color: #fff;
+	padding-left: 10px;
+	font-size: 30px;
+}
+
+.blueButton {
+	width: 90px;
+	height: 30px;
+	line-height: 30px;
+	color: white;
+	background-color: #2081c7;
+	text-align: center;
+}
+
+.bpOutPad {
+	padding-left: 65px;
+	line-height: 30px;
+	margin: 20px 0;
+}
+
+
+/*详情表格*/
+
+.orderQueryTable {
+	margin: 50px auto;
+	width: 95%;
+}
+
+.orderQueryTable table {
+	border: 1px solid #999999;
+	text-align: center;
+	table-layout: fixed;
+	width: 100%;
+}
+
+.orderQueryTable table td {
+	line-height: 35px;
+	border-right: 1px solid #dddddd;
+	padding: 5px;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+	color: #333;
+}
+
+.orderQueryTable table tbody td {
+	border-top: 1px solid #dddddd;
+}
+
+.orderQueryTable table tbody .orderChooseNo {
+	color: #2081c7;
+	cursor: pointer;
+}
+
+.orderQueryTable table tbody .orderChooseNo:hover {
+	background-color: #2081c7;
+	color: white;
+}
+
+.orderQueryTable table thead {
+	background-color: #f1f1f1;
+}
+
+.orderQueryTable table thead td {
+	font-weight: bold;
+}
+
+.orderQueryTable table tr:hover {
+	background-color: #f7f7f7;
+}
+
+
+/*地图---表格详情的医疗争议统计表*/
+
+
+/*input框不显示*/
+
+.treatStepTwo input,
+.treatStepTwo select,
+.treatStepTwo textarea {
+	border: none;
+	outline: none;
+}
+
+.treatStepTwo {
+	width: 920px;
+	margin: 0 auto;
+	position: relative;
+}
+
+.dashHead {
+	border-bottom: 1px dashed #ccc;
+	font-weight: bold;
+	font-size: 16px;
+	padding: 10px 0;
+	margin: 10px 0;
+}
+
+.dashTable table input,
+.dashTable table textarea,
+.dashTable table select {
+	width: 260px;
+	height: 30px;
+}
+
+.dashTable table td.paddingL {
+	width: 285px;
+}
+
+.dashTable table tr {
+	line-height: 50px;
+}
+
+.marginTopDash {
+	margin-top: 60px;
+}
+
+div.headTre {
+	font-size: 20px;
+	font-weight: bold;
+	letter-spacing: 2px;
+}
+
+
+/*地图---表格详情的处方、电子病历*/
+
+.content-box {
+	overflow: hidden;
+	margin-top: 8px;
+	position: relative;
+}
+
+.des-title,
+.person-des,
+.clinic,
+.prescribe {
+	border-bottom: 1px solid #999999;
+}
+
+.con-l {
+	width: 31%;
+}
+
+.con-l .table-style {
+	border: 0;
+	margin: 35px 0 0 1%;
+}
+
+.con-l .table-style th,
+.person-des th,
+.clinic th,
+.physical th {
+	text-align: right;
+	color: #666666;
+	font-weight: normal;
+}
+
+.con-l .table-style th {
+	width: 150px;
+}
+
+.con-l .table-style td {
+	width: 64%;
+}
+
+.con-l .table-style td,
+.con-l .table-style .th-head,
+.person-des td,
+.clinic td,
+.physical td {
+	color: #333333;
+}
+
+
+/*处方结果btn*/
+
+.result {
+	position: relative;
+	width: 141px;
+	height: 26px;
+	background-color: #28c75c;
+	border-radius: 5px;
+	border: 1px solid #dddddd;
+}
+
+.result-txt {
+	position: absolute;
+	right: 0;
+	width: 61px;
+	height: 26px;
+	line-height: 26px;
+	text-align: center;
+	background-color: #f1f1f1;
+	border-radius: 3px;
+}
+
+
+/*右侧内容*/
+
+.con-r {
+	width: 69%;
+	padding-top: 50px;
+}
+
+
+/*分类标签*/
+
+.type-title {
+	overflow: hidden;
+}
+
+.type-title span {
+	display: inline-block;
+	float: left;
+	width: 134px;
+	height: 32px;
+	line-height: 32px;
+	text-align: center;
+	border: 1px solid #bbbbbb;
+}
+
+.type-title .active {
+	background-color: #2081c7;
+	color: #fff;
+	border: 1px solid #2081c7;
+}
+
+
+/*处方签*/
+
+.details-box {
+	width: 98%;
+	border: 1px solid #999999;
+}
+
+.des-title {
+	position: relative;
+	margin: 25px 0 7px 0;
+}
+
+.des-title h1,
+.des-title h2 {
+	margin: 0;
+	padding: 0;
+	line-height: 1.5;
+	font-size: 22px;
+	text-align: center;
+	font-weight: normal;
+}
+
+.des-type {
+	position: absolute;
+	top: 15px;
+	right: 20px;
+	width: 57px;
+	height: 17px;
+	line-height: 17px;
+	text-align: center;
+	border: 1px solid black;
+	font-size: 14px;
+}
+
+.des-title p {
+	margin: 0;
+	padding-right: 12px;
+	font-size: 14px;
+	text-align: right;
+}
+
+
+/*详细资料*/
+
+.person-des {
+	padding: 20px 0;
+}
+
+.person-des table,
+.clinic table {
+	width: 100%;
+}
+
+.person-des th,
+.clinic th {
+	width: 100px;
+}
+
+
+/*临床*/
+
+.clinic {
+	padding: 12px 0;
+}
+
+
+/*药方*/
+
+.prescribe table {
+	margin: 25px 2%;
+	width: 96%;
+	text-align: center;
+	font-size: 14px;
+	border-color: #999999;
+}
+
+.prescribe div {
+	margin: 10px 2%;
+	width: 96%;
+	font-size: 25px;
+	color: black;
+	text-align: left;
+}
+
+.prescribe .chinaM {
+	margin: 25px 2%;
+	width: 96%;
+	font-size: 16px;
+	color: black;
+	background-color: #f2f2f2;
+}
+
+.prescribe .totalNum,
+.prescribe .totalD {
+	margin: 10px auto;
+	font-size: 16px;
+	padding: 15px;
+}
+
+.prescribe .totalNum {
+	width: 33%;
+}
+
+.prescribe .totalD {
+	width: 80%;
+}
+
+.prescribe .totalD textarea {
+	width: 90%;
+	vertical-align: text-top;
+}
+
+.prescribe tr {
+	height: 40px;
+	border-color: #dddddd;
+}
+
+.prescribe .prescribe-type {
+	height: 43px;
+	background-color: #f1f1f1;
+	border-top-color: #999999;
+}
+
+
+/*医师签章*/
+
+.doctor {
+	padding: 10px 0;
+}
+
+.doctor p {
+	margin: 0 auto;
+	width: 96%;
+	line-height: 2;
+}
+
+
+/*电子病例*/
+
+.physical table {
+	width: 100%;
+}
+
+.physical table tr {
+	height: 54px;
+	border-color: #dddddd;
+}
+
+.physical th {
+	width: 100px;
+}
+
+.content-box>.positionA {
+	bottom: 0;
+	left: 48%;
+}
+
+
+/*查询条件*/
+
+.preSamQueryCondition {
+	border-bottom: 1px solid #d9d9d9;
+	margin: 0 20px;
+}
+
+.preSamQueryCondition>div {
+	margin-bottom: 15px;
+}
+
+.preSamQueryCondition .leftFirst {
+	width: 120px;
+	text-align: right;
+}
+
+.preSamQueryCondition .chooseTime input {
+	width: 120px;
+}
+
+.preSamQueryCondition .chooseOrderType .borCcc {
+	width: 91px;
+}
+
+.preSamQueryCondition .chooseArea .borCcc {
+	width: 85px;
+}
+
+.preSamQueryCondition .chooseArea input.borCcc {
+	width: 80px;
+}
+
+.preSamQueryCondition .clinicName .borCcc {
+	width: 195px;
+}
+
+.preSamQueryCondition .preConditionQuery,
+.preSamQueryCondition .queryOrderTable {
+	width: 115px;
+	height: 30px;
+	line-height: 30px;
+	border: 1px solid #2081c7;
+	color: #2081c7;
+}
+
+.preSamQueryCondition .preConditionQuery.disClick {
+	color: black;
+	background-color: #cccccc;
+	border: 1px solid #bbbbbb;
+	cursor: not-allowed;
+}
+
+.orderQueryTable table td.greenFont {
+	color: red;
+}
+
+
+/*地图透明*/
+
+.pacityMap {
+	opacity: 0;
+	position: absolute;
+	z-index: -1;
+}
+
+
+/*诊所列表*/
+
+.mapTab .area-show {
+	position: absolute;
+	left: 20px;
+	top: 35px;
+	background: #fff;
+	width: 300px;
+	height: auto;
+	opacity: 0.95;
+}
+
+.area-show .area-time {
+	width: 260px;
+	height: 50px;
+}
+
+.area-show .area-time input {
+	width: 80px;
+	height: 25px;
+	margin-top: 12px;
+}
+
+.area-show .area-list {
+	border: solid 1px #316a91;
+	max-height: 260px;
+	width: 250px;
+	overflow-y: auto;
+	background-color: #467ca2;
+}
+
+.area-list::-webkit-scrollbar {
+	width: 4px;
+	height: 4px;
+}
+
+.area-list::-webkit-scrollbar-thumb {
+	background: #2081c7;
+	border-radius: 3px;
+	opacity: .8;
+}
+
+.area-list::-webkit-scrollbar-track-piece {
+	background-color: #fff;
+}
+
+.area-show .xingzheng {
+	width: 100%;
+	height: 24px;
+	font: bold 14px/24px "微软雅黑";
+	text-indent: 10px;
+	margin: 0;
+	color: white;
+	border-top: solid 1px #316a91;
+}
+
+.area-show .mayor-name {
+	position: relative;
+	color: white;
+	width: 100%;
+	height: 24px;
+	font: bold 14px/24px "微软雅黑";
+	text-indent: 30px;
+	margin: 0;
+	cursor: pointer;
+	border-top: solid 1px #316a91;
+}
+
+.area-show .area-list .clinics-area {
+	width: 100%;
+	height: auto;
+	font: bold 14px/24px "微软雅黑";
+	text-indent: 20px;
+	margin: 0;
+	border-top: none;
+	cursor: pointer;
+	background-color: #6196bb;
+	border-top: solid 1px #467ca2;
+}
+
+.area-show .clinics-area-name {
+	width: 100%;
+	height: 24px;
+	font: bold 12px/24px "微软雅黑";
+	text-indent: 36px;
+	margin: 0;
+	color: white;
+	border-top: solid 1px #467ca2;
+}
+
+.area-show .clinics-area-list {
+	width: 100%;
+	height: auto;
+	background-color: #d6e6f1;
+}
+
+.area-show .clinics-area-list li {
+	width: 100%;
+	height: 24px;
+	font: 12px/24px "微软雅黑";
+	text-indent: 40px;
+	margin: 0;
+	border-top: solid 1px #6196bb;
+	color: #316a91;
+}
+
+
+/*巡查状态说明*/
+
+.mapTab .mark-condition {
+	position: absolute;
+	right: 20px;
+	top: 40px;
+	background: #fff;
+	height: auto;
+	opacity: 0.95;
+}
+
+.mapTab .mark-condition li {
+	width: 100%;
+	height: 24px;
+	font: bold 12px/24px "微软雅黑";
+}
+
+
+/*控制菜单是否展开*/
+
+.show-off {
+	background: #6196bb url(../images/off.png) no-repeat 10px center;
+}
+
+.show-on {
+	background: #6196bb url(../images/on.png) no-repeat 10px center;
+}
+
+
+/*诊所详情弹框*/
+
+.mapTab .clinics-detail {
+	position: absolute;
+	left: 290px;
+	top: 36px;
+	width: 455px;
+	background: #fff;
+	height: auto;
+	opacity: 0.95;
+}
+
+.clinics-detail .detail-head {
+	background: #2081c7;
+	height: 40px;
+	font: bold 16px/40px "微软雅黑";
+	text-align: center;
+	position: relative;
+}
+
+.clinics-detail .detail-head .close-clinics-detail {
+	position: absolute;
+	width: 40px;
+	height: 100%;
+	font: bold 24px/40px "微软雅黑";
+	top: 0;
+	right: 0;
+	cursor: pointer;
+}
+
+.clinics-information div {
+	width: 100%;
+	font: bold 12px/24px "微软雅黑";
+	border-bottom: 1px dotted #000;
+}
+
+.area-show .area-time .search-btn {
+	width: 48px;
+	height: 25px;
+	text-align: center;
+}
+
+
+/*诊所巡查录入弹框*/
+
+.clinics-entering {
+	position: absolute;
+	margin: auto;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	width: 400px;
+	height: 400px;
+	background: #fff;
+	box-shadow: #8B91A0 0px 0px 2px 2px;
+}
+
+.clinics-entering .entering-head {
+	background: #2081c7;
+	height: 40px;
+	font: bold 16px/40px "微软雅黑";
+	text-align: center;
+	position: relative;
+}
+
+.clinics-entering .close-entering {
+	position: absolute;
+	width: 40px;
+	height: 100%;
+	font: bold 24px/40px "微软雅黑";
+	top: 0;
+	right: 0;
+	cursor: pointer;
+}
+
+.clinics-entering table {
+	table-layout: fixed;
+	display: table;
+	border-collapse: separate;
+	border-spacing: 0px;
+}
+
+.clinics-entering table tr {
+	height: 40px;
+	line-height: 40px;
+}
+
+.clinics-entering .tableKey {
+	width: 100px;
+	font: bold 14px/40px "微软雅黑";
+	text-align: right;
+}
+
+.clinics-entering .tableVal {
+	width: 300px;
+	font: bold 14px/40px "微软雅黑";
+}
+
+.clinics-entering .tableVal input {
+	width: 280px;
+	height: 20px;
+	border: 1px solid #ccc;
+}
+
+.clinics-entering .tableVal textarea {
+	width: 286px;
+	height: 50px;
+	border: 1px solid #ccc;
+}
+
+.clinics-entering .entering-btn {
+	width: 100%;
+	height: 50px;
+	overflow: hidden;
+}
+
+.clinics-entering .entering-btn .save-btn {
+	float: left;
+	width: 80px;
+	height: 30px;
+	background: #2081c7;
+	margin-top: 10px;
+	margin-left: 40px;
+	text-align: center;
+	font: bold 14px/30px "微软雅黑";
+	border-radius: 5px;
+	color: white;
+	cursor: pointer;
+}
+
+.clinics-entering .entering-btn .cancel-btn {
+	float: right;
+	width: 80px;
+	height: 30px;
+	background: #2081c7;
+	margin-top: 10px;
+	margin-right: 40px;
+	text-align: center;
+	font: bold 14px/30px "微软雅黑";
+	border-radius: 5px;
+	color: white;
+	cursor: pointer;
+}
+
+
+/****************************/
+
+.BMap_cpyCtrl {
+	display: none;
+}
+
+.anchorBL {
+	display: none;
+}
+
+.effect {
+	width: 120px;
+	height: 100%;
+	text-align: center;
+	line-height: 20px;
+	color: #2081c7;
+	cursor: pointer;
+}
+
+.hide {
+	display: none;
+}
+
+.show {
+	display: block;
+}
+
+.description {
+	color: #2081c7;
+	cursor: pointer;
+}
